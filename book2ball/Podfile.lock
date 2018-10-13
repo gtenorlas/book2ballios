@@ -38,13 +38,6 @@ PODS:
   - Google/SignIn (3.1.0):
     - Google/Core
     - GoogleSignIn (~> 4.0)
-  - GoogleMaps (2.7.0):
-    - GoogleMaps/Maps (= 2.7.0)
-  - GoogleMaps/Base (2.7.0)
-  - GoogleMaps/Maps (2.7.0):
-    - GoogleMaps/Base
-  - GooglePlaces (2.7.0):
-    - GoogleMaps/Base (= 2.7.0)
   - GoogleSignIn (4.3.0):
     - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
     - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
@@ -79,8 +72,6 @@ DEPENDENCIES:
   - FacebookLogin
   - FacebookShare
   - Google/SignIn
-  - GoogleMaps
-  - GooglePlaces
   - PayPal-iOS-SDK
 
 SPEC REPOS:
@@ -97,8 +88,6 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseInstanceID
     - Google
-    - GoogleMaps
-    - GooglePlaces
     - GoogleSignIn
     - GoogleToolboxForMac
     - GTMOAuth2
@@ -118,14 +107,12 @@ SPEC CHECKSUMS:
   FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
   FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
   Google: 98da4b1a60ed0beb80a290387a28333406a1eb90
-  GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
-  GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   GoogleSignIn: 11183592dc63e105475c7305a325045ff95e02b7
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   PayPal-iOS-SDK: 10654cd111e911a9807bddb96fae81aacb8e9915
 
-PODFILE CHECKSUM: de8189ba1bef10250e790b2e45b9e9b1410a901b
+PODFILE CHECKSUM: 66ef325f9229ec29b37998db2da9199b81dabe1a
 
 COCOAPODS: 1.5.3

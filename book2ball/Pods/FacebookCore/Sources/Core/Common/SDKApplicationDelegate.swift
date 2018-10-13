@@ -47,16 +47,12 @@ public final class SDKApplicationDelegate {
    - returns: `true` if the url contained in the `launchOptions` was intended for the Facebook SDK, otherwise - `false`.
    */
   @discardableResult
-    public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    if let launchOptions = launchOptions {
-        if #available(iOS 9.0, *) {
-            if let shortcutItem = launchOptions[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
-                print("Shortcut: \(shortcutItem)")
-            }
-        }
-    }
-    return true
-    }
+  public func
+    application(_ application: UIApplication,
+                didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]? = nil) -> Bool {
+    //UIApplicationLaunchOptionsKey
+    return delegate?.application(application, didFinishLaunchingWithOptions: launchOptions) ?? false
+  }
 
   /**
    Call this function from the `UIApplicationDelegate.application(application:openURL:sourceApplication:annotation:)`
@@ -98,7 +94,8 @@ public final class SDKApplicationDelegate {
   @discardableResult
   public func application(_ app: UIApplication,
                           open url: URL,
-                          options: [UIApplicationLaunchOptionsKey: Any] = [:]) -> Bool {
+                          options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
+     //UIApplicationOpenURLOptionsKey
     return delegate?.application(app,
                                  open: url,
                                  sourceApplication: options[.sourceApplication] as? String,

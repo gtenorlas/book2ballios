@@ -621,14 +621,6 @@ Copyright 2017 Google
 
 Copyright 2016 Google Inc.
 
-## GoogleMaps
-
-Copyright 2018 Google
-
-## GooglePlaces
-
-Copyright 2018 Google
-
 ## GoogleSignIn
 
 Copyright 2018 Google
