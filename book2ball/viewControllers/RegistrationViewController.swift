@@ -40,7 +40,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
                     status.text = "success"
                     
                     //create a new user
-                    let user: Customer = Customer(id: 0, username: username.text as! NSString, password: password1.text as! NSString, firstName: firstName.text as! NSString, lastName: lastName.text as! NSString, email: email.text as! NSString,contactNumber: contactNumber.text as! NSString, startDate: "" ,endDate: "" , status: "")
+                    let user: Customer = Customer( username: username.text as! NSString, password: password1.text as! NSString, firstName: firstName.text as! NSString, lastName: lastName.text as! NSString, email: email.text as! NSString,contactNumber: contactNumber.text as! NSString, startDate: "" ,endDate: "" , status: "", originate: "")
                     
                     //save to db
                     do {

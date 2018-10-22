@@ -407,7 +407,7 @@ class DAO: NSObject{
         let insertQuery = "INSERT INTO user ( username, password, firstName, lastName, email) VALUES (?, ?, ?, ?, ?);"
         
         if sqlite3_prepare_v2(db, insertQuery, -1, &insertPointer, nil) == SQLITE_OK {
-            print("user to save: \(userToSave.id) \(userToSave.username) \(userToSave.password) \(userToSave.email)")
+          //  print("user to save: \(userToSave.id) \(userToSave.username) \(userToSave.password) \(userToSave.email)")
             
             //UTF8STRING IS REQUIRED, ELSE value is not recorded correctly
             sqlite3_bind_text(insertPointer, 1, userToSave.username.utf8String, -1, nil)
