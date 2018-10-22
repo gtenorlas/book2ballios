@@ -7,12 +7,26 @@
 //
 
 import UIKit
+import GoogleSignIn
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var selectedFacilityData: FacilityData = FacilityData()
+    var payment: Payment = Payment()
+    var selectedCity : String = ""
+    
+    //Shanu's part
+    var dao : DAO = DAO()
+    
+    //Gene's part
+    var userLoggedIn: Customer = Customer()
+    
+    //MO's part
+    var selectedCourt: Court = Court()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         if let launchOptions = launchOptions {
@@ -22,7 +36,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         }
+        
+        // Override point for customization after application launch.
+        
+        //Google client id is require to make Google sign in to work
+        GIDSignIn.sharedInstance().clientID = "1086742650619-t0gt0shot9h4u64qbgeh7tar4lujs4iv.apps.googleusercontent.com"
+        
+        //Facebook SDK requirement
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        //PayPal Credentials
+        /*
+        PayPalMobile .initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction: "AXxgODp_IkCtOtBMkrrfb8VHwjTTxvtiFoXlgTxxyrYPsmW03x4pTbHaxWMfxuyO6Z-xn47rvh8fTRNP",
+                                                                PayPalEnvironmentSandbox: "iresh.anthony-facilitator@gmail.com"])
+        */
+        //open the database, drop tables, create tables
+        do {
+            dao.copyDatabaseIfNeeded()
+            try dao.openDB()
+            //try dao.dropTable(tableName: "user")
+            //try dao.dropTable(tableName: "court")
+            //try dao.dropTable(tableName: "facility")
+            //try dao.dropTable(tableName: "payment")
+            
+            //try dao.createTableUser()
+            //try dao.createTableFacility()
+            //try dao.createTableCourt()
+            //try dao.createTablePayment()
+            //try dao.insertDefaultFacilities() //enter all default data for facilities, run one time
+            //try dao.insertDefaultCourts() //enter all default data for courts, run one time
+            print("success")
+        } catch {
+            print (error);
+        }
         return true
+    }
+    
+    //FB required func implementation
+    func application(_ application: UIApplication, open url:URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool{
+        let handled = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, options: options)
+        return handled
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

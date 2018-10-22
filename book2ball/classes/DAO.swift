@@ -5,7 +5,7 @@
 //  Copyright © 2018 Xcode User. All rights reserved.
 //
 //  The purpose of this class is to do all the transactions to the database.
-//  CRUD operation for all the data objects such as Payment, Court, Facility, Registration.
+//  CRUD operation for all the data objects such as Payment, Court, Facility, Customer.
 //  Create and drop tables.
 
 import UIKit
@@ -402,7 +402,7 @@ class DAO: NSObject{
     }
     
     //insert a new customer
-    func insertToTableUser(userToSave:Registration) throws{
+    func insertToTableUser(userToSave:Customer) throws{
         var insertPointer: OpaquePointer? = nil
         let insertQuery = "INSERT INTO user ( username, password, firstName, lastName, email) VALUES (?, ?, ?, ?, ?);"
         
@@ -418,10 +418,10 @@ class DAO: NSObject{
             
             //done saving successfully
             if sqlite3_step(insertPointer) == SQLITE_DONE {
-                print ("User Registration Data saved.")
+                print ("User Customer Data saved.")
             }
         } else {
-            print ("error inserting Registration")
+            print ("error inserting Customer")
             DBError.insertQueryFailed
         }
         sqlite3_finalize(insertPointer) //close
@@ -432,8 +432,8 @@ class DAO: NSObject{
     /*
      To grab the user that is trying to log in
     */
-    func readFromTableUserByUsernameAndPassword(username:NSString, password:NSString) throws -> Array<Registration>{
-        var users:Array<Registration> = []
+    func readFromTableUserByUsernameAndPassword(username:NSString, password:NSString) throws -> Array<Customer>{
+        var users:Array<Customer> = []
         let query="SELECT * FROM user where username = ? and password = ?;"
         var stmt: OpaquePointer? = nil
         if sqlite3_prepare(db, query, -1, &stmt, nil) == SQLITE_OK {
@@ -462,7 +462,7 @@ class DAO: NSObject{
                 print("email:" + emailString)
                 
                 //add to array
-                users.append(Registration(id: Int(id), username: usernameString as NSString, password: passwordString as NSString, firstName: firstNameString as NSString, lastName: lastNameString as NSString, email: emailString as NSString))
+              //  users.append(Customer(id: Int(id), username: usernameString as NSString, password: passwordString as NSString, firstName: firstNameString as NSString, lastName: lastNameString as NSString, email: emailString as NSString))
             }
         }else {
             DBError.unableToRetrieveData

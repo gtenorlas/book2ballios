@@ -27,10 +27,10 @@ class FaceBookRegistration: NSObject {
     
     //Get the facebook user information and create a user(Registration) to hold
     //the information of the user currently logged in to the system.
-    func fetchProfile() -> Registration {
+    func fetchProfile() -> Customer {
         print("profile fetched")
         let parameters = ["fields" : "email, first_name, last_name"]
-        let user: Registration = Registration()
+        let user: Customer = Customer()
         FBSDKGraphRequest(graphPath:"me", parameters : parameters).start{( connection, result, error ) -> Void in
             if error != nil {
                 print("error");

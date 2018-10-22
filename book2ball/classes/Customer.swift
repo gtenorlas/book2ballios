@@ -8,13 +8,17 @@
 
 import UIKit
 
-class Registration: NSObject {
+class Customer: NSObject {
     var id: Int
     var username:NSString
     var password:NSString
     var firstName: NSString
     var lastName: NSString
     var email:NSString
+    var contactNumber: NSString
+    var startDate: NSString
+    var endDate: NSString
+    var status: NSString
     
     //constructor without arguments
     public override init() {
@@ -24,17 +28,25 @@ class Registration: NSObject {
         self.firstName = ""
         self.lastName = ""
         self.email = ""
+        self.contactNumber = ""
+        self.startDate = ""
+        self.endDate = ""
+        self.status = ""
         
     }
     
     //constructor with arguments
-    public init(id:Int, username:NSString, password:NSString, firstName: NSString, lastName: NSString, email:NSString){
+    public init(id:Int, username:NSString, password:NSString, firstName: NSString, lastName: NSString, email:NSString, contactNumber: NSString, startDate: NSString, endDate: NSString, status: NSString){
         self.id = id
         self.username = username
         self.password = password
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
+        self.contactNumber = contactNumber
+        self.startDate = startDate
+        self.endDate = endDate
+        self.status = status
     }
     
 

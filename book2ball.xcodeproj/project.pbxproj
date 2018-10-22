@@ -14,8 +14,12 @@
 		34E85579216BA3B800C2AD71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34E85577216BA3B800C2AD71 /* LaunchScreen.storyboard */; };
 		34E85583216BA43300C2AD71 /* Book 2 Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E85582216BA43300C2AD71 /* Book 2 Ball.png */; };
 		6F3B7563EF122C2CFDB5AF29 /* Pods_book2ball.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D89524B4D9FCD63E4FFB59D0 /* Pods_book2ball.framework */; };
+		AED2CD25217E19FD0013F560 /* FacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2CD24217E19FD0013F560 /* FacebookViewController.swift */; };
+		AED2CD27217E280D0013F560 /* GoogleSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2CD26217E280D0013F560 /* GoogleSignInViewController.swift */; };
+		AED2CD2A217E29B40013F560 /* SearchFacilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2CD29217E29B40013F560 /* SearchFacilityViewController.swift */; };
+		AED2CD2C217E3E370013F560 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2CD2B217E3E370013F560 /* RegistrationViewController.swift */; };
 		CE0FB96121717CE4003038B5 /* Court.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95921717CC4003038B5 /* Court.swift */; };
-		CE0FB96321717CE4003038B5 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95B21717CCD003038B5 /* Registration.swift */; };
+		CE0FB96321717CE4003038B5 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95B21717CCD003038B5 /* Customer.swift */; };
 		CE0FB96421717CE4003038B5 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95C21717CD2003038B5 /* DAO.swift */; };
 		CE0FB96521717CE4003038B5 /* FaceBookRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95D21717CD6003038B5 /* FaceBookRegistration.swift */; };
 		CE0FB96621717CE4003038B5 /* FacilityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95E21717CDA003038B5 /* FacilityData.swift */; };
@@ -33,8 +37,12 @@
 		34E85578216BA3B800C2AD71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34E8557A216BA3B800C2AD71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34E85582216BA43300C2AD71 /* Book 2 Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Book 2 Ball.png"; sourceTree = "<group>"; };
+		AED2CD24217E19FD0013F560 /* FacebookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookViewController.swift; sourceTree = "<group>"; };
+		AED2CD26217E280D0013F560 /* GoogleSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInViewController.swift; sourceTree = "<group>"; };
+		AED2CD29217E29B40013F560 /* SearchFacilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFacilityViewController.swift; sourceTree = "<group>"; };
+		AED2CD2B217E3E370013F560 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		CE0FB95921717CC4003038B5 /* Court.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Court.swift; sourceTree = "<group>"; };
-		CE0FB95B21717CCD003038B5 /* Registration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
+		CE0FB95B21717CCD003038B5 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		CE0FB95C21717CD2003038B5 /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		CE0FB95D21717CD6003038B5 /* FaceBookRegistration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceBookRegistration.swift; sourceTree = "<group>"; };
 		CE0FB95E21717CDA003038B5 /* FacilityData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacilityData.swift; sourceTree = "<group>"; };
@@ -86,7 +94,7 @@
 		34E8556D216BA3B700C2AD71 /* book2ball */ = {
 			isa = PBXGroup;
 			children = (
-				CE0FB95821717C51003038B5 /* viewControllers */,
+				AED2CD28217E28120013F560 /* viewControllers */,
 				CE0FB95721717B6F003038B5 /* classes */,
 				34E85581216BA41400C2AD71 /* images */,
 				34E85580216BA3D500C2AD71 /* storyboards */,
@@ -123,6 +131,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AED2CD28217E28120013F560 /* viewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AED2CD26217E280D0013F560 /* GoogleSignInViewController.swift */,
+				AED2CD24217E19FD0013F560 /* FacebookViewController.swift */,
+				AED2CD29217E29B40013F560 /* SearchFacilityViewController.swift */,
+				AED2CD2B217E3E370013F560 /* RegistrationViewController.swift */,
+			);
+			path = viewControllers;
+			sourceTree = "<group>";
+		};
 		CE0FB95721717B6F003038B5 /* classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,16 +151,9 @@
 				CE0FB95E21717CDA003038B5 /* FacilityData.swift */,
 				CE0FB96021717CE4003038B5 /* GoogleRegistration.swift */,
 				CE0FB95F21717CDF003038B5 /* Payment.swift */,
-				CE0FB95B21717CCD003038B5 /* Registration.swift */,
+				CE0FB95B21717CCD003038B5 /* Customer.swift */,
 			);
 			path = classes;
-			sourceTree = "<group>";
-		};
-		CE0FB95821717C51003038B5 /* viewControllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = viewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,11 +308,15 @@
 			files = (
 				CE0FB96421717CE4003038B5 /* DAO.swift in Sources */,
 				34E85571216BA3B700C2AD71 /* ViewController.swift in Sources */,
+				AED2CD25217E19FD0013F560 /* FacebookViewController.swift in Sources */,
 				34E8556F216BA3B700C2AD71 /* AppDelegate.swift in Sources */,
+				AED2CD2C217E3E370013F560 /* RegistrationViewController.swift in Sources */,
 				CE0FB96621717CE4003038B5 /* FacilityData.swift in Sources */,
-				CE0FB96321717CE4003038B5 /* Registration.swift in Sources */,
+				CE0FB96321717CE4003038B5 /* Customer.swift in Sources */,
 				CE0FB96521717CE4003038B5 /* FaceBookRegistration.swift in Sources */,
+				AED2CD2A217E29B40013F560 /* SearchFacilityViewController.swift in Sources */,
 				CE0FB96721717CE4003038B5 /* Payment.swift in Sources */,
+				AED2CD27217E280D0013F560 /* GoogleSignInViewController.swift in Sources */,
 				CE0FB96121717CE4003038B5 /* Court.swift in Sources */,
 				CE0FB96821717CE4003038B5 /* GoogleRegistration.swift in Sources */,
 			);

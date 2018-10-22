@@ -11,7 +11,7 @@
 
 import UIKit
 
-class GoogleRegistration: Registration {
+class GoogleRegistration: Customer {
     var googleUserId: String
     var googleUserToken: String
     
