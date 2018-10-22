@@ -18,6 +18,8 @@
 		AED2CD27217E280D0013F560 /* GoogleSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2CD26217E280D0013F560 /* GoogleSignInViewController.swift */; };
 		AED2CD2A217E29B40013F560 /* SearchFacilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2CD29217E29B40013F560 /* SearchFacilityViewController.swift */; };
 		AED2CD2C217E3E370013F560 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2CD2B217E3E370013F560 /* RegistrationViewController.swift */; };
+		AED2CD2E217E5FF40013F560 /* BookingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2CD2D217E5FF40013F560 /* BookingsViewController.swift */; };
+		AED2CD30217E60D80013F560 /* PaymentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2CD2F217E60D80013F560 /* PaymentTableViewCell.swift */; };
 		CE0FB96121717CE4003038B5 /* Court.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95921717CC4003038B5 /* Court.swift */; };
 		CE0FB96321717CE4003038B5 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95B21717CCD003038B5 /* Customer.swift */; };
 		CE0FB96421717CE4003038B5 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95C21717CD2003038B5 /* DAO.swift */; };
@@ -41,6 +43,8 @@
 		AED2CD26217E280D0013F560 /* GoogleSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInViewController.swift; sourceTree = "<group>"; };
 		AED2CD29217E29B40013F560 /* SearchFacilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFacilityViewController.swift; sourceTree = "<group>"; };
 		AED2CD2B217E3E370013F560 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		AED2CD2D217E5FF40013F560 /* BookingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingsViewController.swift; sourceTree = "<group>"; };
+		AED2CD2F217E60D80013F560 /* PaymentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTableViewCell.swift; sourceTree = "<group>"; };
 		CE0FB95921717CC4003038B5 /* Court.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Court.swift; sourceTree = "<group>"; };
 		CE0FB95B21717CCD003038B5 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		CE0FB95C21717CD2003038B5 /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
@@ -99,9 +103,9 @@
 				34E85581216BA41400C2AD71 /* images */,
 				34E85580216BA3D500C2AD71 /* storyboards */,
 				34E8556E216BA3B700C2AD71 /* AppDelegate.swift */,
-				34E85570216BA3B700C2AD71 /* ViewController.swift */,
 				34E85575216BA3B800C2AD71 /* Assets.xcassets */,
 				34E8557A216BA3B800C2AD71 /* Info.plist */,
+				AED2CD2F217E60D80013F560 /* PaymentTableViewCell.swift */,
 			);
 			path = book2ball;
 			sourceTree = "<group>";
@@ -134,10 +138,12 @@
 		AED2CD28217E28120013F560 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				34E85570216BA3B700C2AD71 /* ViewController.swift */,
 				AED2CD26217E280D0013F560 /* GoogleSignInViewController.swift */,
 				AED2CD24217E19FD0013F560 /* FacebookViewController.swift */,
 				AED2CD29217E29B40013F560 /* SearchFacilityViewController.swift */,
 				AED2CD2B217E3E370013F560 /* RegistrationViewController.swift */,
+				AED2CD2D217E5FF40013F560 /* BookingsViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -306,10 +312,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AED2CD2E217E5FF40013F560 /* BookingsViewController.swift in Sources */,
 				CE0FB96421717CE4003038B5 /* DAO.swift in Sources */,
 				34E85571216BA3B700C2AD71 /* ViewController.swift in Sources */,
 				AED2CD25217E19FD0013F560 /* FacebookViewController.swift in Sources */,
 				34E8556F216BA3B700C2AD71 /* AppDelegate.swift in Sources */,
+				AED2CD30217E60D80013F560 /* PaymentTableViewCell.swift in Sources */,
 				AED2CD2C217E3E370013F560 /* RegistrationViewController.swift in Sources */,
 				CE0FB96621717CE4003038B5 /* FacilityData.swift in Sources */,
 				CE0FB96321717CE4003038B5 /* Customer.swift in Sources */,
