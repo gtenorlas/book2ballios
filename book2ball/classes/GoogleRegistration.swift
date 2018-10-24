@@ -20,5 +20,9 @@ class GoogleRegistration: Customer {
         self.googleUserToken = googleUserToken
         super.init() //initialize the parent class
     }
-
+    
+    required init(from decoder: Decoder) throws {
+        fatalError("init(from:) has not been implemented")
+    }
+    
 }

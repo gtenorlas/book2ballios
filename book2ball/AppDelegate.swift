@@ -9,6 +9,7 @@
 import UIKit
 import GoogleSignIn
 import FBSDKCoreKit
+//import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var selectedCourt: Court = Court()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+       // FirebaseApp.configure()
+        //FIRApp.configure()
         if let launchOptions = launchOptions {
             if #available(iOS 9.0, *) {
                 if let shortcutItem = launchOptions[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {

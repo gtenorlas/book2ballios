@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegistrationViewController: UIViewController, UITextFieldDelegate {
+class RegistrationViewController: UIViewController, UITextFieldDelegate{
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     
     @IBOutlet var status: UILabel!
@@ -19,9 +19,6 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var lastName: UITextField!
     @IBOutlet var email: UITextField!
     @IBOutlet var contactNumber: UITextField!
-    
-    
-    
     
     @IBAction func onSubmitTap(_ sender: UIButton) {
         //check if fields are valid
@@ -40,14 +37,18 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
                     status.text = "success"
                     
                     //create a new user
-                    let user: Customer = Customer( username: username.text as! NSString, password: password1.text as! NSString, firstName: firstName.text as! NSString, lastName: lastName.text as! NSString, email: email.text as! NSString,contactNumber: contactNumber.text as! NSString, startDate: "" ,endDate: "" , status: "", originate: "")
-                    
+                    let user: Customer = Customer( username: username.text as! NSString, password: password1.text as! NSString, firstName: firstName.text as! NSString, lastName: lastName.text as! NSString, email: email.text as! NSString,contactNumber: contactNumber.text as! NSString, startDate: "" ,endDate: "" , status: "", originate: "Standard")
+                    print(username.text)
+                    print(password1.text)
+                    print(firstName.text)
+                    print(lastName.text)
+                   user.saveToServer()
                     //save to db
-                    do {
-                        try mainDelegate.dao.insertToTableUser(userToSave: user)
-                    } catch {
-                        print (error);
-                    }
+                   // do {
+                   //     try mainDelegate.dao.insertToTableUser(userToSave: user)
+                   // } catch {
+                   //     print (error);
+                   // }
                     
                     //set the user is logged in
                     mainDelegate.userLoggedIn = user
