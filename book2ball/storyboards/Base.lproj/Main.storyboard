@@ -718,6 +718,7 @@
                         <viewLayoutGuide key="safeArea" id="3li-by-emY"/>
                     </view>
                     <connections>
+                        <outlet property="myTableView" destination="HGF-HD-KJz" id="9p5-3q-DkD"/>
                         <outlet property="searchDisplayController" destination="gVB-Jm-bjQ" id="ZVk-SO-TFp"/>
                         <outlet property="segment" destination="Xls-ak-l2d" id="XNS-Rp-9CH"/>
                     </connections>

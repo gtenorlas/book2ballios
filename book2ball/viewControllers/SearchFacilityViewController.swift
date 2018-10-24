@@ -11,11 +11,27 @@ import UIKit
 class SearchFacilityViewController: UIViewController {
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    var facilities : [String : Any] = ["Jays" : ["first facility","good facility","10 km"], "Leafs" : ["second facility","ok facility","20 km"], "Raptors"  : ["third facility","best facility","30 km"], "Marlies"  : ["forth facility","fine facility","40 km"], "FC" : ["5th facility","nice facility","50 km"]]
+    var facilities = ["Jays" : ["first facility","good facility",10 ], "Leafs" : ["second facility","ok facility",20], "Raptors"  : ["third facility","best facility",30], "Marlies"  : ["forth facility","fine facility",40], "FC" : ["5th facility","nice facility",50]]
     
    // @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var segment: UISegmentedControl!
+    @IBOutlet var myTableView : UITableView!
+    
     var numKm: Int = 1
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return facilities.count
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 30
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let tableCell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell()
+        for (kind, kilo) in facilities{
+       // tableCell.textLabel?.text = (facilities)[indexPath.row] as! String
+        }
+        return tableCell
+    }
     
     @IBAction func indexChanged(sender : UISegmentedControl) {
         // This all works fine and it prints out the value of 3 on any click
@@ -27,10 +43,16 @@ class SearchFacilityViewController: UIViewController {
     
     @IBAction func onSubmit(_ sender: UIButton) {
         
+        for (kind, kilo) in facilities{
+            for number in kilo {
+              //  if number == numKm {
+               // largest = number
+              //  }
+              } }
       
         
         
-        performSegue(withIdentifier: "paypalSegue", sender: nil)
+       // performSegue(withIdentifier: "paypalSegue", sender: nil)
     }
     
 
