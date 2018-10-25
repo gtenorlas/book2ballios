@@ -7,7 +7,8 @@
 //  The purpose of this class is to hold the new customer registration and to hold the user that is currently logged in to the application
 
 import UIKit
-let DomainURL = "http://mags.website/api/customer/"
+//let DomainURL = "http://mags.website/api/customer/"
+var baseURL = "http://mags.website/api/customer/"
 
 class Customer: NSObject, Codable {
     
@@ -58,19 +59,6 @@ class Customer: NSObject, Codable {
         case username, password, firstName, lastName, email, contactNumber, startDate, endDate, status, originate
     }
     
-    required init (from decoder: Decoder) throws {
-        let container =  try decoder.container (keyedBy: CodingKeys.self)
-        username = try container.decode (String.self, forKey: .username) as NSString
-        password = try container.decode (String.self, forKey: .password) as NSString
-        firstName = try container.decode (String.self, forKey: .firstName) as NSString
-        lastName = try container.decode (String.self, forKey: .lastName) as NSString
-        email = try container.decode (String.self, forKey: .email) as NSString
-        contactNumber = try container.decode (String.self, forKey: .contactNumber) as NSString
-        startDate = try container.decode (String.self, forKey: .startDate) as NSString
-        endDate = try container.decode (String.self, forKey: .endDate) as NSString
-        status = try container.decode (String.self, forKey: .status) as NSString
-        originate = try container.decode (String.self, forKey: .originate) as NSString
-    }
     func encode (to encoder: Encoder) throws
     {
         do {
@@ -90,8 +78,132 @@ class Customer: NSObject, Codable {
         }
     }
     
-    
+    required init (from decoder: Decoder) throws {
+        let values =  try decoder.container (keyedBy: CodingKeys.self)
+        username = try values.decode (String.self, forKey: .username) as NSString
+        password = try values.decode (String.self, forKey: .password) as NSString
+        firstName = try values.decode (String.self, forKey: .firstName) as NSString
+        lastName = try values.decode (String.self, forKey: .lastName) as NSString
+        email = try values.decode (String.self, forKey: .email) as NSString
+        contactNumber = try values.decode (String.self, forKey: .contactNumber) as NSString
+        startDate = try values.decode (String.self, forKey: .startDate) as NSString
+        endDate = try values.decode (String.self, forKey: .endDate) as NSString
+        status = try values.decode (String.self, forKey: .status) as NSString
+        originate = try values.decode (String.self, forKey: .originate) as NSString
+    }
+    static func fetch(customer:Customer){
+        var baseURL = "http://mags.website/api/customer/"
+        baseURL += "\(customer.username)/"
+        baseURL += "\(customer.password)/"
+        baseURL += "\(customer.originate)"
+        
+        print(baseURL)
+        
+        // create post request
+        let url = NSURL(string: baseURL)!
+        let request = NSMutableURLRequest(url: url as URL)
+        request.httpMethod = "GET"
+        
+        // insert json data to the request
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        
+        let task = URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
+            if error != nil{
+                print("Error -> \(error)")
+                return
+            }
+            
+            // print (String.init(data: data!, encoding: .ascii) ?? "no data")
+            
+            //Use JSONSerialization to handle the data that is received
+            if let objData = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) {
+                print ("done serialization")
+                print (objData)
+                if let dict = objData as? [String:Any] {
+                    print("yes it is a dictionary")
+                    
+                }
+            }
+        }
+        
+        task.resume()
+        //return dict
+    }
+    /*
+     func fetch(){
+        print("fetch")
+        // create post request
+        let request = NSMutableURLRequest(url: baseURL as URL)
+        request.httpMethod = "GET"
+        print("get")
+        // insert json data to the request
+       // request.setValue("application/x-www-form-urldecoded", forHTTPHeaderField: "Content-Type")
+       // request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        print("json")
+        let task = URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
+            if error != nil{
+                print("Error -> \(error)")
+                return
+            }
+            
+            print (String.init(data: data!, encoding: .ascii) ?? "no data")
+        }
+        
+        task.resume()
+     
+        if let url = URL.init(string: urlString) {
+            let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+                print(String.init(data: data!, encoding: .ascii) ?? "no data")
+                if let newMusic = try? JSONDecoder().decode(Music.self, from: data!) {
+                    print (newMusic.guid ?? "no guid")
+                    print (newMusic.music_url ?? "no url")
+                    completionHandler(newMusic)
+                }
+            })
+            task.resume()
+        }
+ 
+    }
+    */
     func saveToServer() {
+        // create post request
+        baseURL += "\(username)/"
+        baseURL += "\(password)/"
+        baseURL += "\(firstName)/"
+        baseURL += "\(lastName)/"
+        baseURL += "\(email)/"
+        baseURL += "\(contactNumber)/"
+        baseURL += "\(startDate)/"
+        baseURL += "\(endDate)/"
+        baseURL += "\(status)/"
+        baseURL += "\(originate)"
+        
+        print(baseURL)
+        
+        // create post request
+        let url = NSURL(string: baseURL)!
+        let request = NSMutableURLRequest(url: url as URL)
+        request.httpMethod = "POST"
+        
+        // insert json data to the request
+     //  request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+      //  request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+     //   request.httpBody = try? JSONEncoder().encode(self)
+        
+        let task = URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
+            if error != nil{
+                print("Error -> \(error)")
+                return
+            }
+            
+            print (String.init(data: data!, encoding: .ascii) ?? "no data")
+        }
+        task.resume()
+/*
        // let urlString = DomainURL
         
         var req = URLRequest.init(url: URL.init(string: DomainURL)!)
@@ -102,6 +214,7 @@ class Customer: NSObject, Codable {
             print (String.init(data: data!, encoding: .ascii) ?? "no data")
         }
         task.resume()
+ */
     }
 
 }

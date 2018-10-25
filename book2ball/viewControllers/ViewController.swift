@@ -31,17 +31,24 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onLogin(_ sender: UIButton) {
-        var users:Array<Customer>
+       // var users:Array<Customer>
+        let users = Customer()
+        users.username = username.text as! NSString
+        users.password = password.text as! NSString
+        users.originate = "Standard"
         do{
-            try users = mainDelegate.dao.readFromTableUserByUsernameAndPassword(username: username.text as! NSString, password: password.text! as NSString)
+            Customer.fetch(customer: users)
+          //  var cust : String
+         // cust =  Customer.fetch(customer: users)
+           // try users = mainDelegate.dao.readFromTableUserByUsernameAndPassword(username: username.text as! NSString, password: password.text! as NSString)
             
             //no user exists
-            if (users.count == 0) {
+            if (users == nil) {
                 status.text = "Username/password incorrect."
             }else {
                 //user found with valid credentials
                 //set the user is logged in
-                mainDelegate.userLoggedIn = users[0]
+              //  mainDelegate.userLoggedIn = users[0]
                 
                 performSegue(withIdentifier: "searchFacilitySegue", sender: nil)
             }

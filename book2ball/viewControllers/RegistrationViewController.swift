@@ -37,12 +37,13 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate{
                     status.text = "success"
                     
                     //create a new user
-                    let user: Customer = Customer( username: username.text as! NSString, password: password1.text as! NSString, firstName: firstName.text as! NSString, lastName: lastName.text as! NSString, email: email.text as! NSString,contactNumber: contactNumber.text as! NSString, startDate: "" ,endDate: "" , status: "", originate: "Standard")
+                    let user: Customer = Customer( username: username.text as! NSString, password: password1.text as! NSString, firstName: firstName.text as! NSString, lastName: lastName.text as! NSString, email: email.text as! NSString,contactNumber: contactNumber.text as! NSString, startDate: "10-22-2018-13-30" ,endDate: "null" , status: "Active", originate: "Standard")
                     print(username.text)
                     print(password1.text)
                     print(firstName.text)
                     print(lastName.text)
-                   user.saveToServer()
+                 //   user.fetch()
+                    user.saveToServer()
                     //save to db
                    // do {
                    //     try mainDelegate.dao.insertToTableUser(userToSave: user)
