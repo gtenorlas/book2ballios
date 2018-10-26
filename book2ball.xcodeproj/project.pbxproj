@@ -20,6 +20,9 @@
 		AED2CD2C217E3E370013F560 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2CD2B217E3E370013F560 /* RegistrationViewController.swift */; };
 		AED2CD2E217E5FF40013F560 /* BookingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2CD2D217E5FF40013F560 /* BookingsViewController.swift */; };
 		AED2CD30217E60D80013F560 /* PaymentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2CD2F217E60D80013F560 /* PaymentTableViewCell.swift */; };
+		AEEFA5A721835FEB00B80BCE /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEFA5A621835FEA00B80BCE /* Accelerate.framework */; };
+		AEEFA5A92183601500B80BCE /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEFA5A82183601500B80BCE /* SafariServices.framework */; };
+		AEEFA5AB2183602400B80BCE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEFA5AA2183602400B80BCE /* SystemConfiguration.framework */; };
 		CE0FB96121717CE4003038B5 /* Court.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95921717CC4003038B5 /* Court.swift */; };
 		CE0FB96321717CE4003038B5 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95B21717CCD003038B5 /* Customer.swift */; };
 		CE0FB96421717CE4003038B5 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95C21717CD2003038B5 /* DAO.swift */; };
@@ -45,6 +48,10 @@
 		AED2CD2B217E3E370013F560 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		AED2CD2D217E5FF40013F560 /* BookingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingsViewController.swift; sourceTree = "<group>"; };
 		AED2CD2F217E60D80013F560 /* PaymentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTableViewCell.swift; sourceTree = "<group>"; };
+		AEEFA5A621835FEA00B80BCE /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		AEEFA5A82183601500B80BCE /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		AEEFA5AA2183602400B80BCE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		AEEFA5AC2183606200B80BCE /* book2ball-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "book2ball-Bridging-Header.h"; sourceTree = "<group>"; };
 		CE0FB95921717CC4003038B5 /* Court.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Court.swift; sourceTree = "<group>"; };
 		CE0FB95B21717CCD003038B5 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		CE0FB95C21717CD2003038B5 /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
@@ -61,6 +68,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEEFA5AB2183602400B80BCE /* SystemConfiguration.framework in Frameworks */,
+				AEEFA5A92183601500B80BCE /* SafariServices.framework in Frameworks */,
+				AEEFA5A721835FEB00B80BCE /* Accelerate.framework in Frameworks */,
 				6F3B7563EF122C2CFDB5AF29 /* Pods_book2ball.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +116,7 @@
 				34E85575216BA3B800C2AD71 /* Assets.xcassets */,
 				34E8557A216BA3B800C2AD71 /* Info.plist */,
 				AED2CD2F217E60D80013F560 /* PaymentTableViewCell.swift */,
+				AEEFA5AC2183606200B80BCE /* book2ball-Bridging-Header.h */,
 			);
 			path = book2ball;
 			sourceTree = "<group>";
@@ -130,6 +141,9 @@
 		83585EDC5BC5DCDAA0205FBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AEEFA5AA2183602400B80BCE /* SystemConfiguration.framework */,
+				AEEFA5A82183601500B80BCE /* SafariServices.framework */,
+				AEEFA5A621835FEA00B80BCE /* Accelerate.framework */,
 				D89524B4D9FCD63E4FFB59D0 /* Pods_book2ball.framework */,
 			);
 			name = Frameworks;
@@ -197,6 +211,7 @@
 				TargetAttributes = {
 					34E8556A216BA3B700C2AD71 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -473,6 +488,7 @@
 			baseConfigurationReference = 134D3D10162E535E8A38AD8B /* Pods-book2ball.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q3333SLGG6;
 				INFOPLIST_FILE = book2ball/Info.plist;
@@ -483,6 +499,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mjsaad.book2ball;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "book2ball/book2ball-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -493,6 +511,7 @@
 			baseConfigurationReference = D0D8B42B88D00A6B549AEC2C /* Pods-book2ball.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q3333SLGG6;
 				INFOPLIST_FILE = book2ball/Info.plist;
@@ -503,6 +522,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mjsaad.book2ball;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "book2ball/book2ball-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

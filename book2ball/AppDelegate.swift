@@ -49,10 +49,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         //PayPal Credentials
-        /*
+        
         PayPalMobile .initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction: "AXxgODp_IkCtOtBMkrrfb8VHwjTTxvtiFoXlgTxxyrYPsmW03x4pTbHaxWMfxuyO6Z-xn47rvh8fTRNP",
                                                                 PayPalEnvironmentSandbox: "iresh.anthony-facilitator@gmail.com"])
-        */
+        
         //open the database, drop tables, create tables
         do {
             dao.copyDatabaseIfNeeded()
