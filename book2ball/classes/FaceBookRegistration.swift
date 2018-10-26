@@ -30,7 +30,7 @@ class FaceBookRegistration: NSObject {
     func fetchProfile() -> Customer {
         print("profile fetched")
         let parameters = ["fields" : "email, first_name, last_name"]
-        let user: Customer = Customer()
+        var user: Customer = Customer()
         FBSDKGraphRequest(graphPath:"me", parameters : parameters).start{( connection, result, error ) -> Void in
             if error != nil {
                 print("error");
@@ -45,9 +45,25 @@ class FaceBookRegistration: NSObject {
                     user.email = email as NSString
                     user.firstName = first_name as NSString
                     user.lastName = last_name as NSString
+                    user.originate = "facebook"
                     print("Email is " + email)
                     print("First Name is " + first_name)
                     print("Last Name is " + last_name)
+                    
+                    let response=Customer.fetchFacebook(customer: user)
+                    if let invalid = response as? String {
+                        print ("response is \(invalid)")
+                        user.username = email as NSString
+                        user.password = "null"
+                        user.contactNumber = "null"
+                        user.startDate = "10-22-2018-13-30"
+                        user.endDate = "null"
+                        user.status = "Active"
+                        Customer.save(customer: user)
+                    }else {
+                        user = response as! Customer
+                        //print("customer is \(customer.toString())")
+                    }
                 }
             }
         }

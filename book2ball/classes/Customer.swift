@@ -55,24 +55,24 @@ class Customer: NSObject, Codable {
     }
     
     enum CodingKeys : String, CodingKey {
-       // case username = "id"
+        // case username = "id"
         case username, password, firstName, lastName, email, contactNumber, startDate, endDate, status, originate
     }
     
     func encode (to encoder: Encoder) throws
     {
         do {
-        var container = encoder.container (keyedBy: CodingKeys.self)
-        try container.encode (username as String, forKey: .username)
-        try container.encode (password as String, forKey: .password)
-        try container.encode (firstName as String, forKey: .firstName)
-        try container.encode (lastName as String, forKey: .lastName)
-        try container.encode (email as String, forKey: .email)
-        try container.encode (contactNumber as String, forKey: .contactNumber)
-        try container.encode (startDate as String, forKey: .startDate)
-        try container.encode (endDate as String, forKey: .endDate)
-        try container.encode (status as String, forKey: .status)
-        try container.encode (originate as String, forKey: .originate)
+            var container = encoder.container (keyedBy: CodingKeys.self)
+            try container.encode (username as String, forKey: .username)
+            try container.encode (password as String, forKey: .password)
+            try container.encode (firstName as String, forKey: .firstName)
+            try container.encode (lastName as String, forKey: .lastName)
+            try container.encode (email as String, forKey: .email)
+            try container.encode (contactNumber as String, forKey: .contactNumber)
+            try container.encode (startDate as String, forKey: .startDate)
+            try container.encode (endDate as String, forKey: .endDate)
+            try container.encode (status as String, forKey: .status)
+            try container.encode (originate as String, forKey: .originate)
         } catch {
             print(error)
         }
@@ -91,7 +91,44 @@ class Customer: NSObject, Codable {
         status = try values.decode (String.self, forKey: .status) as NSString
         originate = try values.decode (String.self, forKey: .originate) as NSString
     }
-    static func fetch(customer:Customer){
+    
+    static func save(customer:Customer){
+        
+        var baseURL = "http://mags.website/api/customer/"
+        baseURL += "\(customer.username)/"
+        baseURL += "\(customer.password)/"
+        baseURL += "\(customer.firstName)/"
+        baseURL += "\(customer.lastName)/"
+        baseURL += "\(customer.email)/"
+        baseURL += "\(customer.contactNumber)/"
+        baseURL += "\(customer.startDate)/"
+        baseURL += "\(customer.endDate)/"
+        baseURL += "\(customer.status)/"
+        baseURL += "\(customer.originate)"
+        
+        print(baseURL)
+        
+        // create post request
+        let url = NSURL(string: baseURL)!
+        let request = NSMutableURLRequest(url: url as URL)
+        request.httpMethod = "POST"
+        
+        let task = URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
+            if error != nil{
+                print("Error -> \(error)")
+                return
+            }
+            
+            print (response)
+            print("saved")
+        }
+        
+        task.resume()
+        
+    }
+    
+    static func fetch(customer:Customer)->Any{
+        var fetchedCustomer : (Any)? = nil
         var baseURL = "http://mags.website/api/customer/"
         baseURL += "\(customer.username)/"
         baseURL += "\(customer.password)/"
@@ -108,113 +145,116 @@ class Customer: NSObject, Codable {
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         
+        //var status:String=""
+        let semaphore = DispatchSemaphore(value: 0) //make it synchrounous
         
-        let task = URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
+        URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
             if error != nil{
                 print("Error -> \(error)")
                 return
             }
             
-            // print (String.init(data: data!, encoding: .ascii) ?? "no data")
+            print ("response -> \(response)")
+            
+            print ("data -> " + String.init(data: data!, encoding: .ascii)! ?? "no data")
+            
+            
             
             //Use JSONSerialization to handle the data that is received
             if let objData = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) {
+                
                 print ("done serialization")
-                print (objData)
+                //print (objData)
                 if let dict = objData as? [String:Any] {
                     print("yes it is a dictionary")
+                    //grabbing the data from dictionary and saving it to the customer attributes
+                    customer.contactNumber = (dict["contactNumber"] as? NSString)!
+                    customer.email = (dict["email"] as? NSString)!
+                    customer.firstName = (dict["firstName"] as? NSString)!
+                    customer.lastName = (dict["lastName"] as? NSString)!
+                    customer.status = (dict["status"] as? NSString)!
+                    //print ("customer name is \(customer.firstName)")
+                    fetchedCustomer = customer
                     
                 }
+            }else {
+                fetchedCustomer =  String.init(data: data!, encoding: .ascii)
             }
-        }
+            semaphore.signal()//wait for synchronous
+            }.resume()
+        _ = semaphore.wait(timeout: .distantFuture)
         
-        task.resume()
-        //return dict
+        // task.resume()
+        
+        print ("its here")
+        return fetchedCustomer
+        
+        
     }
-    /*
-     func fetch(){
-        print("fetch")
-        // create post request
-        let request = NSMutableURLRequest(url: baseURL as URL)
-        request.httpMethod = "GET"
-        print("get")
-        // insert json data to the request
-       // request.setValue("application/x-www-form-urldecoded", forHTTPHeaderField: "Content-Type")
-       // request.setValue("application/json", forHTTPHeaderField: "Accept")
-        
-        print("json")
-        let task = URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
-            if error != nil{
-                print("Error -> \(error)")
-                return
-            }
-            
-            print (String.init(data: data!, encoding: .ascii) ?? "no data")
-        }
-        
-        task.resume()
-     
-        if let url = URL.init(string: urlString) {
-            let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-                print(String.init(data: data!, encoding: .ascii) ?? "no data")
-                if let newMusic = try? JSONDecoder().decode(Music.self, from: data!) {
-                    print (newMusic.guid ?? "no guid")
-                    print (newMusic.music_url ?? "no url")
-                    completionHandler(newMusic)
-                }
-            })
-            task.resume()
-        }
- 
-    }
-    */
-    func saveToServer() {
-        // create post request
-        baseURL += "\(username)/"
-        baseURL += "\(password)/"
-        baseURL += "\(firstName)/"
-        baseURL += "\(lastName)/"
-        baseURL += "\(email)/"
-        baseURL += "\(contactNumber)/"
-        baseURL += "\(startDate)/"
-        baseURL += "\(endDate)/"
-        baseURL += "\(status)/"
-        baseURL += "\(originate)"
-        
+    
+    static func fetchFacebook(customer:Customer)->Any{
+        var fetchedCustomer : (Any)? = nil
+        var baseURL = "http://mags.website/api/customer/"
+        baseURL += "\(customer.email)/"
+        baseURL += "\(customer.firstName)/"
+        baseURL += "\(customer.lastName)/"
+        baseURL += "\(customer.originate)"
         print(baseURL)
         
         // create post request
         let url = NSURL(string: baseURL)!
         let request = NSMutableURLRequest(url: url as URL)
-        request.httpMethod = "POST"
+        request.httpMethod = "GET"
         
         // insert json data to the request
-     //  request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-      //  request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         
-     //   request.httpBody = try? JSONEncoder().encode(self)
+        //var status:String=""
+        let semaphore = DispatchSemaphore(value: 0) //make it synchrounous
         
-        let task = URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
+        URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
             if error != nil{
                 print("Error -> \(error)")
                 return
             }
             
-            print (String.init(data: data!, encoding: .ascii) ?? "no data")
-        }
-        task.resume()
-/*
-       // let urlString = DomainURL
+            print ("response -> \(response)")
+            
+            print ("data -> " + String.init(data: data!, encoding: .ascii)! ?? "no data")
+            
+            
+            
+            //Use JSONSerialization to handle the data that is received
+            if let objData = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) {
+                
+                print ("done serialization")
+                //print (objData)
+                if let dict = objData as? [String:Any] {
+                    print("yes it is a dictionary")
+                    //grabbing the data from dictionary and saving it to the customer attributes
+                    customer.contactNumber = (dict["contactNumber"] as? NSString)!
+                    customer.email = (dict["email"] as? NSString)!
+                    customer.firstName = (dict["firstName"] as? NSString)!
+                    customer.lastName = (dict["lastName"] as? NSString)!
+                    customer.status = (dict["status"] as? NSString)!
+                    //print ("customer name is \(customer.firstName)")
+                    fetchedCustomer = customer
+                    
+                }
+            }else {
+                fetchedCustomer =  String.init(data: data!, encoding: .ascii)
+            }
+            semaphore.signal()//wait for synchronous
+            }.resume()
+        _ = semaphore.wait(timeout: .distantFuture)
         
-        var req = URLRequest.init(url: URL.init(string: DomainURL)!)
-        req.httpMethod = "POST"
-        req.httpBody = try? JSONEncoder().encode(self)
+        // task.resume()
         
-        let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
-            print (String.init(data: data!, encoding: .ascii) ?? "no data")
-        }
-        task.resume()
- */
+        print ("its here")
+        return fetchedCustomer
+        
+        
     }
-
+    
 }

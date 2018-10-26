@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegistrationViewController: UIViewController, UITextFieldDelegate{
+class RegistrationViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate,UIImagePickerControllerDelegate{
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     
     @IBOutlet var status: UILabel!
@@ -19,6 +19,32 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet var lastName: UITextField!
     @IBOutlet var email: UITextField!
     @IBOutlet var contactNumber: UITextField!
+    @IBOutlet weak var myImageView : UIImageView!
+    
+    @IBAction func uploadPhoto(_ sender: AnyObject){
+        
+        let image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        
+        image.allowsEditing = true
+        self.present(image, animated: true){
+            
+        }
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            myImageView.image = image
+            myImageView.layer.cornerRadius = myImageView.frame.size.width/2
+            myImageView.clipsToBounds = true
+        }else{
+            
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
     @IBAction func onSubmitTap(_ sender: UIButton) {
         //check if fields are valid
@@ -42,14 +68,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate{
                     print(password1.text)
                     print(firstName.text)
                     print(lastName.text)
-                 //   user.fetch()
-                    user.saveToServer()
-                    //save to db
-                   // do {
-                   //     try mainDelegate.dao.insertToTableUser(userToSave: user)
-                   // } catch {
-                   //     print (error);
-                   // }
+                    Customer.save(customer: user)
                     
                     //set the user is logged in
                     mainDelegate.userLoggedIn = user

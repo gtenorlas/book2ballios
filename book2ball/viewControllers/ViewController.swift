@@ -12,8 +12,8 @@ class ViewController: UIViewController {
     
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    @IBOutlet var username: UITextField!
-    @IBOutlet var password: UITextField!
+    @IBOutlet var userName: UITextField!
+    @IBOutlet var passWord: UITextField!
     @IBOutlet var status: UILabel!
     
     //clear status text before performing a segue
@@ -32,29 +32,20 @@ class ViewController: UIViewController {
     
     @IBAction func onLogin(_ sender: UIButton) {
        // var users:Array<Customer>
-        let users = Customer()
-        users.username = username.text as! NSString
-        users.password = password.text as! NSString
+        var users = Customer()
+        users.username = userName.text as! NSString
+        users.password = passWord.text as! NSString
         users.originate = "Standard"
-        do{
-            Customer.fetch(customer: users)
-          //  var cust : String
-         // cust =  Customer.fetch(customer: users)
-           // try users = mainDelegate.dao.readFromTableUserByUsernameAndPassword(username: username.text as! NSString, password: password.text! as NSString)
-            
-            //no user exists
-            if (users == nil) {
-                status.text = "Username/password incorrect."
-            }else {
-                //user found with valid credentials
-                //set the user is logged in
-              //  mainDelegate.userLoggedIn = users[0]
-                
-                performSegue(withIdentifier: "searchFacilitySegue", sender: nil)
-            }
-        }catch{
-            print("Error retrieving user logging in")
+        
+        let response = Customer.fetch(customer: users)
+        if let invalid = response as? String {
+            print ("response is \(invalid)")
+            status.text = "Username/password incorrect."
+        }else {
+            users = response as! Customer
+            performSegue(withIdentifier: "searchFacilitySegue", sender: nil)
         }
+
         
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
