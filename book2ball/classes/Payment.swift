@@ -9,6 +9,8 @@
 
 import UIKit
 
+//just a comment to remove
+
 class Payment: NSObject {
     
     let facilityCharge: String = "123.25"
