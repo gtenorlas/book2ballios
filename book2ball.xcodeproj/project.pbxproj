@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		343AEE282183754800A8C111 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 343AEE272183754800A8C111 /* bg.jpg */; };
+		343AEE2A2183775A00A8C111 /* bg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 343AEE292183775A00A8C111 /* bg1.jpg */; };
 		34E8556F216BA3B700C2AD71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E8556E216BA3B700C2AD71 /* AppDelegate.swift */; };
 		34E85571216BA3B700C2AD71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E85570216BA3B700C2AD71 /* ViewController.swift */; };
 		34E85574216BA3B700C2AD71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34E85572216BA3B700C2AD71 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		134D3D10162E535E8A38AD8B /* Pods-book2ball.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-book2ball.debug.xcconfig"; path = "book2ball/Pods/Target Support Files/Pods-book2ball/Pods-book2ball.debug.xcconfig"; sourceTree = "<group>"; };
+		343AEE272183754800A8C111 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		343AEE292183775A00A8C111 /* bg1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg1.jpg; sourceTree = "<group>"; };
 		34E8556B216BA3B700C2AD71 /* book2ball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = book2ball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34E8556E216BA3B700C2AD71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34E85570216BA3B700C2AD71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 		34E85581216BA41400C2AD71 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				343AEE292183775A00A8C111 /* bg1.jpg */,
+				343AEE272183754800A8C111 /* bg.jpg */,
 				34E85582216BA43300C2AD71 /* Book 2 Ball.png */,
 			);
 			path = images;
@@ -238,6 +244,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				343AEE2A2183775A00A8C111 /* bg1.jpg in Resources */,
+				343AEE282183754800A8C111 /* bg.jpg in Resources */,
 				34E85579216BA3B800C2AD71 /* LaunchScreen.storyboard in Resources */,
 				34E85576216BA3B800C2AD71 /* Assets.xcassets in Resources */,
 				34E85583216BA43300C2AD71 /* Book 2 Ball.png in Resources */,

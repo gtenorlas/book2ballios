@@ -25,7 +25,7 @@ class PaymentTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         // step 11c - configure primaryLabel
         primaryLabel.textAlignment = NSTextAlignment.left

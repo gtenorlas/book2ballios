@@ -41,7 +41,7 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
         // step 10b - define PaymenTableViewCell.swift as UITableViewCell and move there before continuing
         // step 12 - check if cells already defined and a cell is leaving the screen.
         // if it is a newlyloaded view, cell will be instantiated.
-        let tableCell : PaymentTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell") as? PaymentTableViewCell ?? PaymentTableViewCell(style:UITableViewCellStyle.default, reuseIdentifier: "cell")
+        let tableCell : PaymentTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell") as? PaymentTableViewCell ?? PaymentTableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
         
         // step 12b - populate the cell
         let rowNum = indexPath.row
