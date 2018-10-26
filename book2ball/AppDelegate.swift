@@ -29,12 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MO's part
     var selectedCourt: Court = Court()
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
        // FirebaseApp.configure()
         //FIRApp.configure()
         if let launchOptions = launchOptions {
             if #available(iOS 9.0, *) {
-                if let shortcutItem = launchOptions[UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+                if let shortcutItem = launchOptions[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
                     print("Shortcut: \(shortcutItem)")
                 }
             }
@@ -76,7 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     //FB required func implementation
-    func application(_ application: UIApplication, open url:URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool{
+    func application(_ application: UIApplication, open url:URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool{
         let handled = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, options: options)
         return handled
     }
