@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var payment: Payment = Payment()
     var selectedCity : String = ""
     
+    var facList: Array<FacilityData> = []
+    
     //Shanu's part
     var dao : DAO = DAO()
     
