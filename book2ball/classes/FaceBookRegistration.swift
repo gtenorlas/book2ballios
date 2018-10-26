@@ -50,7 +50,7 @@ class FaceBookRegistration: NSObject {
                     print("First Name is " + first_name)
                     print("Last Name is " + last_name)
                     
-                    let response=Customer.fetchFacebook(customer: user)
+                    let response=Customer.fetchAccount(customer: user)
                     if let invalid = response as? String {
                         print ("response is \(invalid)")
                         user.username = email as NSString

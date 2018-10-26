@@ -192,7 +192,7 @@ class Customer: NSObject, Codable {
         
     }
     
-    static func fetchFacebook(customer:Customer)->Any{
+    static func fetchAccount(customer:Customer)->Any{
         var fetchedCustomer : (Any)? = nil
         var baseURL = "http://mags.website/api/customer/"
         baseURL += "\(customer.email)/"

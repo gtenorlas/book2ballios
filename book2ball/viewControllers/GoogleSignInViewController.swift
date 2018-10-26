@@ -27,15 +27,31 @@ class GoogleSignInViewController: UIViewController, GIDSignInUIDelegate, GIDSign
             let familyName = user.profile.familyName
             let email = user.profile.email
             
-            let user: Customer = GoogleRegistration(googleUserId: userId! as String, googleUserToken: idToken! as String)
+            var user: Customer = GoogleRegistration(googleUserId: userId! as String, googleUserToken: idToken! as String)
             user.email = email! as NSString
             user.firstName = givenName! as NSString
             user.lastName = familyName! as NSString
+            user.originate = "google"
             
+            let response = Customer.fetchAccount(customer: user)
+            if let invalid = response as? String {
+                print ("response is \(invalid)")
+                user.username = email! as NSString
+                user.password = "null"
+                user.contactNumber = "null"
+                user.startDate = "10-22-2018-13-30"
+                user.endDate = "null"
+                user.status = "Active"
+                Customer.save(customer: user)
+                performSegue(withIdentifier: "searchFacilitySegue", sender: nil)
+            }else {
+                user = response as! Customer
+                performSegue(withIdentifier: "searchFacilitySegue", sender: nil)
+            }
             
             mainDelegate.userLoggedIn = user //user signed in
             
-            performSegue(withIdentifier: "segueToSearchFacility", sender: nil)
+           // performSegue(withIdentifier: "segueToSearchFacility", sender: nil)
         }
     }
     
