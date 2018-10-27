@@ -16,6 +16,9 @@
 		34E85579216BA3B800C2AD71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34E85577216BA3B800C2AD71 /* LaunchScreen.storyboard */; };
 		34E85583216BA43300C2AD71 /* Book 2 Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E85582216BA43300C2AD71 /* Book 2 Ball.png */; };
 		6F3B7563EF122C2CFDB5AF29 /* Pods_book2ball.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D89524B4D9FCD63E4FFB59D0 /* Pods_book2ball.framework */; };
+		AE6DA5692184293F00DF0F55 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA5682184293F00DF0F55 /* ForgetPasswordViewController.swift */; };
+		AE6DA56C2184412500DF0F55 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA56B2184412500DF0F55 /* SWRevealViewController.m */; };
+		AE6DA56E218446D400DF0F55 /* PaypalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA56D218446D400DF0F55 /* PaypalViewController.swift */; };
 		AED2CD25217E19FD0013F560 /* FacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2CD24217E19FD0013F560 /* FacebookViewController.swift */; };
 		AED2CD27217E280D0013F560 /* GoogleSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2CD26217E280D0013F560 /* GoogleSignInViewController.swift */; };
 		AED2CD2A217E29B40013F560 /* SearchFacilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2CD29217E29B40013F560 /* SearchFacilityViewController.swift */; };
@@ -48,6 +51,10 @@
 		34E85578216BA3B800C2AD71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34E8557A216BA3B800C2AD71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34E85582216BA43300C2AD71 /* Book 2 Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Book 2 Ball.png"; sourceTree = "<group>"; };
+		AE6DA5682184293F00DF0F55 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		AE6DA56A2184412500DF0F55 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		AE6DA56B2184412500DF0F55 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		AE6DA56D218446D400DF0F55 /* PaypalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaypalViewController.swift; sourceTree = "<group>"; };
 		AED2CD24217E19FD0013F560 /* FacebookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookViewController.swift; sourceTree = "<group>"; };
 		AED2CD26217E280D0013F560 /* GoogleSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInViewController.swift; sourceTree = "<group>"; };
 		AED2CD29217E29B40013F560 /* SearchFacilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFacilityViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +123,8 @@
 		34E8556D216BA3B700C2AD71 /* book2ball */ = {
 			isa = PBXGroup;
 			children = (
+				AE6DA56A2184412500DF0F55 /* SWRevealViewController.h */,
+				AE6DA56B2184412500DF0F55 /* SWRevealViewController.m */,
 				AED2CD28217E28120013F560 /* viewControllers */,
 				CE0FB95721717B6F003038B5 /* classes */,
 				34E85581216BA41400C2AD71 /* images */,
@@ -168,6 +177,8 @@
 				AED2CD29217E29B40013F560 /* SearchFacilityViewController.swift */,
 				AED2CD2B217E3E370013F560 /* RegistrationViewController.swift */,
 				AED2CD2D217E5FF40013F560 /* BookingsViewController.swift */,
+				AE6DA5682184293F00DF0F55 /* ForgetPasswordViewController.swift */,
+				AE6DA56D218446D400DF0F55 /* PaypalViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -342,9 +353,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AED2CD2E217E5FF40013F560 /* BookingsViewController.swift in Sources */,
+				AE6DA56C2184412500DF0F55 /* SWRevealViewController.m in Sources */,
 				AEF7CB282183D52700AE5D80 /* CourtData.swift in Sources */,
+				AE6DA56E218446D400DF0F55 /* PaypalViewController.swift in Sources */,
 				CE0FB96421717CE4003038B5 /* DAO.swift in Sources */,
 				34E85571216BA3B700C2AD71 /* ViewController.swift in Sources */,
+				AE6DA5692184293F00DF0F55 /* ForgetPasswordViewController.swift in Sources */,
 				AED2CD25217E19FD0013F560 /* FacebookViewController.swift in Sources */,
 				34E8556F216BA3B700C2AD71 /* AppDelegate.swift in Sources */,
 				AED2CD30217E60D80013F560 /* PaymentTableViewCell.swift in Sources */,

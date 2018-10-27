@@ -11,6 +11,7 @@ import GoogleSignIn
 
 class GoogleSignInViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
+    @IBOutlet weak var menuButton : UIBarButtonItem!
     
     //implement sign in as part of GIDSignInDelegate requirement
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
@@ -77,8 +78,21 @@ class GoogleSignInViewController: UIViewController, GIDSignInUIDelegate, GIDSign
         let googleSignInButton = GIDSignInButton(frame: CGRect(x: 0,y: 0,width: 100,height: 50))
         googleSignInButton.center=view.center
         view.addSubview(googleSignInButton)
+        sideMenu()
     }
-    
+    func sideMenu(){
+        
+        if revealViewController() != nil{
+            
+            menuButton.target = revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            revealViewController().rearViewRevealWidth = 250
+            revealViewController().rightViewRevealWidth = 160
+            
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
