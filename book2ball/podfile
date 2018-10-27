@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-project '/Users/xcode/Desktop/book2ballios/book2ball.xcodeproj'
+project '/Users/user/Desktop/book2ballios/book2ball.xcodeproj'
 target 'book2ball' do
 use_frameworks!
 pod 'FacebookCore'
@@ -8,5 +8,6 @@ pod 'FacebookShare'
 pod 'PayPal-iOS-SDK'
 pod 'Google/SignIn'
 pod 'Firebase/Core'
+pod 'Firebase/Auth'
 end
 

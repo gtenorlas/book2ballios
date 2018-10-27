@@ -25,6 +25,9 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.37.0):
     - FBSDKCoreKit (~> 4.37.0)
+  - Firebase/Auth (3.17.0):
+    - Firebase/Core
+    - FirebaseAuth (= 3.1.1)
   - Firebase/Core (3.17.0):
     - FirebaseAnalytics (= 3.9.0)
     - FirebaseCore (= 3.6.0)
@@ -32,6 +35,10 @@ PODS:
     - FirebaseCore (~> 3.6)
     - FirebaseInstanceID (~> 1.0)
     - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+  - FirebaseAuth (3.1.1):
+    - FirebaseAnalytics (~> 3.7)
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseCore (3.6.0):
     - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
   - FirebaseInstanceID (1.0.10):
@@ -74,6 +81,7 @@ DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
   - FacebookShare
+  - Firebase/Auth
   - Firebase/Core
   - Google/SignIn
   - PayPal-iOS-SDK
@@ -90,6 +98,7 @@ SPEC REPOS:
     - FBSDKShareKit
     - Firebase
     - FirebaseAnalytics
+    - FirebaseAuth
     - FirebaseCore
     - FirebaseInstanceID
     - Google
@@ -110,6 +119,7 @@ SPEC CHECKSUMS:
   FBSDKShareKit: 52e0083222c38e930eb6878007478326599195c3
   Firebase: 4b66b5b59c43edac745b87f0c87e42cdd0279c13
   FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
+  FirebaseAuth: cc8a1824170adbd351edb7f994490a3fb5c18be6
   FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
   FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
   Google: 98da4b1a60ed0beb80a290387a28333406a1eb90
@@ -119,6 +129,6 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   PayPal-iOS-SDK: 10654cd111e911a9807bddb96fae81aacb8e9915
 
-PODFILE CHECKSUM: 99a231cd1e5ad2fc416eb4c93b2339e232076263
+PODFILE CHECKSUM: 0d9a1912920a47f966c5c067e6894abd1dca1ad3
 
 COCOAPODS: 1.5.3
