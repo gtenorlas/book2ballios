@@ -28,7 +28,6 @@
 		AEEFA5A721835FEB00B80BCE /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEFA5A621835FEA00B80BCE /* Accelerate.framework */; };
 		AEEFA5A92183601500B80BCE /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEFA5A82183601500B80BCE /* SafariServices.framework */; };
 		AEEFA5AB2183602400B80BCE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEFA5AA2183602400B80BCE /* SystemConfiguration.framework */; };
-		AEF7CB282183D52700AE5D80 /* CourtData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7CB262183D52600AE5D80 /* CourtData.swift */; };
 		AEF7CB292183D52700AE5D80 /* SiteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7CB272183D52700AE5D80 /* SiteCell.swift */; };
 		CE0FB96121717CE4003038B5 /* Court.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95921717CC4003038B5 /* Court.swift */; };
 		CE0FB96321717CE4003038B5 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95B21717CCD003038B5 /* Customer.swift */; };
@@ -65,7 +64,6 @@
 		AEEFA5A82183601500B80BCE /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		AEEFA5AA2183602400B80BCE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AEEFA5AC2183606200B80BCE /* book2ball-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "book2ball-Bridging-Header.h"; sourceTree = "<group>"; };
-		AEF7CB262183D52600AE5D80 /* CourtData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourtData.swift; sourceTree = "<group>"; };
 		AEF7CB272183D52700AE5D80 /* SiteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteCell.swift; sourceTree = "<group>"; };
 		CE0FB95921717CC4003038B5 /* Court.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Court.swift; sourceTree = "<group>"; };
 		CE0FB95B21717CCD003038B5 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 		CE0FB95721717B6F003038B5 /* classes */ = {
 			isa = PBXGroup;
 			children = (
-				AEF7CB262183D52600AE5D80 /* CourtData.swift */,
 				AEF7CB272183D52700AE5D80 /* SiteCell.swift */,
 				CE0FB95921717CC4003038B5 /* Court.swift */,
 				CE0FB95C21717CD2003038B5 /* DAO.swift */,
@@ -354,7 +351,6 @@
 			files = (
 				AED2CD2E217E5FF40013F560 /* BookingsViewController.swift in Sources */,
 				AE6DA56C2184412500DF0F55 /* SWRevealViewController.m in Sources */,
-				AEF7CB282183D52700AE5D80 /* CourtData.swift in Sources */,
 				AE6DA56E218446D400DF0F55 /* PaypalViewController.swift in Sources */,
 				CE0FB96421717CE4003038B5 /* DAO.swift in Sources */,
 				34E85571216BA3B700C2AD71 /* ViewController.swift in Sources */,

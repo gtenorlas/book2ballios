@@ -99,7 +99,7 @@ class FacilityData: NSObject {
     var country: NSString
     var contactNumber: NSString
     var distance: Double
-    var courtsList: Array<CourtData> = []
+    var courtsList: Array<Court> = []
     
     
     public override init() {
@@ -117,7 +117,7 @@ class FacilityData: NSObject {
         self.distance = 0.0
         self.courtsList = []
     }
-    public init(id:Int, facilityName:NSString, facilityDesc:NSString,addLine1:NSString, addLine2:NSString, addLine3:NSString,city:NSString,province:NSString,postalCode:NSString,country:NSString, contact:NSString, distance:Double, courtsList: Array<CourtData> ){
+    public init(id:Int, facilityName:NSString, facilityDesc:NSString,addLine1:NSString, addLine2:NSString, addLine3:NSString,city:NSString,province:NSString,postalCode:NSString,country:NSString, contact:NSString, distance:Double, courtsList: Array<Court> ){
         self.facilityId = id
         self.facilityName = facilityName
         self.facilityDescription = facilityDesc

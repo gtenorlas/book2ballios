@@ -141,20 +141,9 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
                 facility.postalCode = jsonDict!["postalCode"] as! NSString
                 facility.country = jsonDict!["country"] as! NSString
                 
-                let courts = jsonDict!["courts"] as? NSArray
-                print(courts!.count)
-                for eachCourtObject in courts! {
-                    let court = CourtData()
-                    let courtDict = eachCourtObject as? NSDictionary
-                    court.courtNumber = courtDict!["courtNumber"] as! Int
-                    court.courtName = courtDict!["courtName"] as! NSString
-                    court.availability = courtDict!["availability"] as! NSString
-                    court.maxPayer = courtDict!["maxPayer"] as! Int
-                    court.courtType = courtDict!["courtType"] as! NSString
-                    court.price = courtDict!["price"] as! Double
-                    print("court name: \(court.courtName)")
-                    facility.courtsList.append(court)
-                }
+                let courts = Court.fetch(data: jsonDict!["courts"])
+                facility.courtsList = courts
+                
                 facility.contactNumber = jsonDict!["contactNumber"] as! NSString
                 facility.distance = 100.00
                 

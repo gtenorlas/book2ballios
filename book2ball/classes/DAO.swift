@@ -338,49 +338,7 @@ class DAO: NSObject{
         sqlite3_finalize(insertPointer) //close
     }
     
-    //Retrieve courts from the datbase belonging to a facility
-    func readFromTableCourtByFacilityId(facilityId:Int) throws -> Array<Court>{
-        var courts:Array<Court> = []
-        let query="SELECT * FROM court where facilityId = ?;"
-        var stmt: OpaquePointer? = nil
-        if sqlite3_prepare(db, query, -1, &stmt, nil) == SQLITE_OK {
-            
-            sqlite3_bind_int(stmt, 1, Int32(facilityId))
-            
-            //loop each result
-            while (sqlite3_step(stmt) == SQLITE_ROW) {
-                let courtNumber = sqlite3_column_int(stmt, 0)
-                let courtName = sqlite3_column_text(stmt, 1)
-                let courtNameString = String (cString: courtName!)
-                let availability = sqlite3_column_text(stmt, 2)
-                let availabilityString = String(cString: availability!)
-                let maxPlayer = sqlite3_column_int(stmt, 3)
-                let creationDate =  sqlite3_column_text(stmt, 4)
-                let creationDateString = String(cString: creationDate!)
-                let endDate =  sqlite3_column_text(stmt, 5)
-                let endDateString = String(cString: endDate!)
-                let facilityId = sqlite3_column_int(stmt, 6)
-                
-                let idString = String(courtNumber)
-                let maxPlayerString = String(maxPlayer)
-                let facilityIdString = String(facilityId)
-                print("Court Number " + idString)
-                print("name " + courtNameString)
-                print("availability " + availabilityString)
-                print("maxPlayer " + maxPlayerString)
-                print("creation Date:" + creationDateString)
-                print("end Date:" + endDateString)
-                print("facilityId:" + facilityIdString)
-                
-                //add to array
-                courts.append(Court(id: Int(courtNumber), name: courtNameString as NSString, availability: availabilityString as NSString,player: Int(maxPlayerString)!, cDate: creationDateString as NSString, eDate: endDateString as NSString, facilityId: Int(facilityId)))
-            }
-        }else {
-            DBError.unableToRetrieveData
-        }
-        sqlite3_finalize(stmt)//close
-        return courts
-    }
+   
     
     //create a table user for new customers
     func createTableUser() throws {
