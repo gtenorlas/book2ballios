@@ -216,7 +216,9 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
         return true
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "segueToCourtsViewController", sender: nil)
+    }
     
     
     override func viewDidLoad() {

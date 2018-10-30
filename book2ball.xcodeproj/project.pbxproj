@@ -36,6 +36,7 @@
 		CE0FB96621717CE4003038B5 /* FacilityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95E21717CDA003038B5 /* FacilityData.swift */; };
 		CE0FB96721717CE4003038B5 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95F21717CDF003038B5 /* Payment.swift */; };
 		CE0FB96821717CE4003038B5 /* GoogleRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB96021717CE4003038B5 /* GoogleRegistration.swift */; };
+		CEFBFE222188F72100678A5C /* CourtsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBFE212188F72100678A5C /* CourtsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		CE0FB95E21717CDA003038B5 /* FacilityData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacilityData.swift; sourceTree = "<group>"; };
 		CE0FB95F21717CDF003038B5 /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		CE0FB96021717CE4003038B5 /* GoogleRegistration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleRegistration.swift; sourceTree = "<group>"; };
+		CEFBFE212188F72100678A5C /* CourtsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtsViewController.swift; sourceTree = "<group>"; };
 		D0D8B42B88D00A6B549AEC2C /* Pods-book2ball.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-book2ball.release.xcconfig"; path = "book2ball/Pods/Target Support Files/Pods-book2ball/Pods-book2ball.release.xcconfig"; sourceTree = "<group>"; };
 		D89524B4D9FCD63E4FFB59D0 /* Pods_book2ball.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_book2ball.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -177,6 +179,7 @@
 				AED2CD2D217E5FF40013F560 /* BookingsViewController.swift */,
 				AE6DA5682184293F00DF0F55 /* ForgetPasswordViewController.swift */,
 				AE6DA56D218446D400DF0F55 /* PaypalViewController.swift */,
+				CEFBFE212188F72100678A5C /* CourtsViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				CE0FB96521717CE4003038B5 /* FaceBookRegistration.swift in Sources */,
 				AED2CD2A217E29B40013F560 /* SearchFacilityViewController.swift in Sources */,
 				CE0FB96721717CE4003038B5 /* Payment.swift in Sources */,
+				CEFBFE222188F72100678A5C /* CourtsViewController.swift in Sources */,
 				AED2CD27217E280D0013F560 /* GoogleSignInViewController.swift in Sources */,
 				CE0FB96121717CE4003038B5 /* Court.swift in Sources */,
 				CE0FB96821717CE4003038B5 /* GoogleRegistration.swift in Sources */,

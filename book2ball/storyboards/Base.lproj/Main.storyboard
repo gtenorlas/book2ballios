@@ -966,6 +966,7 @@
                         <outlet property="myTableView" destination="HGF-HD-KJz" id="9p5-3q-DkD"/>
                         <outlet property="searchDisplayController" destination="gVB-Jm-bjQ" id="ZVk-SO-TFp"/>
                         <outlet property="segment" destination="Xls-ak-l2d" id="XNS-Rp-9CH"/>
+                        <segue destination="mhL-Ka-mdT" kind="presentation" identifier="segueToCourtsViewController" id="gwW-wx-VLp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pMu-Yz-Wjz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -982,49 +983,39 @@
             </objects>
             <point key="canvasLocation" x="1739.1304347826087" y="58.695652173913047"/>
         </scene>
-        <!--Search Facility View Controller-->
+        <!--Courts View Controller-->
         <scene sceneID="Szm-Ed-ShW">
             <objects>
-                <viewController id="mhL-Ka-mdT" customClass="SearchFacilityViewController" customModule="book2ball" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mhL-Ka-mdT" customClass="CourtsViewController" customModule="book2ball" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BHS-mM-yq0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6b6-cH-4CE">
-                                <rect key="frame" x="139" y="351" width="94" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="TWI-Lj-YEp"/>
-                                </constraints>
-                                <size key="titleShadowOffset" width="0.0" height="11"/>
-                                <state key="normal" title="Search"/>
-                                <connections>
-                                    <action selector="onSubmit:" destination="mhL-Ka-mdT" eventType="touchUpInside" id="hpN-zR-jmj"/>
-                                </connections>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BHg-Bu-Qcg">
-                                <rect key="frame" x="0.0" y="407" width="414" height="329"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Distance in Kilo-Meters:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o0y-pD-dQ3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Rent Duration (Hours):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o0y-pD-dQ3">
                                 <rect key="frame" x="16" y="253" width="273" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aBS-9R-qdR">
-                                <rect key="frame" x="16" y="291" width="296" height="29"/>
+                                <rect key="frame" x="16" y="291" width="374" height="29"/>
                                 <segments>
-                                    <segment title="10"/>
-                                    <segment title="20"/>
-                                    <segment title="30"/>
-                                    <segment title="40"/>
-                                    <segment title="50"/>
+                                    <segment title="0.5"/>
+                                    <segment title="1.0"/>
+                                    <segment title="1.5"/>
+                                    <segment title="2.0"/>
+                                    <segment title="2.5"/>
+                                    <segment title="3.0"/>
+                                    <segment title="3.5"/>
+                                    <segment title="4.0"/>
+                                    <segment title="4.5"/>
+                                    <segment title="5.0"/>
                                 </segments>
                                 <connections>
-                                    <action selector="indexChangedWithSender:" destination="mhL-Ka-mdT" eventType="touchUpInside" id="1iH-Vm-Dmw"/>
+                                    <action selector="indexChangedWithSender:" destination="mhL-Ka-mdT" eventType="valueChanged" id="Gei-lY-m4C"/>
                                 </connections>
                             </segmentedControl>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nzF-un-ePM">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="nzF-un-ePM">
                                 <rect key="frame" x="0.0" y="121" width="414" height="107"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="107" id="yOd-vQ-Tad"/>
@@ -1053,34 +1044,40 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4A-IP-6RK">
+                                <rect key="frame" x="125" y="337" width="138" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0024504750040000001" green="0.4010392129" blue="0.79995733499999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSearch:" destination="mhL-Ka-mdT" eventType="touchUpInside" id="7Hw-3C-Ipv"/>
+                                    <action selector="paymentInitiation:" destination="DiR-zl-Rwh" eventType="touchUpInside" id="Jcd-Ch-qSu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6b6-cH-4CE" firstAttribute="leading" secondItem="nrt-jN-INy" secondAttribute="leading" constant="139" id="7gM-4q-r3i"/>
                             <constraint firstAttribute="trailing" secondItem="FHU-Si-af8" secondAttribute="trailing" id="KkR-94-gH5"/>
-                            <constraint firstItem="6b6-cH-4CE" firstAttribute="top" secondItem="aBS-9R-qdR" secondAttribute="bottom" constant="32" id="Mx3-ls-ea8"/>
                             <constraint firstItem="nrt-jN-INy" firstAttribute="trailing" secondItem="aBS-9R-qdR" secondAttribute="trailing" constant="63" id="Q6x-Ri-D6n"/>
-                            <constraint firstItem="BHg-Bu-Qcg" firstAttribute="top" secondItem="6b6-cH-4CE" secondAttribute="bottom" constant="19" id="QxO-c2-Tsf"/>
                             <constraint firstItem="FHU-Si-af8" firstAttribute="leading" secondItem="nzF-un-ePM" secondAttribute="leading" id="TfC-PF-jHw"/>
                             <constraint firstItem="FHU-Si-af8" firstAttribute="trailing" secondItem="nzF-un-ePM" secondAttribute="trailing" id="TuZ-a3-PbO"/>
                             <constraint firstItem="o0y-pD-dQ3" firstAttribute="top" secondItem="nzF-un-ePM" secondAttribute="bottom" constant="25" id="Wj9-Ce-RxV"/>
                             <constraint firstItem="aBS-9R-qdR" firstAttribute="top" secondItem="o0y-pD-dQ3" secondAttribute="bottom" constant="17" id="Wtd-tG-oAH"/>
                             <constraint firstItem="nzF-un-ePM" firstAttribute="top" secondItem="FHU-Si-af8" secondAttribute="bottom" constant="57" id="XFc-xd-6Dl"/>
-                            <constraint firstItem="BHg-Bu-Qcg" firstAttribute="bottom" secondItem="nrt-jN-INy" secondAttribute="bottom" id="Zqo-C4-e5t"/>
                             <constraint firstItem="nrt-jN-INy" firstAttribute="trailing" secondItem="o0y-pD-dQ3" secondAttribute="trailing" constant="86" id="aEs-X8-GLF"/>
                             <constraint firstItem="o0y-pD-dQ3" firstAttribute="leading" secondItem="BHS-mM-yq0" secondAttribute="leadingMargin" id="blX-Gg-hL4"/>
                             <constraint firstItem="nrt-jN-INy" firstAttribute="bottom" secondItem="FHU-Si-af8" secondAttribute="bottom" constant="672" id="fjc-DQ-z9R"/>
-                            <constraint firstItem="nzF-un-ePM" firstAttribute="trailing" secondItem="BHg-Bu-Qcg" secondAttribute="trailing" id="hbR-VZ-St2"/>
-                            <constraint firstItem="aBS-9R-qdR" firstAttribute="centerX" secondItem="6b6-cH-4CE" secondAttribute="centerX" constant="-22" id="j4B-kF-s77"/>
                             <constraint firstItem="o0y-pD-dQ3" firstAttribute="leading" secondItem="aBS-9R-qdR" secondAttribute="leading" id="l7r-VD-NTt"/>
                             <constraint firstItem="FHU-Si-af8" firstAttribute="leading" secondItem="nrt-jN-INy" secondAttribute="leading" id="q53-Ap-ona"/>
-                            <constraint firstItem="nzF-un-ePM" firstAttribute="leading" secondItem="BHg-Bu-Qcg" secondAttribute="leading" id="scz-3L-CQZ"/>
                             <constraint firstItem="FHU-Si-af8" firstAttribute="top" secondItem="nrt-jN-INy" secondAttribute="top" id="xiZ-Lv-kld"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nrt-jN-INy"/>
                     </view>
                     <connections>
-                        <outlet property="myTableView" destination="BHg-Bu-Qcg" id="i12-z8-nc1"/>
+                        <outlet property="datePicker" destination="nzF-un-ePM" id="CoO-nU-1GB"/>
                         <outlet property="searchDisplayController" destination="gVB-Jm-bjQ" id="KA4-fr-Ksr"/>
                         <outlet property="segment" destination="aBS-9R-qdR" id="9IG-gh-hPY"/>
                     </connections>
