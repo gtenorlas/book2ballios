@@ -257,4 +257,123 @@ class Customer: NSObject, Codable {
         
     }
     
+    /*returns "invalid" or "success"    */
+    static func sendToken(email:String!)->Any{
+        var fetchedResponse : (Any)? = nil
+        var baseURL = "http://mags.website/api/customer/token/"
+        baseURL += "\(email!)/"
+        print(baseURL)
+        
+        // create post request
+        let url = NSURL(string: baseURL)!
+        let request = NSMutableURLRequest(url: url as URL)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let semaphore = DispatchSemaphore(value: 0) //make it synchrounous
+        
+        URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
+            if error != nil{
+                print("Error -> \(error)")
+                return
+            }
+            
+            print ("response -> \(response)")
+            print ("data -> " + String.init(data: data!, encoding: .ascii)! ?? "no data")
+            
+            fetchedResponse =  String.init(data: data!, encoding: .ascii)
+            
+            semaphore.signal()//wait for synchronous
+            }.resume()
+        _ = semaphore.wait(timeout: .distantFuture)
+        
+        print ("its here")
+        return fetchedResponse!
+    }
+    
+    /*returns "invalid" or "success"    */
+    static func validateToken(email: String!, tokenToValidate:String!)->Any{
+        var fetchedResponse : (Any)? = nil
+        var baseURL = "http://mags.website/api/customer/token/validate/"
+        baseURL += "\(email!)/"
+        baseURL += "\(tokenToValidate!)/"
+        print(baseURL)
+        
+        // create post request
+        let url = NSURL(string: baseURL)!
+        let request = NSMutableURLRequest(url: url as URL)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let semaphore = DispatchSemaphore(value: 0) //make it synchrounous
+        
+        URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
+            if error != nil{
+                print("Error -> \(error)")
+                return
+            }
+            
+            print ("response -> \(response)")
+            print ("data -> " + String.init(data: data!, encoding: .ascii)! ?? "no data")
+            
+            fetchedResponse =  String.init(data: data!, encoding: .ascii)
+            
+            semaphore.signal()//wait for synchronous
+            }.resume()
+        _ = semaphore.wait(timeout: .distantFuture)
+        
+        print ("its here")
+        return fetchedResponse!
+    }
+    
+    /*returns "invalid" or "success"    */
+    static func resetPassword(email: String!, newPassword:String!)->Any{
+        var fetchedResponse : (Any)? = nil
+        var baseURL = "http://mags.website/api/customer/reset/"
+        baseURL += "\(email!)/"
+        baseURL += "\(newPassword!)/"
+        print(baseURL)
+        
+        // create post request
+        let url = NSURL(string: baseURL)!
+        let request = NSMutableURLRequest(url: url as URL)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let semaphore = DispatchSemaphore(value: 0) //make it synchrounous
+        
+        URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
+            if error != nil{
+                print("Error -> \(error)")
+                return
+            }
+            
+            print ("response -> \(response)")
+            print ("data -> " + String.init(data: data!, encoding: .ascii)! ?? "no data")
+            
+            fetchedResponse =  String.init(data: data!, encoding: .ascii)
+            
+            semaphore.signal()//wait for synchronous
+            }.resume()
+        _ = semaphore.wait(timeout: .distantFuture)
+        
+        print ("its here")
+        return fetchedResponse!
+    }
+    
+    public func toString() -> String {
+        var data = ""
+        data += "Username: \(self.username) "
+        data += "Password: \(self.password) "
+        data += "Firstname: \(self.firstName) "
+        data += "Lastname: \(self.lastName) "
+        data += "Email: \(self.email) "
+        data += "Contact: \(self.contactNumber ?? "") "
+        data += "Start Date: \(self.startDate ?? "") "
+        data += "End Date: \(self.endDate ?? "") "
+        data += "Status: \(self.status) "
+        data += "Originate: \(self.originate)"
+        return data
+    }
+    
 }

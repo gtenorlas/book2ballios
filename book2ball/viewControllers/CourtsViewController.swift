@@ -53,6 +53,14 @@ class CourtsViewController: UIViewController {
         courts = Court.fetch(facilityId: 1, startDateTime: startDateTimeString, endDateTime: endDateTimeString)
         print ("No of courts returned -> \(courts.count)")
         
+        let payment:Payment = Payment(facility: "HoopDome", court: "", resDate: startDate, resStart: startTime, numOfHours: "5")
+        
+        //add user email to payment
+        payment.customerEmail = mainDelegate.userLoggedIn.email as! String
+        
+        mainDelegate.payment = payment
+ 
+        
     }
 
     override func viewDidLoad() {

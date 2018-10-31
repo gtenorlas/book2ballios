@@ -30,7 +30,7 @@
                                 <rect key="frame" x="20" y="626" width="123" height="30"/>
                                 <state key="normal" title="Forgot password?"/>
                                 <connections>
-                                    <segue destination="akz-A1-bIj" kind="presentation" id="eeA-6l-Pr7"/>
+                                    <action selector="forgotPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JwR-B2-pGi"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="w3h-qw-ugl">
@@ -1055,6 +1055,7 @@
                                 <connections>
                                     <action selector="onSearch:" destination="mhL-Ka-mdT" eventType="touchUpInside" id="7Hw-3C-Ipv"/>
                                     <action selector="paymentInitiation:" destination="DiR-zl-Rwh" eventType="touchUpInside" id="Jcd-Ch-qSu"/>
+                                    <segue destination="DiR-zl-Rwh" kind="presentation" id="vhP-f6-8qW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1297,7 +1298,7 @@
                         <outlet property="lblTotAmt" destination="6VX-B3-JEB" id="hOq-rN-pSU"/>
                         <outlet property="lblsubTot" destination="Mmi-Bd-WcI" id="cx9-1i-ytR"/>
                         <outlet property="payButton" destination="qaK-vA-4Yk" id="pJ0-2U-QCG"/>
-                        <segue destination="RlC-uO-e6u" kind="presentation" id="Nab-Bx-wT7"/>
+                        <segue destination="RlC-uO-e6u" kind="presentation" identifier="bookingsViewControllerSegue" id="Nab-Bx-wT7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7i-iI-W5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1334,6 +1335,6 @@
         <image name="updateButton" width="114" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3XT-zT-dJN"/>
+        <segue reference="sMS-we-xNN"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -71,7 +71,7 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navBar.topItem?.title = "\(mainDelegate.userLoggedIn.firstName) \(mainDelegate.userLoggedIn.lastName) Bookings"
+       // navBar.topItem?.title = "\(mainDelegate.userLoggedIn.firstName) \(mainDelegate.userLoggedIn.lastName) Bookings"
         
         
         //get all the bookings
