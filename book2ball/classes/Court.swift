@@ -71,4 +71,50 @@ class Court: NSObject {
         
         return fetchedCourts
     }
+    static func fetch(facilityId:Int,startDateTime:String,endDateTime:String) -> Array<Court>{
+        
+        var fetchedCourts: Array<Court>=Array()
+        var baseURL = "http://mags.website/api/court/"
+        baseURL += "\(facilityId)/"
+        baseURL += "\(startDateTime)/"
+        baseURL += "\(endDateTime)/"
+     
+        
+        print(baseURL)
+        
+        // create post request
+        let url = NSURL(string: baseURL)!
+        let request = NSMutableURLRequest(url: url as URL)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        //var status:String=""
+        let semaphore = DispatchSemaphore(value: 0) //make it synchrounous
+        
+        URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
+            if error != nil{
+                print("Error -> \(error)")
+                return
+            }
+            
+            print ("response -> \(response)")
+            
+            print ("data -> " + String.init(data: data!, encoding: .ascii)! ?? "no data")
+            
+            
+            
+            //Use JSONSerialization to handle the data that is received
+            if let objData = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) {
+                
+                print ("done serialization")
+                fetchedCourts = Court.fetch(data: objData)
+            }
+            semaphore.signal()//wait for synchronous
+            }.resume()
+        _ = semaphore.wait(timeout: .distantFuture)
+        
+
+        return fetchedCourts
+    }
+    
 }

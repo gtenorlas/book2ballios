@@ -15,6 +15,8 @@ class CourtsViewController: UIViewController {
     var courts:Array<Court>=[]
     let numIncrement: Double = 0.5
     var duration: Double = 0
+    var startDateTimeString = ""
+    var endDateTimeString = ""
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var segment: UISegmentedControl!
@@ -35,6 +37,22 @@ class CourtsViewController: UIViewController {
         let startTime = formatterShort.string(from: datePicker.date)
         
         print("StartDate: \(startDate), startTime: \(startTime)")
+        
+        var calendar: Calendar = Calendar(identifier: Calendar.Identifier.gregorian)
+        //local time zone by using .current
+        calendar.timeZone = .current //TimeZone(identifier: "UTC")!
+        var components: DateComponents = DateComponents()
+        components.calendar = calendar
+        components.minute = Int(duration * 60)
+        let endDateTime: Date = calendar.date(byAdding: components, to: datePicker.date)!
+        
+        formatterShort.dateFormat = "MM-dd-yyyy-h-mm"
+        startDateTimeString=formatterShort.string(from:datePicker.date)
+        endDateTimeString=formatterShort.string(from: endDateTime)
+        print ("StartDateTime -> \(startDateTimeString), EndDateTime -> \(endDateTimeString)")
+        courts = Court.fetch(facilityId: 1, startDateTime: startDateTimeString, endDateTime: endDateTimeString)
+        print ("No of courts returned -> \(courts.count)")
+        
     }
 
     override func viewDidLoad() {
