@@ -217,6 +217,7 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        mainDelegate.selectedFacilityData = facilityList[indexPath.row]
         performSegue(withIdentifier: "segueToCourtsViewController", sender: nil)
     }
     
@@ -241,7 +242,10 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
         // Dispose of any resources that can be recreated.
     }
     
-    
+    @IBAction func unwindToSeachFacilityViewController(sender : UIStoryboardSegue)
+    {
+        
+    }
     /*
      // MARK: - Navigation
      

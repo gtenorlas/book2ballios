@@ -1037,9 +1037,6 @@
                                     <navigationItem title="Court" id="cd9-Si-ezM">
                                         <barButtonItem key="leftBarButtonItem" title="Back" image="left" id="74j-W6-CUB">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <connections>
-                                                <segue destination="pZs-9p-8Nd" kind="unwind" unwindAction="unwindToViewControllerWithSender:" id="OGX-D3-3PI"/>
-                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -1055,9 +1052,17 @@
                                 <connections>
                                     <action selector="onSearch:" destination="mhL-Ka-mdT" eventType="touchUpInside" id="7Hw-3C-Ipv"/>
                                     <action selector="paymentInitiation:" destination="DiR-zl-Rwh" eventType="touchUpInside" id="Jcd-Ch-qSu"/>
-                                    <segue destination="DiR-zl-Rwh" kind="presentation" id="vhP-f6-8qW"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Q7-aI-IY8">
+                                <rect key="frame" x="0.0" y="385" width="414" height="351"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="mhL-Ka-mdT" id="tme-SZ-c0S"/>
+                                    <outlet property="delegate" destination="mhL-Ka-mdT" id="h7R-Xz-WFT"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1079,8 +1084,11 @@
                     </view>
                     <connections>
                         <outlet property="datePicker" destination="nzF-un-ePM" id="CoO-nU-1GB"/>
+                        <outlet property="myTableView" destination="6Q7-aI-IY8" id="pWe-Hw-d15"/>
                         <outlet property="searchDisplayController" destination="gVB-Jm-bjQ" id="KA4-fr-Ksr"/>
                         <outlet property="segment" destination="aBS-9R-qdR" id="9IG-gh-hPY"/>
+                        <segue destination="DiR-zl-Rwh" kind="presentation" identifier="segueToPaypalViewController" id="deR-wL-8xM"/>
+                        <segue destination="pZs-9p-8Nd" kind="unwind" unwindAction="unwindToSeachFacilityViewControllerWithSender:" id="nhL-Js-aAO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SMC-sv-lhY" userLabel="First Responder" sceneMemberID="firstResponder"/>
