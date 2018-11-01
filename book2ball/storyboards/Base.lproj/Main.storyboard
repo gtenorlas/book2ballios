@@ -1000,16 +1000,16 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aBS-9R-qdR">
                                 <rect key="frame" x="16" y="291" width="374" height="29"/>
                                 <segments>
-                                    <segment title="0.5"/>
-                                    <segment title="1.0"/>
-                                    <segment title="1.5"/>
-                                    <segment title="2.0"/>
-                                    <segment title="2.5"/>
-                                    <segment title="3.0"/>
-                                    <segment title="3.5"/>
-                                    <segment title="4.0"/>
-                                    <segment title="4.5"/>
-                                    <segment title="5.0"/>
+                                    <segment title="1"/>
+                                    <segment title="2"/>
+                                    <segment title="3"/>
+                                    <segment title="4"/>
+                                    <segment title="5"/>
+                                    <segment title="6"/>
+                                    <segment title="7"/>
+                                    <segment title="8"/>
+                                    <segment title="9"/>
+                                    <segment title="10"/>
                                 </segments>
                                 <connections>
                                     <action selector="indexChangedWithSender:" destination="mhL-Ka-mdT" eventType="valueChanged" id="Gei-lY-m4C"/>
@@ -1023,6 +1023,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="562257981.023911">
                                     <!--2018-10-26 14:46:21 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="dateTimeChangeWithSender:" destination="mhL-Ka-mdT" eventType="valueChanged" id="3ru-2r-ANQ"/>
+                                </connections>
                             </datePicker>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHU-Si-af8">
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>

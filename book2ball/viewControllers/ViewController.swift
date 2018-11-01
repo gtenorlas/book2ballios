@@ -90,7 +90,7 @@ class ViewController: UIViewController {
                             }
                             var password2 = ""
                             resetPasswordAlert.addTextField{ (textField2) in
-                                textField2.placeholder = "Conferm the password"
+                                textField2.placeholder = "Confirm the password"
                                 textField2.isSecureTextEntry = true
                                 password2 = textField2.text!
                             }
@@ -100,7 +100,7 @@ class ViewController: UIViewController {
                                 // password1 = resetPasswordAlert.textFields?.first?.text
                                // let password2 = resetPasswordAlert.textFields?.first?.text
                                 if password1 != password2 {
-                                    let passwordNotMatched = UIAlertController(title: "Password didn't matched", message: "Error: \(String(describing: (response as AnyObject).localizedDescription))", preferredStyle: .alert)
+                                    let passwordNotMatched = UIAlertController(title: "Password must be the same", message: "Error: \(String(describing: (response as AnyObject).localizedDescription))", preferredStyle: .alert)
                                     passwordNotMatched.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                                     self.present(passwordNotMatched, animated: true, completion: nil)
                                     
@@ -112,7 +112,7 @@ class ViewController: UIViewController {
                                         self.present(passwordFailedAlert, animated: true, completion: nil)
                                     }
                                     else{
-                                        let passwordAlert = UIAlertController(title: "Reset Done", message: "Sussecfull", preferredStyle: .alert)
+                                        let passwordAlert = UIAlertController(title: "Reset Done", message: "Password reset successfully", preferredStyle: .alert)
 
                                         passwordAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                                         self.present(passwordAlert, animated: true, completion: nil)

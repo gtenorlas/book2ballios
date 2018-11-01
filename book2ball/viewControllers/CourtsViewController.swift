@@ -38,8 +38,8 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
     //define the table method for clicking on a cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if didSearch == true {
-        let payment:Payment = Payment(facility: mainDelegate.selectedFacilityData.facilityName as String, court: listData[indexPath.row], resDate: startDate, resStart: startTime, numOfHours: String(format:"%.2f", duration))
+        if didSearch == true && didSelectDateTime == true {
+        let payment:Payment = Payment(facility: mainDelegate.selectedFacilityData.facilityName as String, court: listData[indexPath.row], resDate: startDate, resStart: startTime, numOfHours: String(duration))
         
         //add user email to payment
         payment.customerEmail = mainDelegate.userLoggedIn.email as! String
@@ -48,7 +48,7 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
         
         performSegue(withIdentifier: "segueToPaypalViewController", sender: nil)
         }else {
-            
+            showAlert(alertString: "Please select Date/time, duration, and click on search.")
         }
     }
     
@@ -57,12 +57,13 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
     var descriptionData:[String]=[]
     var courts:Array<Court>=[]
     let numIncrement: Double = 0.5
-    var duration: Double = 0.5
+    var duration: Int = 1
     var startDateTimeString = ""
     var endDateTimeString = ""
     var startDate = ""
     var startTime = ""
     var didSearch = false
+    var didSelectDateTime = false
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var segment: UISegmentedControl!
@@ -70,8 +71,13 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBAction func indexChanged(sender:UISegmentedControl){
         print("# of Segments = \(sender.numberOfSegments)")
-        duration = (Double(sender.selectedSegmentIndex)  + 1) * numIncrement
+        duration = (Int(sender.selectedSegmentIndex)  + 1) //* numIncrement
         print ("duration -> \(duration)")
+    }
+    
+    @IBAction func dateTimeChange(sender:UIDatePicker) {
+        didSelectDateTime = true
+        didSearch = false
     }
     
     @IBAction func onSearch(_ sender: UIButton){
@@ -103,6 +109,10 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
         generateTableData(courtList: courts)
         didSearch = true
         
+        if courts.count == 0 {
+            showAlert(alertString: "No available courts found with the selected date/time and duration")
+        }
+        
     }
     
     func generateTableData(courtList : Array<Court>){
@@ -115,7 +125,16 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
         }
         myTableView.reloadData()
     }
-
+    
+    func showAlert(alertString: String) {
+        let alert = UIAlertController(title: nil, message: alertString, preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "OK",
+                                     style: .cancel) { (alert) -> Void in
+        }
+        alert.addAction(okButton)
+        present(alert, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -135,6 +154,7 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
         
         datePicker.minimumDate = minDate
         datePicker.maximumDate =  maxDate
+      //  datePicker.minuteInterval = 0
         
         
         //table
