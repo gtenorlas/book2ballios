@@ -10,6 +10,7 @@ import UIKit
 
 class BookingsViewController: UIViewController , UITableViewDataSource,UITableViewDelegate{
     @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var menuButton : UIBarButtonItem!
     
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     var listData:[String]=[]
@@ -84,9 +85,24 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
             timeData.append("Time: \(each.reservationStartTime!), # of Hours: \(each.numOfHours!) ")
         }
         
-        
+        sideMenu()
         
     }
+    
+    func sideMenu(){
+        
+        if revealViewController() != nil{
+            
+            menuButton.target = revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            revealViewController().rearViewRevealWidth = 250
+            revealViewController().rightViewRevealWidth = 160
+            
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            
+        }
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

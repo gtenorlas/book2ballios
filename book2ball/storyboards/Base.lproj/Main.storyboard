@@ -334,7 +334,7 @@
             </objects>
             <point key="canvasLocation" x="853.62318840579712" y="58.695652173913047"/>
         </scene>
-        <!--About Us View Controller-->
+        <!--About Us-->
         <scene sceneID="2rb-Ug-flt">
             <objects>
                 <viewController id="9a9-Ou-E5i" customClass="AboutUsViewController" customModule="book2ball" customModuleProvider="target" sceneMemberID="viewController">
@@ -345,9 +345,15 @@
                         <viewLayoutGuide key="safeArea" id="acP-4N-qzk"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="LqR-UX-9Ez">
+                    <navigationItem key="navigationItem" title="About Us" id="LqR-UX-9Ez">
                         <barButtonItem key="leftBarButtonItem" title="Back" image="menu" id="Vv1-2g-Vby">
                             <color key="tintColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="home" id="0xV-IH-lTK">
+                            <color key="tintColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
+                            <connections>
+                                <segue destination="vTJ-gF-y9C" kind="unwind" unwindAction="unwindToViewControllerWithSender:" id="zXf-nO-xfs"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -356,10 +362,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnQ-Pp-cLX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="vTJ-gF-y9C" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2126.0869565217395" y="-1507.3369565217392"/>
         </scene>
-        <!--Update Profile View Controller-->
+        <!--Profile-->
         <scene sceneID="rW7-uL-0YE">
             <objects>
                 <viewController id="VaO-Dd-78N" customClass="UpdateProfileViewController" customModule="book2ball" customModuleProvider="target" sceneMemberID="viewController">
@@ -409,7 +416,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="amF-Ja-eBl">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="amF-Ja-eBl">
                                 <rect key="frame" x="135" y="77" width="130" height="130"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDc-TB-68B">
@@ -428,23 +435,6 @@
                                 <color key="textColor" red="0.0" green="0.40104150770000002" blue="0.79996013639999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIY-Ks-2e3">
-                                <rect key="frame" x="0.0" y="64" width="414" height="44"/>
-                                <color key="barTintColor" red="0.0022031611299999998" green="0.40095490220000002" blue="0.79996716980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </textAttributes>
-                                <textAttributes key="largeTitleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Profile" id="XvU-RO-V7x">
-                                        <barButtonItem key="rightBarButtonItem" title="Item" image="home" id="xs8-Bq-7UY">
-                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -461,8 +451,6 @@
                             <constraint firstItem="GUx-yA-e09" firstAttribute="top" secondItem="n2B-PC-tku" secondAttribute="bottom" constant="8" symbolic="YES" id="Ha9-Ps-vFS"/>
                             <constraint firstItem="amF-Ja-eBl" firstAttribute="leading" secondItem="x6t-QB-fco" secondAttribute="leading" constant="125" id="IMx-yF-iwZ"/>
                             <constraint firstItem="qOn-wD-wWK" firstAttribute="leading" secondItem="VN5-0M-6bG" secondAttribute="leadingMargin" id="ISd-3Y-IEN"/>
-                            <constraint firstItem="IIY-Ks-2e3" firstAttribute="top" secondItem="x6t-QB-fco" secondAttribute="top" id="JMj-Ce-lJ0"/>
-                            <constraint firstAttribute="trailing" secondItem="IIY-Ks-2e3" secondAttribute="trailing" id="Jcq-qC-KFR"/>
                             <constraint firstItem="lfr-oY-4Kq" firstAttribute="top" secondItem="GUx-yA-e09" secondAttribute="bottom" constant="8" symbolic="YES" id="JlW-tf-ND7"/>
                             <constraint firstItem="6Zh-xw-pgR" firstAttribute="top" secondItem="amF-Ja-eBl" secondAttribute="bottom" constant="8" symbolic="YES" id="KzD-TV-VnC"/>
                             <constraint firstItem="GUx-yA-e09" firstAttribute="leading" secondItem="lfr-oY-4Kq" secondAttribute="leading" id="L81-gQ-MGg"/>
@@ -480,16 +468,20 @@
                             <constraint firstItem="qOn-wD-wWK" firstAttribute="leading" secondItem="n2B-PC-tku" secondAttribute="leading" id="kvR-RU-AVb"/>
                             <constraint firstItem="lDc-TB-68B" firstAttribute="bottom" secondItem="x6t-QB-fco" secondAttribute="bottom" id="oPF-UY-DE3"/>
                             <constraint firstItem="x6t-QB-fco" firstAttribute="trailing" secondItem="amF-Ja-eBl" secondAttribute="trailing" constant="100" id="sjO-KP-sh3"/>
-                            <constraint firstItem="IIY-Ks-2e3" firstAttribute="leading" secondItem="x6t-QB-fco" secondAttribute="leading" id="uES-VL-dFK"/>
                             <constraint firstItem="x6t-QB-fco" firstAttribute="trailing" secondItem="lDc-TB-68B" secondAttribute="trailing" constant="126" id="w7o-M9-EP8"/>
-                            <constraint firstItem="amF-Ja-eBl" firstAttribute="top" secondItem="IIY-Ks-2e3" secondAttribute="bottom" constant="13" id="wSH-cF-l0a"/>
                             <constraint firstItem="lfr-oY-4Kq" firstAttribute="leading" secondItem="yVH-mF-Zaa" secondAttribute="leading" id="zBI-HL-UMu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x6t-QB-fco"/>
                     </view>
-                    <navigationItem key="navigationItem" id="TAP-wC-4J0">
+                    <navigationItem key="navigationItem" title="Profile" id="TAP-wC-4J0">
                         <barButtonItem key="leftBarButtonItem" title="Back" image="menu" id="TLj-Fd-CAZ">
                             <color key="tintColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="home" id="nLy-ta-WGm">
+                            <color key="tintColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
+                            <connections>
+                                <segue destination="Ixr-J5-RDW" kind="unwind" unwindAction="unwindToViewControllerWithSender:" id="259-yv-JaZ"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -497,6 +489,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jWb-BR-CMf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ixr-J5-RDW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="228.98550724637684" y="-779.34782608695662"/>
         </scene>
@@ -747,9 +740,6 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Google" id="Dfr-6L-rmw">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" image="menu" id="zHs-m7-n4d">
-                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Item" image="home" id="TU8-ws-ZTx">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
@@ -790,7 +780,7 @@
             </objects>
             <point key="canvasLocation" x="141" y="858"/>
         </scene>
-        <!--Bookings View Controller-->
+        <!--Bookings-->
         <scene sceneID="ISW-ID-W8P">
             <objects>
                 <viewController id="RlC-uO-e6u" customClass="BookingsViewController" customModule="book2ball" customModuleProvider="target" sceneMemberID="viewController">
@@ -798,48 +788,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zl8-eA-gp1">
-                                <rect key="frame" x="0.0" y="108" width="414" height="628"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zl8-eA-gp1">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTv-1z-NO5">
-                                <rect key="frame" x="0.0" y="64" width="414" height="44"/>
-                                <color key="barTintColor" red="0.0022031611299999998" green="0.40095490220000002" blue="0.79996716980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </textAttributes>
-                                <textAttributes key="largeTitleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Bookings" id="frc-Ba-kGG">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" image="left" id="uox-uo-wYe">
-                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="QTv-1z-NO5" firstAttribute="top" secondItem="lKx-9S-mWZ" secondAttribute="top" id="Mch-lI-xSc"/>
-                            <constraint firstItem="QTv-1z-NO5" firstAttribute="leading" secondItem="Zl8-eA-gp1" secondAttribute="leading" id="TSg-Gg-I1c"/>
                             <constraint firstItem="Zl8-eA-gp1" firstAttribute="bottom" secondItem="SfA-F3-qdA" secondAttribute="bottom" id="Ugp-r0-b1Q"/>
-                            <constraint firstItem="QTv-1z-NO5" firstAttribute="leading" secondItem="lKx-9S-mWZ" secondAttribute="leading" id="ZUO-E5-PTT"/>
-                            <constraint firstAttribute="trailing" secondItem="QTv-1z-NO5" secondAttribute="trailing" id="bVP-1R-rXe"/>
-                            <constraint firstItem="Zl8-eA-gp1" firstAttribute="top" secondItem="QTv-1z-NO5" secondAttribute="bottom" id="jts-an-8Hr"/>
-                            <constraint firstItem="QTv-1z-NO5" firstAttribute="top" secondItem="SfA-F3-qdA" secondAttribute="top" id="ujH-5w-ao7"/>
-                            <constraint firstItem="QTv-1z-NO5" firstAttribute="trailing" secondItem="Zl8-eA-gp1" secondAttribute="trailing" id="ys6-VV-vW6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SfA-F3-qdA"/>
                     </view>
-                    <navigationItem key="navigationItem" id="OaG-yJ-rsO"/>
+                    <navigationItem key="navigationItem" title="Bookings" id="OaG-yJ-rsO">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="menu" id="Acq-no-wBM">
+                            <color key="tintColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="home" id="MLJ-ch-cjk">
+                            <connections>
+                                <segue destination="Bk8-mw-onz" kind="unwind" unwindAction="unwindToViewControllerWithSender:" id="OH7-LK-9UJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="Acq-no-wBM" id="ccA-Zr-8n2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8tN-dA-9NG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Bk8-mw-onz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5386.9565217391309" y="-1032.0652173913045"/>
         </scene>
-        <!--Search Facility View Controller-->
+        <!--Search-->
         <scene sceneID="jbd-Hc-eZa">
             <objects>
                 <viewController id="lo6-a0-UI9" customClass="SearchFacilityViewController" customModule="book2ball" customModuleProvider="target" sceneMemberID="viewController">
@@ -939,10 +918,11 @@
                         <viewLayoutGuide key="safeArea" id="3li-by-emY"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="vxs-Po-tp0">
+                    <navigationItem key="navigationItem" title="Search" id="vxs-Po-tp0">
                         <barButtonItem key="leftBarButtonItem" title="Back" image="menu" id="zGW-gV-ynL">
                             <color key="tintColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="home" id="Xz2-yn-LUN"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -1024,6 +1004,15 @@
                                     <navigationItem title="Court" id="cd9-Si-ezM">
                                         <barButtonItem key="leftBarButtonItem" title="Back" image="left" id="74j-W6-CUB">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <segue destination="pZs-9p-8Nd" kind="unwind" unwindAction="unwindToSeachFacilityViewControllerWithSender:" id="qit-7g-TeL"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="home" id="0WZ-2n-8un">
+                                            <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <segue destination="pZs-9p-8Nd" kind="unwind" unwindAction="unwindToViewControllerWithSender:" id="jIZ-OU-o0i"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -1107,7 +1096,20 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Invoice" id="ey9-GI-nZc"/>
+                                    <navigationItem title="Invoice" id="ey9-GI-nZc">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="left" id="8wZ-eB-AEM">
+                                            <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <segue destination="Hfb-jb-lL5" kind="unwind" unwindAction="unwindToCourtsViewControllerWithSender:" id="9v9-bP-uUt"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="home" id="iFX-MS-hux">
+                                            <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <segue destination="Hfb-jb-lL5" kind="unwind" unwindAction="unwindToViewControllerWithSender:" id="fhf-Da-EfN"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Customer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSE-uX-qje">
@@ -1297,6 +1299,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7i-iI-W5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Hfb-jb-lL5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4400" y="55.434782608695656"/>
         </scene>
@@ -1384,8 +1387,8 @@
         <image name="updateButton" width="114" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9Ma-XJ-0v2"/>
+        <segue reference="Nab-Bx-wT7"/>
         <segue reference="sMS-we-xNN"/>
-        <segue reference="eea-1T-dMa"/>
+        <segue reference="2MQ-PW-o4G"/>
     </inferredMetricsTieBreakers>
 </document>
