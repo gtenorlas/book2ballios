@@ -89,7 +89,7 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
     var provinceData:[String]=[]
     var distanceData:[Double]=[]
     var facilityList:Array<FacilityData> = []
-    
+    @IBOutlet weak var menuButton : UIBarButtonItem!
     
     //var facilities = ["Fac1","Fac2", "Fac3" , "Fac4" , "Fac5"]
     //var cities : [String : String] = ["Fac1" : "Brampton","Fac2" : "Brampton", "Fac3" : "Mississauga", "Fac4" : "Toronto", "Fac5" : "Vancouver"]
@@ -235,6 +235,22 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
             
         }
         
+        sideMenu()
+        
+    }
+    
+    func sideMenu(){
+        
+        if revealViewController() != nil{
+            
+            menuButton.target = revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            revealViewController().rearViewRevealWidth = 250
+            revealViewController().rightViewRevealWidth = 160
+            
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            
+        }
     }
     
     override func didReceiveMemoryWarning() {

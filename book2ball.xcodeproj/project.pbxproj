@@ -19,6 +19,9 @@
 		AE6DA5692184293F00DF0F55 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA5682184293F00DF0F55 /* ForgetPasswordViewController.swift */; };
 		AE6DA56C2184412500DF0F55 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA56B2184412500DF0F55 /* SWRevealViewController.m */; };
 		AE6DA56E218446D400DF0F55 /* PaypalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA56D218446D400DF0F55 /* PaypalViewController.swift */; };
+		AEBEC551218BD394001480CB /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEC550218BD394001480CB /* UpdateProfileViewController.swift */; };
+		AEBEC553218BD3CC001480CB /* RearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEC552218BD3CC001480CB /* RearViewController.swift */; };
+		AEBEC555218BD520001480CB /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEC554218BD520001480CB /* AboutUsViewController.swift */; };
 		AED2CD25217E19FD0013F560 /* FacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2CD24217E19FD0013F560 /* FacebookViewController.swift */; };
 		AED2CD27217E280D0013F560 /* GoogleSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2CD26217E280D0013F560 /* GoogleSignInViewController.swift */; };
 		AED2CD2A217E29B40013F560 /* SearchFacilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2CD29217E29B40013F560 /* SearchFacilityViewController.swift */; };
@@ -57,6 +60,9 @@
 		AE6DA56A2184412500DF0F55 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		AE6DA56B2184412500DF0F55 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		AE6DA56D218446D400DF0F55 /* PaypalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaypalViewController.swift; sourceTree = "<group>"; };
+		AEBEC550218BD394001480CB /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
+		AEBEC552218BD3CC001480CB /* RearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RearViewController.swift; sourceTree = "<group>"; };
+		AEBEC554218BD520001480CB /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		AED2CD24217E19FD0013F560 /* FacebookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookViewController.swift; sourceTree = "<group>"; };
 		AED2CD26217E280D0013F560 /* GoogleSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInViewController.swift; sourceTree = "<group>"; };
 		AED2CD29217E29B40013F560 /* SearchFacilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFacilityViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +192,9 @@
 				AE6DA56D218446D400DF0F55 /* PaypalViewController.swift */,
 				CEFBFE212188F72100678A5C /* CourtsViewController.swift */,
 				CEFBFE23218A83DB00678A5C /* CourtsTableViewCell.swift */,
+				AEBEC550218BD394001480CB /* UpdateProfileViewController.swift */,
+				AEBEC552218BD3CC001480CB /* RearViewController.swift */,
+				AEBEC554218BD520001480CB /* AboutUsViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -362,6 +371,7 @@
 				AED2CD2E217E5FF40013F560 /* BookingsViewController.swift in Sources */,
 				AE6DA56C2184412500DF0F55 /* SWRevealViewController.m in Sources */,
 				AE6DA56E218446D400DF0F55 /* PaypalViewController.swift in Sources */,
+				AEBEC551218BD394001480CB /* UpdateProfileViewController.swift in Sources */,
 				CEFBFE24218A83DB00678A5C /* CourtsTableViewCell.swift in Sources */,
 				CE0FB96421717CE4003038B5 /* DAO.swift in Sources */,
 				34E85571216BA3B700C2AD71 /* ViewController.swift in Sources */,
@@ -374,6 +384,8 @@
 				CE0FB96321717CE4003038B5 /* Customer.swift in Sources */,
 				AEF7CB292183D52700AE5D80 /* SiteCell.swift in Sources */,
 				CE0FB96521717CE4003038B5 /* FaceBookRegistration.swift in Sources */,
+				AEBEC555218BD520001480CB /* AboutUsViewController.swift in Sources */,
+				AEBEC553218BD3CC001480CB /* RearViewController.swift in Sources */,
 				AED2CD2A217E29B40013F560 /* SearchFacilityViewController.swift in Sources */,
 				CE0FB96721717CE4003038B5 /* Payment.swift in Sources */,
 				CEFBFE222188F72100678A5C /* CourtsViewController.swift in Sources */,
