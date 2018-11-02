@@ -53,6 +53,8 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
         //save to database
         try! mainDelegate.dao.insertToTablePayment(payment: mainDelegate.payment)
         
+        performSegue(withIdentifier: "bookingsViewControllerSegue", sender: nil)
+        /*
         //add button
         button.backgroundColor = .gray
         button.setTitleColor(.blue, for: .normal)
@@ -62,6 +64,7 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
         button.frame.origin = CGPoint(x:self.view.frame.size.width / 2 - 150, y:self.view.frame.size.height - 40)
         //add to the view
         self.view.addSubview(button)
+         */
     }
     
     //go to bookings view controller

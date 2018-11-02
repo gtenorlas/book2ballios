@@ -136,12 +136,12 @@
                         <outlet property="passWord" destination="vfi-Ot-w0S" id="mGR-ot-gPT"/>
                         <outlet property="status" destination="EHN-gg-Ok3" id="02c-bz-uql"/>
                         <outlet property="userName" destination="w3h-qw-ugl" id="su0-8N-e49"/>
-                        <segue destination="ske-ee-OZg" kind="presentation" identifier="searchFacilitySegue" id="sMS-we-xNN"/>
+                        <segue destination="WfL-ZB-6KH" kind="presentation" identifier="searchFacilitySegue" id="BRF-cs-Niz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140.57971014492756" y="58.695652173913047"/>
+            <point key="canvasLocation" x="-1891" y="89"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="g3w-Jc-Srz">
@@ -155,7 +155,7 @@
                                 <rect key="frame" x="20" y="395" width="398" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
                                 <connections>
                                     <outlet property="delegate" destination="FyE-ao-0ng" id="sdO-Ah-Is7"/>
                                 </connections>
@@ -164,7 +164,7 @@
                                 <rect key="frame" x="20" y="433" width="398" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
                                 <connections>
                                     <outlet property="delegate" destination="FyE-ao-0ng" id="0Oj-Ld-Z8j"/>
                                 </connections>
@@ -173,7 +173,7 @@
                                 <rect key="frame" x="20" y="471" width="398" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                 <connections>
                                     <outlet property="delegate" destination="FyE-ao-0ng" id="1av-AW-PmR"/>
                                 </connections>
@@ -182,7 +182,7 @@
                                 <rect key="frame" x="20" y="509" width="398" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                                 <connections>
                                     <outlet property="delegate" destination="FyE-ao-0ng" id="ikT-Sx-Ure"/>
                                 </connections>
@@ -191,7 +191,7 @@
                                 <rect key="frame" x="20" y="547" width="398" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <outlet property="delegate" destination="FyE-ao-0ng" id="e3B-C7-2l4"/>
                                 </connections>
@@ -200,7 +200,7 @@
                                 <rect key="frame" x="20" y="585" width="398" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 <connections>
                                     <outlet property="delegate" destination="FyE-ao-0ng" id="GE4-2B-Ps7"/>
                                 </connections>
@@ -209,7 +209,7 @@
                                 <rect key="frame" x="20" y="623" width="398" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 <connections>
                                     <outlet property="delegate" destination="FyE-ao-0ng" id="8j7-KY-9ID"/>
                                 </connections>
@@ -245,7 +245,7 @@
                                 <rect key="frame" x="20" y="357" width="398" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
                                 <connections>
                                     <outlet property="delegate" destination="FyE-ao-0ng" id="L82-Wh-nxv"/>
                                 </connections>
@@ -326,13 +326,13 @@
                         <outlet property="password2" destination="nmi-Aw-Ded" id="9Vk-yR-jVV"/>
                         <outlet property="status" destination="Nfw-aZ-0gm" id="4aO-9I-Iag"/>
                         <outlet property="username" destination="vGU-AB-SMa" id="tYq-oY-wyY"/>
-                        <segue destination="ske-ee-OZg" kind="presentation" identifier="searchFacilitySegue" id="3XT-zT-dJN"/>
+                        <segue destination="WfL-ZB-6KH" kind="presentation" identifier="searchFacilitySegue" id="LCQ-jn-Cpm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gfp-A2-Z9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="6ci-8g-Qyp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="853.62318840579712" y="58.695652173913047"/>
+            <point key="canvasLocation" x="-1010" y="103"/>
         </scene>
         <!--About Us-->
         <scene sceneID="2rb-Ug-flt">
@@ -364,7 +364,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnQ-Pp-cLX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="vTJ-gF-y9C" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2126.0869565217395" y="-1507.3369565217392"/>
+            <point key="canvasLocation" x="-1891" y="-1391"/>
         </scene>
         <!--Profile-->
         <scene sceneID="rW7-uL-0YE">
@@ -378,43 +378,43 @@
                                 <rect key="frame" x="20" y="320" width="208" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="n2B-PC-tku">
                                 <rect key="frame" x="20" y="358" width="208" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="GUx-yA-e09">
                                 <rect key="frame" x="20" y="396" width="208" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="lfr-oY-4Kq">
                                 <rect key="frame" x="20" y="434" width="208" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthday" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="yVH-mF-Zaa">
                                 <rect key="frame" x="20" y="472" width="208" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="PHU-ff-5zu">
                                 <rect key="frame" x="20" y="510" width="208" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="zww-wz-pVe">
                                 <rect key="frame" x="20" y="548" width="208" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="amF-Ja-eBl">
                                 <rect key="frame" x="135" y="77" width="130" height="130"/>
@@ -427,7 +427,7 @@
                                 <rect key="frame" x="20" y="586" width="208" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="cc-number"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Edit Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zh-xw-pgR">
                                 <rect key="frame" x="161" y="215" width="79" height="21"/>
@@ -491,7 +491,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jWb-BR-CMf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Ixr-J5-RDW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="228.98550724637684" y="-779.34782608695662"/>
+            <point key="canvasLocation" x="-1890" y="-647"/>
         </scene>
         <!--Facebook View Controller-->
         <scene sceneID="ewu-3a-qro">
@@ -548,7 +548,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bWH-bS-Vwi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="bb4-5g-6p5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="887" y="801"/>
+            <point key="canvasLocation" x="-1010" y="852"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="Ea8-zv-I42">
@@ -567,7 +567,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOg-Bn-Qcc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2144.927536231884" y="-829.07608695652175"/>
+            <point key="canvasLocation" x="-10" y="-647"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="aGx-VZ-nve">
@@ -719,7 +719,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9p-RJ-j47" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1352.1739130434785" y="-778.53260869565224"/>
+            <point key="canvasLocation" x="-10" y="-1414"/>
         </scene>
         <!--Google-->
         <scene sceneID="hPv-ff-XJ7">
@@ -778,7 +778,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K07-D1-lMr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="oEe-xk-h8o" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="141" y="858"/>
+            <point key="canvasLocation" x="-1891" y="852"/>
         </scene>
         <!--Bookings-->
         <scene sceneID="ISW-ID-W8P">
@@ -816,7 +816,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8tN-dA-9NG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Bk8-mw-onz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5386.9565217391309" y="-1032.0652173913045"/>
+            <point key="canvasLocation" x="1051" y="-1392"/>
         </scene>
         <!--Search-->
         <scene sceneID="jbd-Hc-eZa">
@@ -865,7 +865,7 @@
                             </segmentedControl>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q47-wl-jSA">
                                 <rect key="frame" x="0.0" y="64" width="414" height="44"/>
-                                <color key="barTintColor" red="0.0022031611299999998" green="0.40095490220000002" blue="0.79996716980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </textAttributes>
@@ -873,14 +873,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Search" id="BVa-1C-dYX">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" image="left" id="7bU-FH-ZgS">
-                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <connections>
-                                                <segue destination="GRn-0Q-Bir" kind="unwind" unwindAction="unwindToViewControllerWithSender:" id="GMG-xq-myJ"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <navigationItem title="Search" id="BVa-1C-dYX"/>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HGF-HD-KJz">
@@ -922,7 +915,11 @@
                         <barButtonItem key="leftBarButtonItem" title="Back" image="menu" id="zGW-gV-ynL">
                             <color key="tintColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="home" id="Xz2-yn-LUN"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="home" id="Xz2-yn-LUN">
+                            <connections>
+                                <segue destination="GRn-0Q-Bir" kind="unwind" unwindAction="unwindToViewControllerWithSender:" id="2tZ-lF-Dqq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -945,7 +942,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2646.376811594203" y="58.695652173913047"/>
+            <point key="canvasLocation" x="-10" y="852"/>
         </scene>
         <!--Courts View Controller-->
         <scene sceneID="Szm-Ed-ShW">
@@ -1078,7 +1075,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="3563.7681159420295" y="58.695652173913047"/>
+            <point key="canvasLocation" x="1051" y="852"/>
         </scene>
         <!--Paypal View Controller-->
         <scene sceneID="wWA-tZ-Ub8">
@@ -1301,7 +1298,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7i-iI-W5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Hfb-jb-lL5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4400" y="55.434782608695656"/>
+            <point key="canvasLocation" x="1051" y="103"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sbY-qi-2Lm">
@@ -1319,12 +1316,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g96-Ln-Jlh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1739.1304347826087" y="58.695652173913047"/>
+            <point key="canvasLocation" x="-10" y="89"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pIi-ub-OBe">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AGX-ke-YEN" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnTap="YES" id="AGX-ke-YEN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OJ6-GP-HrK">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -1337,7 +1334,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MkX-jL-jzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-678.26086956521749" y="-779.34782608695662"/>
+            <point key="canvasLocation" x="-1009" y="-647"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lnq-nc-cVs">
@@ -1355,7 +1352,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="era-rH-gkm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1218.840579710145" y="-1507.3369565217392"/>
+            <point key="canvasLocation" x="-1009" y="-1414"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gfb-p3-aG1">
@@ -1373,7 +1370,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXh-G8-0V0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4479.7101449275369" y="-1032.0652173913045"/>
+            <point key="canvasLocation" x="1051" y="-647"/>
         </scene>
     </scenes>
     <resources>
@@ -1388,7 +1385,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Nab-Bx-wT7"/>
-        <segue reference="sMS-we-xNN"/>
-        <segue reference="2MQ-PW-o4G"/>
+        <segue reference="LCQ-jn-Cpm"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,6 +15,10 @@ class UpdateProfileViewController: UIViewController {
         super.viewDidLoad()
         sideMenu()
         // Do any additional setup after loading the view.
+        navigationController?.navigationBar.tintColor = .blue
+        navigationController?.navigationBar.barTintColor = .blue
+        navigationController?.navigationBar.titleTextAttributes =
+        [NSAttributedStringKey.foregroundColor : UIColor.white]
     }
     
     func sideMenu(){
