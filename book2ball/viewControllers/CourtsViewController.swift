@@ -9,6 +9,10 @@
 import UIKit
 
 class CourtsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listData.count;
     }
@@ -39,12 +43,32 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if didSearch == true && didSelectDateTime == true {
-        let payment:Payment = Payment(facility: mainDelegate.selectedFacilityData.facilityName as String, court: listData[indexPath.row], resDate: startDate, resStart: startTime, numOfHours: String(duration))
-        
-        //add user email to payment
-        payment.customerEmail = mainDelegate.userLoggedIn.email as! String
-        
-        mainDelegate.payment = payment
+            
+            mainDelegate.selectedCourt = courts[indexPath.row]
+            
+        let booking : Booking = Booking()
+            booking.startDateTime = startDateTime
+            booking.endDateTime = endDateTime
+            booking.duration = duration
+            mainDelegate.selectedBooking = booking
+            
+            let payment : Payment = Payment()
+            payment.courtCharge = mainDelegate.selectedCourt.price
+            payment.adminFee = 0.0
+            payment.subTotal = payment.getSubTotalInINT(facCharge: Int(mainDelegate.selectedCourt.price), hours: duration)
+            payment.taxPercentage = 13.00
+            payment.setTaxAmount()
+            print(payment.subTotal)
+            print(payment.taxAmount)
+            payment.totalAmount = payment.getTotalInDouble(subTot : payment.subTotal!, tax : payment.taxAmount!)
+           // payment.totalAmount = payment.getTotal(subTot: (Float(payment.subTotal! as Double) ), tax: Float(payment.taxAmount! as Double))
+            payment.paymentDateTime = nil
+            payment.confirmationNumber = nil
+            payment.paymentMethod = "payPal"
+            payment.status = ""
+            mainDelegate.payment = payment
+            
+            
         
         performSegue(withIdentifier: "segueToPaypalViewController", sender: nil)
         }else {
@@ -64,6 +88,8 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
     var startTime = ""
     var didSearch = false
     var didSelectDateTime = false
+    var startDateTime : Date? = nil
+    var endDateTime : Date? = nil
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var segment: UISegmentedControl!
@@ -85,7 +111,7 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
         formatterShort.locale = Locale(identifier: "US_en")
         formatterShort.dateFormat = "E, dd MMM yyyy"
         startDate = formatterShort.string(from: datePicker.date)
-        
+        startDateTime = datePicker.date
         formatterShort.dateFormat = "h:mm"
         startTime = formatterShort.string(from: datePicker.date)
         
@@ -97,11 +123,11 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
         var components: DateComponents = DateComponents()
         components.calendar = calendar
         components.minute = Int(duration * 60)
-        let endDateTime: Date = calendar.date(byAdding: components, to: datePicker.date)!
+        endDateTime = calendar.date(byAdding: components, to: datePicker.date)!
         
         formatterShort.dateFormat = "MM-dd-yyyy-HH-mm"
         startDateTimeString=formatterShort.string(from:datePicker.date)
-        endDateTimeString=formatterShort.string(from: endDateTime)
+        endDateTimeString=formatterShort.string(from: endDateTime!)
         print ("StartDateTime -> \(startDateTimeString), EndDateTime -> \(endDateTimeString)")
         courts = Court.fetch(facilityId: mainDelegate.selectedFacilityData.facilityId, startDateTime: startDateTimeString, endDateTime: endDateTimeString)
         print ("No of courts returned -> \(courts.count)")

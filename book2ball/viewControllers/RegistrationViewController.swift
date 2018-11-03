@@ -56,6 +56,25 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate, UINavig
                 status.text = "Password do not match."
             }else {
                 
+                
+                status.text = "success"
+                
+                //create a new user
+                let user: Customer = Customer( username: username.text as! NSString, password: password1.text as! NSString, firstName: firstName.text as! NSString, lastName: lastName.text as! NSString, email: email.text as! NSString,contactNumber: contactNumber.text as! NSString, startDate: "10-22-2018-13-30" ,endDate: "null" , status: "Active", originate: "Standard")
+                print(username.text)
+                print(password1.text)
+                print(firstName.text)
+                print(lastName.text)
+                Customer.save(customer: user)
+                
+                //set the user is logged in
+                mainDelegate.userLoggedIn = user
+                
+                //go to searchFacility
+                performSegue(withIdentifier: "searchFacilitySegue", sender: nil)
+                
+                /*
+                
                 if (try! mainDelegate.dao.readFromTableUserByUsername(username: username.text as! NSString) == true) {
                     //user already exist
                     status.text = "Username already taken."
@@ -75,7 +94,9 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate, UINavig
                     
                     //go to searchFacility
                     performSegue(withIdentifier: "searchFacilitySegue", sender: nil)
+
                 }
+  */
             }
         }
     }

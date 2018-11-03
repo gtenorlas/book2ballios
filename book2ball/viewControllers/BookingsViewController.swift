@@ -11,7 +11,7 @@ import UIKit
 class BookingsViewController: UIViewController , UITableViewDataSource,UITableViewDelegate{
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var menuButton : UIBarButtonItem!
-    
+    @IBOutlet weak var myTable : UITableView!
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     var listData:[String]=[]
     var descriptionData:[String]=[]
@@ -76,6 +76,7 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
         
         
         //get all the bookings
+        /*
         bookings = try! mainDelegate.dao.readFromTablePaymentByEmail(email: mainDelegate.userLoggedIn.email as String)
         
         for each:Payment in bookings{
@@ -84,7 +85,7 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
             descriptionData.append("Facility: \(each.facility!), Court: \(each.court!)")
             timeData.append("Time: \(each.reservationStartTime!), # of Hours: \(each.numOfHours!) ")
         }
-        
+        */
         sideMenu()
         
     }

@@ -11,16 +11,16 @@ import UIKit
 class PaypalViewController: UIViewController, PayPalPaymentDelegate {
     
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
-    @IBOutlet var lblCustomer : UILabel!
-    @IBOutlet var lblFacility : UILabel!
-    @IBOutlet var lblCourt : UILabel!
-    @IBOutlet var lblDate : UILabel!
-    @IBOutlet var lblTime : UILabel!
-    @IBOutlet var lblHrs : UILabel!
-    @IBOutlet var lblTax : UILabel!
-    @IBOutlet var lblsubTot : UILabel!
-    @IBOutlet var lblTotAmt : UILabel!
-    @IBOutlet var lblFacCharge : UILabel!
+    @IBOutlet var courtCharge : UILabel!
+    @IBOutlet var adminFee : UILabel!
+    @IBOutlet var subTotal : UILabel!
+    @IBOutlet var taxPercentage : UILabel!
+    @IBOutlet var taxAmount : UILabel!
+    @IBOutlet var totalAmount : UILabel!
+    @IBOutlet var paymentDateTime : UILabel!
+    @IBOutlet var confirmationNumber : UILabel!
+    @IBOutlet var paymentMethod : UILabel!
+    @IBOutlet var status : UILabel!
     @IBOutlet var lblPayCnfm : UILabel!
     @IBOutlet var payButton: UIButton!
     
@@ -28,16 +28,28 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
     let button = UIButton(frame: CGRect(x:50, y: 150, width: 300, height: 30))
     
     func setValues(){
-        lblCustomer.text = "\(mainDelegate.userLoggedIn.firstName) \(mainDelegate.userLoggedIn.lastName)"
-        lblFacility.text = mainDelegate.payment.facility
-        lblCourt.text = mainDelegate.payment.court
-        lblDate.text = mainDelegate.payment.reservationDate
-        lblTime.text = mainDelegate.payment.reservationStartTime
-        lblHrs.text = mainDelegate.payment.numOfHours
-        lblTax.text = "$" + mainDelegate.payment.tax!
-        lblsubTot.text = "$" + mainDelegate.payment.subTotal!
-        lblTotAmt.text = "$" + mainDelegate.payment.totalAmount!
-        lblFacCharge.text = "$" + mainDelegate.payment.facilityCharge
+        courtCharge.text = String(format:"%.1f", mainDelegate.selectedCourt.price)
+        adminFee.text = "0.0"
+        subTotal.text = String(format:"%.1f", mainDelegate.payment.subTotal!)
+        taxPercentage.text = String(format:"%.1f", mainDelegate.payment.taxPercentage!)
+        taxAmount.text = String(format:"%.1f", mainDelegate.payment.taxAmount!)
+        totalAmount.text = String(format:"%.1f", mainDelegate.payment.totalAmount!)
+        
+        let formatter = DateFormatter()
+        // initially set the format based on your datepicker date / server String
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let myString = formatter.string(from: Date()) // string purpose I add here
+        // convert your string to date
+         mainDelegate.payment.paymentDateTime = formatter.date(from: myString)
+        //then again set the date format whhich type of output you need
+        formatter.dateFormat = "dd-MMM-yyyy"
+        // again convert your date to string
+        paymentDateTime.text = formatter.string(from: mainDelegate.payment.paymentDateTime!)
+        
+        confirmationNumber.text =  ""
+        paymentMethod.text =  mainDelegate.payment.paymentMethod!
+        status.text =  "Completed"
+        mainDelegate.payment.status = "Completed"
         lblPayCnfm.text=""
         payButton.isEnabled=true
         
@@ -49,9 +61,35 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
         //let strVol = String(format: "%.0f",vol)
         lblPayCnfm.text = "Payment Successful!"
         payButton.isEnabled=false
+    
+        var user = mainDelegate.userLoggedIn
+        var facility = mainDelegate.selectedFacilityData
+        var court = mainDelegate.selectedCourt
+         var booking = mainDelegate.selectedBooking
+        var payment = mainDelegate.payment
         
-        //save to database
-        try! mainDelegate.dao.insertToTablePayment(payment: mainDelegate.payment)
+        
+        let book: Booking = Booking(customerEmail: user.email  ,customerName: ((user.firstName as String) + (user.lastName as String)) as String as NSString, bookingType: "basketball", status: "Active", startDateTime: booking.startDateTime! , endDateTime: booking.endDateTime!, duration: booking.duration! , court: court , comment : "null" , payment : payment , facilityName : facility.facilityName)
+        
+        let id =  Booking.save(booking: book)
+        if let respose = id as? String {
+            let i=Int(respose)
+            book.bookingId = i
+            
+        }
+        
+        print("Booking is : \(book.bookingId!)")
+        /*
+        let pay: Payment = Payment( booking: book, courtCharge: (courtCharge.text as? Double)!, adminFee: (adminFee.text as? Double)!, subTotal: (subTotal.text as? Double)!, taxPercentage: (taxPercentage.text as? Double)!, taxAmount: (taxAmount.text as?  Double)!, totalAmount: (totalAmount.text as? Double)!, paymentDateTime: (paymentDateTime.text as?  Date)!, confirmationNumber: confirmationNumber.text as! String, paymentMethod: paymentMethod.text as! String, status : status.text as! String)
+       
+        */
+       payment.booking = book
+        mainDelegate.payment = payment
+        Payment.save(payment: mainDelegate.payment)
+        
+        //set the user is logged in
+       // mainDelegate.payment = pay
+
         
         performSegue(withIdentifier: "bookingsViewControllerSegue", sender: nil)
         /*
@@ -135,14 +173,18 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
     }
     
     @IBAction func paymentInitiation(_ sender: Any) {
-        let item1 = PayPalItem(name: mainDelegate.payment.facility!, withQuantity: UInt(mainDelegate.payment.numOfHours!)!, withPrice: NSDecimalNumber(string: mainDelegate.payment.facilityCharge), withCurrency: "CAD", withSku: mainDelegate.payment.court)
+        
+        let Charge = String(format:"%.1f", mainDelegate.payment.courtCharge!)
+        
+        let item1 = PayPalItem(name: mainDelegate.selectedFacilityData.facilityName as String, withQuantity: UInt(mainDelegate.selectedBooking.duration!), withPrice: NSDecimalNumber(string : Charge), withCurrency: "CAD", withSku: mainDelegate.selectedCourt.courtName as String)
         
         let items = [item1]
         let subtotal = PayPalItem.totalPrice(forItems: items)
         
         // Optional: include payment details
         let shipping = NSDecimalNumber(string: "0.00")
-        let tax = NSDecimalNumber(string: mainDelegate.payment.tax)
+        let taxTotal = String(format:"%.1f", mainDelegate.payment.taxAmount!)
+        let tax =  NSDecimalNumber(string : taxTotal)
         let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
         
         

@@ -7,6 +7,7 @@
 //  The purpose of this class is to do all the transactions to the database.
 //  CRUD operation for all the data objects such as Payment, Court, Facility, Customer.
 //  Create and drop tables.
+/*
 
 import UIKit
 import SQLite3
@@ -672,4 +673,4 @@ class DAO: NSObject{
     }
     
 }
-
+*/

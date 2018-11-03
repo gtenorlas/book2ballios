@@ -19,11 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var selectedFacilityData: FacilityData = FacilityData()
     var payment: Payment = Payment()
     var selectedCity : String = ""
+    var selectedBooking = Booking() 
     
     var facList: Array<FacilityData> = []
     
     //Shanu's part
-    var dao : DAO = DAO()
     
     //Gene's part
     var userLoggedIn: Customer = Customer()
@@ -56,24 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                                 PayPalEnvironmentSandbox: "iresh.anthony-facilitator@gmail.com"])
         
         //open the database, drop tables, create tables
-        do {
-            dao.copyDatabaseIfNeeded()
-            try dao.openDB()
-            //try dao.dropTable(tableName: "user")
-            //try dao.dropTable(tableName: "court")
-            //try dao.dropTable(tableName: "facility")
-            //try dao.dropTable(tableName: "payment")
-            
-            //try dao.createTableUser()
-            //try dao.createTableFacility()
-            //try dao.createTableCourt()
-            //try dao.createTablePayment()
-            //try dao.insertDefaultFacilities() //enter all default data for facilities, run one time
-            //try dao.insertDefaultCourts() //enter all default data for courts, run one time
-            print("success")
-        } catch {
-            print (error);
-        }
+    
         return true
     }
     

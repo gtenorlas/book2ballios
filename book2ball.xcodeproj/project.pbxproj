@@ -16,6 +16,7 @@
 		34E85579216BA3B800C2AD71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34E85577216BA3B800C2AD71 /* LaunchScreen.storyboard */; };
 		34E85583216BA43300C2AD71 /* Book 2 Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E85582216BA43300C2AD71 /* Book 2 Ball.png */; };
 		6F3B7563EF122C2CFDB5AF29 /* Pods_book2ball.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D89524B4D9FCD63E4FFB59D0 /* Pods_book2ball.framework */; };
+		AE4046EB218CD8B300F79935 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4046EA218CD8B300F79935 /* Booking.swift */; };
 		AE6DA5692184293F00DF0F55 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA5682184293F00DF0F55 /* ForgetPasswordViewController.swift */; };
 		AE6DA56C2184412500DF0F55 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA56B2184412500DF0F55 /* SWRevealViewController.m */; };
 		AE6DA56E218446D400DF0F55 /* PaypalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA56D218446D400DF0F55 /* PaypalViewController.swift */; };
@@ -56,6 +57,7 @@
 		34E85578216BA3B800C2AD71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34E8557A216BA3B800C2AD71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34E85582216BA43300C2AD71 /* Book 2 Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Book 2 Ball.png"; sourceTree = "<group>"; };
+		AE4046EA218CD8B300F79935 /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
 		AE6DA5682184293F00DF0F55 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		AE6DA56A2184412500DF0F55 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		AE6DA56B2184412500DF0F55 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				CE0FB96021717CE4003038B5 /* GoogleRegistration.swift */,
 				CE0FB95F21717CDF003038B5 /* Payment.swift */,
 				CE0FB95B21717CCD003038B5 /* Customer.swift */,
+				AE4046EA218CD8B300F79935 /* Booking.swift */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				AEBEC555218BD520001480CB /* AboutUsViewController.swift in Sources */,
 				AEBEC553218BD3CC001480CB /* RearViewController.swift in Sources */,
 				AED2CD2A217E29B40013F560 /* SearchFacilityViewController.swift in Sources */,
+				AE4046EB218CD8B300F79935 /* Booking.swift in Sources */,
 				CE0FB96721717CE4003038B5 /* Payment.swift in Sources */,
 				CEFBFE222188F72100678A5C /* CourtsViewController.swift in Sources */,
 				AED2CD27217E280D0013F560 /* GoogleSignInViewController.swift in Sources */,

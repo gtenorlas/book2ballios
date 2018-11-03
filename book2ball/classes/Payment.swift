@@ -13,26 +13,56 @@ import UIKit
 
 class Payment: NSObject {
     
-    let facilityCharge: String = "123.25"
-    var subTotal : String?
-    var tax: String?
-    var facility: String?
-    var court: String?
-    var reservationDate: String?
-    var reservationStartTime:String?
-    var numOfHours:String?
-    var totalAmount:String?
-    var customerEmail:String?
+    var booking : Booking?
+    var courtCharge : Double?
+    var adminFee : Double?
+    var subTotal : Double?
+    var taxPercentage: Double?
+    var taxAmount : Double?
+    var totalAmount: Double?
+    var paymentDateTime : Date?
+    var confirmationNumber: String?
+    var paymentMethod: String?
+    var status: String?
     
-    override init (){
+    //constructor without arguments
+    public override init() {
+        
+        self.booking = Booking()
+        self.courtCharge = 0.0
+        self.adminFee = 0.0
+        self.subTotal = 0.0
+        self.taxPercentage = 0.0
+        self.taxAmount = 0.0
+        self.totalAmount = 0.0
+        self.paymentDateTime = nil
+        self.confirmationNumber = ""
+        self.paymentMethod = ""
+        self.status = ""
         
     }
     
+    //constructor with arguments
+    public init( booking: Booking, courtCharge: Double, adminFee: Double, subTotal: Double, taxPercentage: Double, taxAmount: Double, totalAmount: Double, paymentDateTime: Date, confirmationNumber: String, paymentMethod: String, status : String){
+        
+        self.booking = booking
+        self.courtCharge = courtCharge
+        self.adminFee = adminFee
+        self.subTotal = subTotal
+        self.taxPercentage = taxPercentage
+        self.taxAmount = taxAmount
+        self.totalAmount = totalAmount
+        self.paymentDateTime = paymentDateTime
+        self.confirmationNumber = confirmationNumber
+        self.paymentMethod = paymentMethod
+        self.status = status
+    }
+    /*
     init (facility:String,court:String,resDate:String,resStart:String,numOfHours:String)
     {
         super.init()
         let numberFormatter = NumberFormatter()
-        let xfacCharge = numberFormatter.number(from: facilityCharge)?.floatValue
+        let xfacCharge = numberFormatter.number(from: courtCharge)?.floatValue
         self.numOfHours = numOfHours
         let xHours = numberFormatter.number(from: numOfHours)?.floatValue
         self.subTotal=getSubTotal(facCharge:xfacCharge!,hours:xHours!)
@@ -45,6 +75,7 @@ class Payment: NSObject {
         self.reservationStartTime = resStart
         self.totalAmount = getTotal(subTot:xSubTotal!,tax:xTax!)
     }
+    */
     
     //calculate tax
     func getTax(subTot:Float)->String
@@ -62,13 +93,148 @@ class Payment: NSObject {
         return realValue
     }
     
+    func getTotalInDouble(subTot:Double,tax:Double)->Double
+    {
+        let xTotal=(subTot+tax)
+       // let realValue=String(format: "%.2f", xTotal)
+        return xTotal
+    }
+    
     //calculate the amount owing without tax
     //based on facility charge * the amount of hours of rental
-    func getSubTotal(facCharge:Float,hours:Float)->String
+    func getSubTotal(facCharge:Int,hours:Int)->String
     {
         let sub=(facCharge * hours)
         let realValue=String(format: "%.2f", sub)
         return realValue
     }
+    func getSubTotalInINT(facCharge:Int,hours:Int)->Double
+    {
+        let sub=(facCharge * hours)
+        //let realValue=String(format: "%.2f", sub)
+        return Double(sub)
+    }
+
+    func setTaxAmount()  {
+        self.taxAmount = ( self.subTotal! * (self.taxPercentage! / 100))
+    }
+    
+    static func save(payment:Payment){
+        
+        var baseURL = "http://mags.website/api/payment/"
+        baseURL += "\(payment.booking!.bookingId!)/"
+        baseURL += "\(payment.courtCharge!)/"
+        baseURL += "\(payment.adminFee!)/"
+        baseURL += "\(payment.subTotal!)/"
+        baseURL += "\(payment.taxPercentage!)/"
+        baseURL += "\(payment.taxAmount!)/"
+        baseURL += "\(payment.totalAmount!)/"
+       // baseURL += "\(payment.paymentDateTime!)/"
+        payment.confirmationNumber = "null"
+        baseURL += "\(payment.confirmationNumber!)/"
+        baseURL += "\(payment.paymentMethod!)/"
+        baseURL += "\(payment.status!)"
+        
+        print(baseURL)
+        
+        // create post request
+        let url = NSURL(string: baseURL)!
+        let request = NSMutableURLRequest(url: url as URL)
+        request.httpMethod = "POST"
+        
+        let task = URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
+            if error != nil{
+                print("Error -> \(error)")
+                return
+            }
+            
+            print (response)
+            print("saved")
+        }
+        
+        task.resume()
+        
+    }
+    
+    static func fetch(payment:Payment)->Any{
+        var fetchedPayment : (Any)? = nil
+        var baseURL = "http://mags.website/api/payment/"
+        baseURL += "\(payment.booking)/"
+        baseURL += "\(payment.courtCharge)/"
+        baseURL += "\(payment.adminFee)/"
+        baseURL += "\(payment.subTotal)/"
+       // baseURL += "\(payment.taxPercentage)/"
+        baseURL += "\(payment.taxAmount)/"
+        baseURL += "\(payment.totalAmount)/"
+        baseURL += "\(payment.paymentDateTime)/"
+        baseURL += "\(payment.confirmationNumber)/"
+        baseURL += "\(payment.paymentMethod)"
+        baseURL += "\(payment.status)"
+        
+        print(baseURL)
+        
+        // create post request
+        let url = NSURL(string: baseURL)!
+        let request = NSMutableURLRequest(url: url as URL)
+        request.httpMethod = "GET"
+        
+        // insert json data to the request
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        //var status:String=""
+        let semaphore = DispatchSemaphore(value: 0) //make it synchrounous
+        
+        URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
+            if error != nil{
+                print("Error -> \(error)")
+                return
+            }
+            
+            print ("response -> \(response)")
+            
+            print ("data -> " + String.init(data: data!, encoding: .ascii)! ?? "no data")
+            
+            
+            
+            //Use JSONSerialization to handle the data that is received
+            if let objData = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) {
+                
+                print ("done serialization")
+                //print (objData)
+                if let dict = objData as? [String:Any] {
+                    print("yes it is a dictionary")
+                    
+                    //grabbing the data from dictionary and saving it to the customer attributes
+                    payment.booking = (dict["booking"])! as! Booking
+                    payment.courtCharge = (dict["courtCharge"] )! as! Double
+                    payment.adminFee = (dict["adminFee"])! as! Double
+                    payment.subTotal = (dict["subTotal"])! as! Double
+                    payment.taxPercentage = (dict["taxPercentage"] )! as! Double
+                    payment.taxAmount = (dict["taxAmount"])! as! Double
+                    payment.totalAmount = (dict["totalAmount"])! as! Double
+                   // payment.paymentDateTime = (dict["paymentDateTime"] )! as! Date
+                    payment.confirmationNumber = (dict["confirmationNumber"] )! as! String
+                    payment.paymentMethod = (dict["paymentMethod"] )! as! String
+                    payment.status = (dict["status"] )! as! String
+                    //print ("customer name is \(customer.firstName)")
+                    fetchedPayment = payment
+                    
+                }
+            }else {
+                fetchedPayment =  String.init(data: data!, encoding: .ascii)
+            }
+            semaphore.signal()//wait for synchronous
+            }.resume()
+        _ = semaphore.wait(timeout: .distantFuture)
+        
+        // task.resume()
+        
+        print ("its here")
+        return fetchedPayment
+        
+        
+    }
+    
 
 }
