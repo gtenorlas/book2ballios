@@ -13,7 +13,8 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
     @IBOutlet weak var menuButton : UIBarButtonItem!
     @IBOutlet weak var myTable : UITableView!
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
-    var listData:[String]=[]
+   var listData:[String]=[]
+   // var listData:Array<Booking> = []
     var descriptionData:[String]=[]
     var timeData: Array<String> = []
     
@@ -47,11 +48,11 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
         
         // step 12b - populate the cell
         let rowNum = indexPath.row
-        let title = listData[rowNum]
+        let title = listData[rowNum]//.facilityName
         let description = descriptionData[rowNum]
         let timeHours = timeData[rowNum]
         
-        tableCell.primaryLabel.text =  title
+        tableCell.primaryLabel.text =  title //as! String
         tableCell.secondaryLabel.text = description
         tableCell.thirdLabel.text = timeHours
         tableCell.accessoryType = .none
@@ -67,11 +68,47 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
         return true
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+       // var listDataArray:Array<Booking> = []
+        //let rowNum = indexPath.row
+       // let title = listData[rowNum].facilityName as String
+       // mainDelegate.selectedBooking = listData[indexPath.row]
+        performSegue(withIdentifier: "segueInvoiceDetailsViewController", sender: nil)
+    }
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var bookings:Array<Booking>=[]
+        bookings = Booking.fetchByEmail(email: mainDelegate.userLoggedIn.email as String)
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let myString = formatter.string(from: Date())
+        
+        for each:Booking in bookings{
+            
+            //add to array
+            print ("In for loop")
+            var bookDate = each.bookingDate
+            bookDate = formatter.date(from: myString)
+            formatter.dateFormat = "dd-MMM-yyyy"
+           // let myStringafd = formatter.string(from: (bookDate?)!)
+            let str = each.facilityName
+           // let title = listData[each].facilityName
+            listData.append("Facility: \(each.facilityName)")
+            
+            descriptionData.append("Number of Hours: \(each.duration!)")
+            
+            timeData.append("Start: \(each.startDateTime!), End: \(each.endDateTime!) ")
+            
+            print (  each.facilityName,each.startDateTime)
+        }
+        
+        /*
         let book = Booking()
         book.customerEmail = mainDelegate.userLoggedIn.email
         let response = Booking.fetch(booking: book)
@@ -102,7 +139,9 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
             timeData.append("Time: \(each.duration!), # of Hours: \(each.endDateTime!) ")
  
             } */
+
         }
+  */
         sideMenu()
         
     }

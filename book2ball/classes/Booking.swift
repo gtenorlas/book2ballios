@@ -110,17 +110,17 @@ class Booking: NSObject {
         var baseURL = "http://mags.website/api/booking/email/"
         // baseURL += "\(booking.bookingId!)/"
         baseURL += "\(booking.customerEmail!)/"
-       // baseURL += "\(booking.customerName!)/"
+        baseURL += "\(booking.customerName!)/"
         // baseURL += "\(booking.bookingDate!)/"
-       // baseURL += "\(booking.bookingType!)/"
-      //  baseURL += "\(booking.status!)/"
-      //  baseURL += "\(booking.startDateTime!)/"
-      //  baseURL += "\(booking.endDateTime!)"
-       // baseURL += "\(booking.duration!)/"
-       // baseURL += "\(booking.court?.courtNumber)/"
+        baseURL += "\(booking.bookingType!)/"
+        baseURL += "\(booking.status!)/"
+        baseURL += "\(booking.startDateTime!)/"
+        baseURL += "\(booking.endDateTime!)"
+        baseURL += "\(booking.duration!)/"
+        baseURL += "\(booking.court?.courtNumber)/"
         // baseURL += "\(booking.comment!)/"
         //  baseURL += "\(booking.payment!)"
-      //  baseURL += "\(booking.facilityName!)"
+        baseURL += "\(booking.facilityName!)"
         
         print(baseURL)
         
@@ -160,15 +160,15 @@ class Booking: NSObject {
                    // booking.bookingId = dict["bookingId"] as! Int
                     booking.customerEmail = dict["customerEmail"] as? NSString
                     booking.customerName = dict["customerName"] as? NSString
-                    booking.bookingDate = dict["bookingDate"] as! Date
+                   // booking.bookingDate = dict["bookingDate"] as! Date
                     booking.bookingType = dict["bookingType"] as? NSString
                     booking.status = dict["status"] as? NSString
                     booking.startDateTime = dict["startDateTime"] as! Date
                     booking.endDateTime = dict["endDateTime"] as! Date
                     booking.duration = dict["duration"] as! Int
                     booking.court?.courtNumber = dict["court"] as! Int
-                    booking.comment = dict["comment"] as? NSString
-                    booking.payment = dict["payment"] as! Payment
+                   // booking.comment = dict["comment"] as? NSString
+                   // booking.payment = dict["payment"] as! Payment
                     booking.facilityName = dict["facilityName"] as? NSString
                     //print ("customer name is \(customer.firstName)")
                     fetchedBooking = booking
@@ -204,6 +204,101 @@ class Booking: NSObject {
         let someDateTime = userCalendar.date(from: dateComponents)
         return someDateTime!
     }
+    
+    static func fetchByEmail(email: String) -> Array<Booking>{
+        //var status:String=""
+        let semaphore = DispatchSemaphore(value: 0) //make it synchrounous
+        var fetchedBookings : Array<Booking> = Array()
+        // create post request
+        let url = NSURL(string: "http://mags.website/api/booking/email/\(email)/")!
+        print ("urlToFetch -> \(url)")
+        let request = NSMutableURLRequest(url: url as URL)
+        request.httpMethod = "GET"
+        
+        // insert json data to the request
+        
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        
+        URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
+            
+            if error != nil{
+                print("Error -> \(error)")
+                return
+            }
+            
+            print (String.init(data: data!, encoding: .ascii) ?? "no data")
+            
+            //Use JSONSerialization to handle the data that is received
+            if let jsonResponse = try? JSONSerialization.jsonObject(with: data!, options: []) {
+                print ("done serialization")
+                print (jsonResponse)
+                
+                guard let jsonArray = jsonResponse as? [[String : Any]] else {return}
+                
+                for bookingJson in jsonArray {
+                    let dict = bookingJson
+                    print("yes it is a dictionary")
+                    let booking =  Booking()
+                    booking.bookingId = dict["bookingId"] as? Int
+                    booking.bookingDate = Booking.setDate(data: dict["bookingDate"])
+                    booking.bookingType = dict["bookingType"] as? NSString
+                    booking.comment = dict["comment"] as? NSString
+                    booking.customerName = dict["customerName"] as? NSString
+                    booking.customerEmail = dict["customerEmail"] as? NSString
+                    booking.duration = dict["duration"] as? Int
+                    booking.endDateTime = Booking.setDate(data:dict["endDateTime"])
+                    booking.facilityName = dict["facilityName"] as? NSString
+                    booking.startDateTime = Booking.setDate(data:dict["startDateTime"])
+                    booking.status = dict["status"] as? NSString
+                    booking.payment = Payment.fetch(data: dict["payment"])
+                    
+                    
+                    fetchedBookings.append(booking)
+                }
+            }else {
+                fetchedBookings =  []
+                
+            }
+            semaphore.signal()//wait for synchronous
+            }.resume()
+        _ = semaphore.wait(timeout: .distantFuture)
+        return fetchedBookings
+    }
+    
+    
+    static func setDate(data:Any) -> Date{
+        
+        guard let dict = data as? [String : Any] else {return Date()}
+        var dateComponents = DateComponents()
+        dateComponents.year = (dict["year"] as? Int)!
+        dateComponents.month = (dict["monthValue"] as? Int)!
+        dateComponents.day = (dict["dayOfMonth"] as? Int)!
+        dateComponents.timeZone = TimeZone(abbreviation: "BST") // EET, CET Standard Time
+        dateComponents.hour = (dict["hour"] as? Int)!
+        dateComponents.minute = (dict["minute"] as? Int)!
+        dateComponents.second = 0
+        
+        
+        var calendar = Calendar(identifier: .iso8601)
+        // calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+        let someDateTime = calendar.date(from: dateComponents)
+        print (Booking.formatDate(date: someDateTime!))
+        return someDateTime!
+    }
+    
+    static func formatDate(date:Date) -> String {
+        let formatterShort = DateFormatter()
+        formatterShort.calendar = Calendar(identifier: .iso8601)
+        formatterShort.locale = Locale(identifier: "US_en")
+        formatterShort.dateFormat = "E, dd MMM yyyy h:mm a"
+        //formatterShort.timeZone = TimeZone(abbreviation: "EST")
+        let formattedDate = formatterShort.string(from: date)
+        return formattedDate
+    }
+    
+    
     
 }
  

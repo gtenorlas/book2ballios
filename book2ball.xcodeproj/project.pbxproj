@@ -147,7 +147,6 @@
 				34E8556E216BA3B700C2AD71 /* AppDelegate.swift */,
 				34E85575216BA3B800C2AD71 /* Assets.xcassets */,
 				34E8557A216BA3B800C2AD71 /* Info.plist */,
-				AED2CD2F217E60D80013F560 /* PaymentTableViewCell.swift */,
 				AEEFA5AC2183606200B80BCE /* book2ball-Bridging-Header.h */,
 			);
 			path = book2ball;
@@ -208,6 +207,7 @@
 		CE0FB95721717B6F003038B5 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				AED2CD2F217E60D80013F560 /* PaymentTableViewCell.swift */,
 				AEF7CB272183D52700AE5D80 /* SiteCell.swift */,
 				CE0FB95921717CC4003038B5 /* Court.swift */,
 				CE0FB95C21717CD2003038B5 /* DAO.swift */,

@@ -830,7 +830,7 @@
                     <connections>
                         <outlet property="menuButton" destination="Acq-no-wBM" id="ccA-Zr-8n2"/>
                         <outlet property="myTable" destination="7jR-MO-hcK" id="OtR-X5-4Mn"/>
-                        <segue destination="9IQ-QC-QhV" kind="presentation" id="J0c-6S-2X0"/>
+                        <segue destination="9IQ-QC-QhV" kind="presentation" identifier="segueInvoiceDetailsViewController" id="J0c-6S-2X0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8tN-dA-9NG" userLabel="First Responder" sceneMemberID="firstResponder"/>

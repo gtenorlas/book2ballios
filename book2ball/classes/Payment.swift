@@ -14,6 +14,7 @@ import UIKit
 class Payment: NSObject {
     
     var booking : Booking?
+    var paymentId: Int?
     var courtCharge : Double?
     var adminFee : Double?
     var subTotal : Double?
@@ -27,7 +28,7 @@ class Payment: NSObject {
     
     //constructor without arguments
     public override init() {
-        
+        self.paymentId = 0
         self.booking = Booking()
         self.courtCharge = 0.0
         self.adminFee = 0.0
@@ -235,6 +236,25 @@ class Payment: NSObject {
         
         
     }
-    
+    static func fetch(data:Any) -> Payment{
+        print ("fetching Payment")
+        let payment = Payment()
+        guard let dict = data as? [String : Any] else {return payment}
+        
+        payment.adminFee = dict["adminFee"] as? Double
+        payment.confirmationNumber = dict["confirmationNumber"] as? String
+        payment.courtCharge = dict["courtCharge"] as? Double
+        payment.paymentDateTime = Booking.setDate(data: dict["paymentDateTime"])
+        payment.paymentId = dict["paymentId"] as? Int
+        payment.paymentMethod = dict["paymentMethod"] as? String
+        payment.status = dict["status"] as? String
+        payment.subTotal = dict["subTotal"] as? Double
+        payment.taxAmount = dict["taxAmount"] as? Double
+        payment.taxPercentage = dict["taxPercentage"] as? Double
+        payment.totalAmount = dict["totalAmount"] as? Double
+        
+        return payment;
+        
+    }
 
 }
