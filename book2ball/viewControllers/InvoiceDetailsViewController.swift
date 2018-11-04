@@ -10,6 +10,20 @@ import UIKit
 
 class InvoiceDetailsViewController: UIViewController {
 
+    @IBOutlet weak var bookingDate: UILabel!
+    @IBOutlet weak var bookingType: UILabel!
+    @IBOutlet weak var startDateTime: UILabel!
+    @IBOutlet weak var endDateTime: UILabel!
+    @IBOutlet weak var duration: UILabel!
+    @IBOutlet weak var courtName: UILabel!
+    @IBOutlet weak var facilityName: UILabel!
+    @IBOutlet weak var paymentDateTime: UILabel!
+    @IBOutlet weak var courtCharge: UILabel!
+    @IBOutlet weak var totalAmount: UILabel!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

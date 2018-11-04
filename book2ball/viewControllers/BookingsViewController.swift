@@ -72,45 +72,13 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       // navBar.topItem?.title = "\(mainDelegate.userLoggedIn.firstName) \(mainDelegate.userLoggedIn.lastName) Bookings"
-        
-        
-        //get all the bookings
-        
-      //  bookings = try! mainDelegate.dao.readFromTablePaymentByEmail(email: mainDelegate.userLoggedIn.email as String)
-        /*
-        var users = Customer()
-        
-        let response = Customer.fetch(customer: users)
-        if let invalid = response as? String {
-            print ("response is \(invalid)")
-            status.text = "Username/password incorrect."
-        }else {
-            users = response as! Customer
-            performSegue(withIdentifier: "searchFacilitySegue", sender: nil)
-        }
-         
-         var bookings : Array<Booking> = []
- */
-         //= mainDelegate.userLoggedIn.email
         let book = Booking()
         book.customerEmail = mainDelegate.userLoggedIn.email
         let response = Booking.fetch(booking: book)
         
         let formatter = DateFormatter()
-        // initially set the format based on your datepicker date / server String
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        
         let myString = formatter.string(from: Date()) // string purpose I add here
-        // convert your string to date
-       // let yourDate = formatter.date(from: myString)
-        //then again set the date format whhich type of output you need
-       // formatter.dateFormat = "dd-MMM-yyyy"
-        // again convert your date to string
-       // let myStringafd = formatter.string(from: yourDate!)
-        
-        //print(myStringafd)
         
         if let invalid = response as? String {
             print ("response is \(invalid)")
