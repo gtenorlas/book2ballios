@@ -58,6 +58,7 @@
 		34E85578216BA3B800C2AD71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34E8557A216BA3B800C2AD71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34E85582216BA43300C2AD71 /* Book 2 Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Book 2 Ball.png"; sourceTree = "<group>"; };
+		AE2B1C5C218E9FF6003C2726 /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
 		AE4046EA218CD8B300F79935 /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
 		AE57B2E0218E6C0A005D7DD9 /* InvoiceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceDetailsViewController.swift; sourceTree = "<group>"; };
 		AE6DA5682184293F00DF0F55 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +217,7 @@
 				CE0FB95F21717CDF003038B5 /* Payment.swift */,
 				CE0FB95B21717CCD003038B5 /* Customer.swift */,
 				AE4046EA218CD8B300F79935 /* Booking.swift */,
+				AE2B1C5C218E9FF6003C2726 /* Location.gpx */,
 			);
 			path = classes;
 			sourceTree = "<group>";

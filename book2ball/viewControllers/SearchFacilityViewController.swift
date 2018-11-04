@@ -7,95 +7,186 @@
 //
 
 import UIKit
+import Foundation
+import CoreLocation
+
 /*
-class SearchFacilityViewController: UIViewController {
-    let mainDelegate = UIApplication.shared.delegate as! AppDelegate
+ class SearchFacilityViewController: UIViewController {
+ let mainDelegate = UIApplication.shared.delegate as! AppDelegate
+ 
+ var facilities = ["Jays" : ["first facility","good facility",10 ], "Leafs" : ["second facility","ok facility",20], "Raptors"  : ["third facility","best facility",30], "Marlies"  : ["forth facility","fine facility",40], "FC" : ["5th facility","nice facility",50]]
+ 
+ // @IBOutlet weak var datePicker: UIDatePicker!
+ @IBOutlet weak var segment: UISegmentedControl!
+ @IBOutlet var myTableView : UITableView!
+ 
+ var numKm: Int = 1
+ 
+ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+ return facilities.count
+ }
+ func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+ return 30
+ }
+ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+ let tableCell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell()
+ for (kind, kilo) in facilities{
+ // tableCell.textLabel?.text = (facilities)[indexPath.row] as! String
+ }
+ return tableCell
+ }
+ 
+ @IBAction func indexChanged(sender : UISegmentedControl) {
+ // This all works fine and it prints out the value of 3 on any click
+ print("# of Segments = \(sender.numberOfSegments)")
+ 
+ numKm = sender.selectedSegmentIndex + 1 //index start at 0, but index1 is 1hour, so add 1
+ 
+ } // indexChanged for the Segmented Control
+ 
+ @IBAction func onSubmit(_ sender: UIButton) {
+ 
+ for (kind, kilo) in facilities{
+ for number in kilo {
+ //  if number == numKm {
+ // largest = number
+ //  }
+ } }
+ 
+ 
+ 
+ // performSegue(withIdentifier: "paypalSegue", sender: nil)
+ }
+ 
+ 
+ override func viewDidLoad() {
+ super.viewDidLoad()
+ 
+ 
+ 
+ // Do any additional setup after loading the view.
+ }
+ 
+ override func didReceiveMemoryWarning() {
+ super.didReceiveMemoryWarning()
+ // Dispose of any resources that can be recreated.
+ }
+ 
+ 
+ /*
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destinationViewController.
+ // Pass the selected object to the new view controller.
+ }
+ */
+ 
+ }*/
+class SearchFacilityViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate {
     
-    var facilities = ["Jays" : ["first facility","good facility",10 ], "Leafs" : ["second facility","ok facility",20], "Raptors"  : ["third facility","best facility",30], "Marlies"  : ["forth facility","fine facility",40], "FC" : ["5th facility","nice facility",50]]
-    
-   // @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var segment: UISegmentedControl!
     @IBOutlet var myTableView : UITableView!
-    
-    var numKm: Int = 1
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return facilities.count
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 30
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let tableCell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell()
-        for (kind, kilo) in facilities{
-       // tableCell.textLabel?.text = (facilities)[indexPath.row] as! String
-        }
-        return tableCell
-    }
-    
-    @IBAction func indexChanged(sender : UISegmentedControl) {
-        // This all works fine and it prints out the value of 3 on any click
-        print("# of Segments = \(sender.numberOfSegments)")
-        
-        numKm = sender.selectedSegmentIndex + 1 //index start at 0, but index1 is 1hour, so add 1
-        
-    } // indexChanged for the Segmented Control
-    
-    @IBAction func onSubmit(_ sender: UIButton) {
-        
-        for (kind, kilo) in facilities{
-            for number in kilo {
-              //  if number == numKm {
-               // largest = number
-              //  }
-              } }
-      
-        
-        
-       // performSegue(withIdentifier: "paypalSegue", sender: nil)
-    }
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}*/
-class SearchFacilityViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    let mainDelegate = UIApplication.shared.delegate as! AppDelegate
-    var nameData:[String]=[]
-    var cityData:[String]=[]
-    var provinceData:[String]=[]
-    var distanceData:[Double]=[]
-    var facilityList:Array<FacilityData> = []
     @IBOutlet weak var menuButton : UIBarButtonItem!
     
-    //var facilities = ["Fac1","Fac2", "Fac3" , "Fac4" , "Fac5"]
-    //var cities : [String : String] = ["Fac1" : "Brampton","Fac2" : "Brampton", "Fac3" : "Mississauga", "Fac4" : "Toronto", "Fac5" : "Vancouver"]
-    //var provinces : [String : String ] = ["Fac1" : "Ontario","Fac2" : "Ontario", "Fac3" : "Ontario", "Fac4" : "Ontario", "Fac5" : "British Colombia"]
-    //var distances : [String : Double] = ["Fac1" : 8.2, "Fac2" : 9.3, "Fac3" : 11.0, "Fac4" : 50, "Fac5" : 5000]
+    let mainDelegate = UIApplication.shared.delegate as! AppDelegate
+    var facilityList:Array<FacilityData> = []
+    var viewingFacilities:Array<FacilityData> = []
+    var initialLocation:CLLocation = CLLocation()
+    var locationManager = CLLocationManager()
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.locationManager.stopUpdatingLocation()
+        self.initialLocation = CLLocation(latitude: locations[0].coordinate.latitude,longitude: locations[0].coordinate.longitude)
+    }
+    
+    func locationManager(_ manager:CLLocationManager, didFailWithError error: Error)
+    {
+        print("unable to access your current location")
+    }
+    
+    
+    @IBAction func viewWithinDistance(_ sender: Any) {
+        let indexSelected = segment.selectedSegmentIndex
+        self.viewingFacilities = []
+        
+        switch (indexSelected) {
+        case 0:
+            for each:FacilityData in self.facilityList{
+                if(each.distance <= 10.00)
+                {
+                    viewingFacilities.append(each)
+                }
+            }
+            self.myTableView.reloadData()
+            
+        case 1:
+            for each:FacilityData in self.facilityList{
+                if(each.distance <= 20.00)
+                {
+                    viewingFacilities.append(each)
+                }
+            }
+            self.myTableView.reloadData()
+        case 2:
+            for each:FacilityData in self.facilityList{
+                if(each.distance <= 30.00)
+                {
+                    viewingFacilities.append(each)
+                }
+            }
+            self.myTableView.reloadData()
+        case 3:
+            for each:FacilityData in self.facilityList{
+                if(each.distance <= 40.00)
+                {
+                    viewingFacilities.append(each)
+                }
+            }
+            self.myTableView.reloadData()
+        case 4:
+            viewingFacilities = self.facilityList
+            self.myTableView.reloadData()
+        default:
+            print("No select")
+        }
+    }
+    
+    
+    func findDistance(address:String,facility: FacilityData)->FacilityData
+    {
+        let locEnteredText = address
+        let geocoder = CLGeocoder()
+        
+        geocoder.geocodeAddressString(locEnteredText, completionHandler:
+            {(placemarks, error) in
+                if(error != nil)
+                {
+                    print("error")
+                    
+                }
+                else{
+                    if let placemark = placemarks?.first{
+                        let coordinates : CLLocationCoordinate2D =
+                            placemark.location!.coordinate
+                        let newLocation = CLLocation(latitude: coordinates.latitude, longitude: coordinates.longitude)
+                        
+                        print("$$$$$$$$$$$$$$$$$$$$$$$$$$")
+                        print(self.initialLocation.coordinate.latitude)
+                        print(self.initialLocation.coordinate.longitude)
+                        print(newLocation.coordinate.latitude)
+                        print(newLocation.coordinate.longitude)
+                        let dist = (self.initialLocation.distance(from: newLocation))/1000
+                        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
+                            facility.distance = dist
+                        })
+                        return
+                    }
+                }
+        })
+        return facility
+    }
     
     func fetch(){
         
@@ -117,15 +208,7 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
                 return
             }
             
-            //print (String.init(data: data!, encoding: .ascii) ?? "no data")
-            //let json = String.init(data: data!, encoding: .ascii) ?? "no data"
             let json =  (try? JSONSerialization.jsonObject(with: data!, options: [])) as? NSArray
-            //let json =  try? JSONSerialization.jsonObject(with: data!, options: [])
-            //let objectCount = json?.count
-            //, let facilities = json[""] as? [Any]
-            //, let facNames = json["facilityName"] as? [String:Any]
-            //, let properties = firstFeature["properties"] as? [String:Any]
-            //, let taxiCount = properties["taxi_count"] as? Int
             
             for eachObject in json! {
                 let facility = FacilityData()
@@ -145,10 +228,8 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
                 facility.courtsList = courts
                 
                 facility.contactNumber = jsonDict!["contactNumber"] as! NSString
-                facility.distance = 100.00
-                
+                facility.distance = 0.00
                 self.facilityList.append(facility)
-                
                 
                 print("----------------------")
                 print(facility.facilityId)
@@ -175,18 +256,30 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
         mainDelegate.facList = self.facilityList
     }
     
+    func getDistanceForFacilities()
+    {
+        var address:String
+        for each:FacilityData in self.facilityList{
+            address = "\(each.addLine1), \(each.city), \(each.province), \(each.postalCode)"
+            print("&&&&&&&&&&&&")
+            print(address)
+            var fac:FacilityData
+            fac = self.findDistance(address: address, facility: each)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                each.distance = fac.distance
+            }
+        }
+        
+    }
     
     
     
-    
-    // @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var segment: UISegmentedControl!
-    @IBOutlet var myTableView : UITableView!
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.facilityList.count
+        //return self.facilityList.count
+        return self.viewingFacilities.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -196,20 +289,19 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tableCell : SiteCell = tableView.dequeueReusableCell(withIdentifier: "cell") as? SiteCell ?? SiteCell(style: .default, reuseIdentifier: "cell")
         
+        let facilityName = self.viewingFacilities[indexPath.row].facilityName
+        let city = self.viewingFacilities[indexPath.row].city
+        let province = self.viewingFacilities[indexPath.row].province
+        let distance = self.viewingFacilities[indexPath.row].distance
         
-        let facilityName = nameData[indexPath.row]
-        let city = cityData[indexPath.row]
-        let province = provinceData[indexPath.row]
-        let distance = distanceData[indexPath.row]
-        
-        
-        tableCell.facilityName.text = facilityName
-        tableCell.city.text = city
-        tableCell.province.text = province
+        tableCell.facilityName.text = facilityName as String
+        tableCell.city.text = city as String
+        tableCell.province.text = province as String
         tableCell.distance.text = String(format:"%.2f", distance)+" km away"
         
         
         return tableCell
+        
     }
     // step 9 making cells editable
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -217,26 +309,51 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        mainDelegate.selectedFacilityData = facilityList[indexPath.row]
+        mainDelegate.selectedFacilityData = self.viewingFacilities[indexPath.row]
         performSegue(withIdentifier: "segueToCourtsViewController", sender: nil)
+    }
+    
+    func sorterForFacilityDistanceASC(this:FacilityData, that:FacilityData) -> Bool {
+        return this.distance < that.distance
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.fetch()
         
-        for each:FacilityData in facilityList{
-            //add to array
-            nameData.append(each.facilityName as String)
-            cityData.append(each.city as String)
-            provinceData.append(each.province as String)
-            distanceData.append(each.distance)
+        
+        if CLLocationManager.locationServicesEnabled() == true {
             
+            if CLLocationManager.authorizationStatus() == .restricted ||
+                CLLocationManager.authorizationStatus() == .denied ||
+                CLLocationManager.authorizationStatus() == .notDetermined {
+                
+                locationManager.requestWhenInUseAuthorization()
+            }
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.delegate = self
+            locationManager.startUpdatingLocation()
+            
+        } else{
+            print("Please turn on location services or GPS")
         }
         
-        sideMenu()
+        self.fetch()
         
+        
+        self.getDistanceForFacilities()
+        print("!!!!!!!!!!!!!!!!!!!!")
+        print(self.facilityList.count)
+        print("!!!!!!!!!!!!!!!!!!!!")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4*facilityList.count), execute: {
+            print("reloading")
+            self.facilityList.sort(by: self.sorterForFacilityDistanceASC)
+            self.viewingFacilities = self.facilityList
+            self.myTableView.reloadData()
+        })
+        
+        sideMenu()
     }
     
     func sideMenu(){

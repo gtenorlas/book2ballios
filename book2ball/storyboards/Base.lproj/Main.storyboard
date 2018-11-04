@@ -1040,8 +1040,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="LCP-bz-UpH">
-                                <rect key="frame" x="28" y="135" width="358" height="56"/>
+                            <searchBar contentMode="redraw" misplaced="YES" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="LCP-bz-UpH">
+                                <rect key="frame" x="28" y="120" width="358" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="lo6-a0-UI9" id="hEB-uz-3FJ"/>
@@ -1058,25 +1058,12 @@
                                     <action selector="onSubmit:" destination="lo6-a0-UI9" eventType="touchUpInside" id="j50-qG-7Yl"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance in Kilo-Meters:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWe-oz-BV4">
-                                <rect key="frame" x="20" y="213" width="308" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Distance in Kilo-Meters:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWe-oz-BV4">
+                                <rect key="frame" x="20" y="190" width="308" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xls-ak-l2d">
-                                <rect key="frame" x="20" y="251" width="374" height="29"/>
-                                <segments>
-                                    <segment title="10"/>
-                                    <segment title="20"/>
-                                    <segment title="30"/>
-                                    <segment title="40"/>
-                                    <segment title="50"/>
-                                </segments>
-                                <connections>
-                                    <action selector="indexChangedWithSender:" destination="lo6-a0-UI9" eventType="touchUpInside" id="Lpb-dd-mzn"/>
-                                </connections>
-                            </segmentedControl>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q47-wl-jSA">
                                 <rect key="frame" x="0.0" y="64" width="414" height="44"/>
                                 <color key="barTintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1098,6 +1085,20 @@
                                     <outlet property="delegate" destination="lo6-a0-UI9" id="llS-P8-aBa"/>
                                 </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="4" translatesAutoresizingMaskIntoConstraints="NO" id="Xls-ak-l2d">
+                                <rect key="frame" x="20" y="227" width="374" height="29"/>
+                                <segments>
+                                    <segment title="10"/>
+                                    <segment title="20"/>
+                                    <segment title="30"/>
+                                    <segment title="40"/>
+                                    <segment title="All"/>
+                                </segments>
+                                <connections>
+                                    <action selector="indexChangedWithSender:" destination="lo6-a0-UI9" eventType="touchUpInside" id="Lpb-dd-mzn"/>
+                                    <action selector="viewWithinDistance:" destination="lo6-a0-UI9" eventType="valueChanged" id="BsI-8E-GQX"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
