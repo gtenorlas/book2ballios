@@ -9,7 +9,7 @@
 import UIKit
 
 class BookingsViewController: UIViewController , UITableViewDataSource,UITableViewDelegate{
-    @IBOutlet weak var navBar: UINavigationBar!
+   // @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var menuButton : UIBarButtonItem!
     @IBOutlet weak var myTable : UITableView!
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -17,7 +17,8 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
     var descriptionData:[String]=[]
     var timeData: Array<String> = []
     
-    var bookings:Array<Payment> = []
+   // var bookings:Array<Payment> = []
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print ("list data count \(listData.count)")
@@ -76,16 +77,64 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
         
         
         //get all the bookings
-        /*
-        bookings = try! mainDelegate.dao.readFromTablePaymentByEmail(email: mainDelegate.userLoggedIn.email as String)
         
-        for each:Payment in bookings{
-            //add to array
-            listData.append(each.reservationDate!)
-            descriptionData.append("Facility: \(each.facility!), Court: \(each.court!)")
-            timeData.append("Time: \(each.reservationStartTime!), # of Hours: \(each.numOfHours!) ")
+      //  bookings = try! mainDelegate.dao.readFromTablePaymentByEmail(email: mainDelegate.userLoggedIn.email as String)
+        /*
+        var users = Customer()
+        
+        let response = Customer.fetch(customer: users)
+        if let invalid = response as? String {
+            print ("response is \(invalid)")
+            status.text = "Username/password incorrect."
+        }else {
+            users = response as! Customer
+            performSegue(withIdentifier: "searchFacilitySegue", sender: nil)
         }
-        */
+         
+         var bookings : Array<Booking> = []
+ */
+         //= mainDelegate.userLoggedIn.email
+        let book = Booking()
+        book.customerEmail = mainDelegate.userLoggedIn.email
+        let response = Booking.fetch(booking: book)
+        
+        let formatter = DateFormatter()
+        // initially set the format based on your datepicker date / server String
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let myString = formatter.string(from: Date()) // string purpose I add here
+        // convert your string to date
+       // let yourDate = formatter.date(from: myString)
+        //then again set the date format whhich type of output you need
+       // formatter.dateFormat = "dd-MMM-yyyy"
+        // again convert your date to string
+       // let myStringafd = formatter.string(from: yourDate!)
+        
+        //print(myStringafd)
+        
+        if let invalid = response as? String {
+            print ("response is \(invalid)")
+        }else {
+        //var bookings = response as? Array<Booking>
+            print ("running")
+           // let responseArray = response []
+           // users = response as! Customer
+            /*
+            for each:Booking in [response] as! Array<Booking> {
+            //add to array
+            print ("In for loop")
+            var bookDate = each.bookingDate
+            bookDate = formatter.date(from: myString)
+            formatter.dateFormat = "dd-MMM-yyyy"
+            let myStringafd = formatter.string(from: bookDate!)
+            listData.append(myStringafd)
+            
+            descriptionData.append("Facility: \(each.facilityName!), Court: \(each.startDateTime!)")
+            
+            timeData.append("Time: \(each.duration!), # of Hours: \(each.endDateTime!) ")
+ 
+            } */
+        }
         sideMenu()
         
     }

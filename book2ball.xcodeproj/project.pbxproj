@@ -17,6 +17,7 @@
 		34E85583216BA43300C2AD71 /* Book 2 Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E85582216BA43300C2AD71 /* Book 2 Ball.png */; };
 		6F3B7563EF122C2CFDB5AF29 /* Pods_book2ball.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D89524B4D9FCD63E4FFB59D0 /* Pods_book2ball.framework */; };
 		AE4046EB218CD8B300F79935 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4046EA218CD8B300F79935 /* Booking.swift */; };
+		AE57B2E1218E6C0A005D7DD9 /* InvoiceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57B2E0218E6C0A005D7DD9 /* InvoiceDetailsViewController.swift */; };
 		AE6DA5692184293F00DF0F55 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA5682184293F00DF0F55 /* ForgetPasswordViewController.swift */; };
 		AE6DA56C2184412500DF0F55 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA56B2184412500DF0F55 /* SWRevealViewController.m */; };
 		AE6DA56E218446D400DF0F55 /* PaypalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA56D218446D400DF0F55 /* PaypalViewController.swift */; };
@@ -58,6 +59,7 @@
 		34E8557A216BA3B800C2AD71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34E85582216BA43300C2AD71 /* Book 2 Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Book 2 Ball.png"; sourceTree = "<group>"; };
 		AE4046EA218CD8B300F79935 /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
+		AE57B2E0218E6C0A005D7DD9 /* InvoiceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceDetailsViewController.swift; sourceTree = "<group>"; };
 		AE6DA5682184293F00DF0F55 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		AE6DA56A2184412500DF0F55 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		AE6DA56B2184412500DF0F55 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				AEBEC550218BD394001480CB /* UpdateProfileViewController.swift */,
 				AEBEC552218BD3CC001480CB /* RearViewController.swift */,
 				AEBEC554218BD520001480CB /* AboutUsViewController.swift */,
+				AE57B2E0218E6C0A005D7DD9 /* InvoiceDetailsViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				AEF7CB292183D52700AE5D80 /* SiteCell.swift in Sources */,
 				CE0FB96521717CE4003038B5 /* FaceBookRegistration.swift in Sources */,
 				AEBEC555218BD520001480CB /* AboutUsViewController.swift in Sources */,
+				AE57B2E1218E6C0A005D7DD9 /* InvoiceDetailsViewController.swift in Sources */,
 				AEBEC553218BD3CC001480CB /* RearViewController.swift in Sources */,
 				AED2CD2A217E29B40013F560 /* SearchFacilityViewController.swift in Sources */,
 				AE4046EB218CD8B300F79935 /* Booking.swift in Sources */,

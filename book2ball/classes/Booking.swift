@@ -106,20 +106,21 @@ class Booking: NSObject {
     
     static func fetch(booking:Booking)->Any{
         var fetchedBooking : (Any)? = nil
-        var baseURL = "http://mags.website/api/booking/"
+       // var fetchedBooking : Array<Any> = Array()
+        var baseURL = "http://mags.website/api/booking/email/"
         // baseURL += "\(booking.bookingId!)/"
         baseURL += "\(booking.customerEmail!)/"
-        baseURL += "\(booking.customerName!)/"
+       // baseURL += "\(booking.customerName!)/"
         // baseURL += "\(booking.bookingDate!)/"
-        baseURL += "\(booking.bookingType!)/"
-        baseURL += "\(booking.status!)/"
-        baseURL += "\(booking.startDateTime!)/"
-        baseURL += "\(booking.endDateTime!)"
-        baseURL += "\(booking.duration!)/"
-        baseURL += "\(booking.court?.courtNumber)/"
+       // baseURL += "\(booking.bookingType!)/"
+      //  baseURL += "\(booking.status!)/"
+      //  baseURL += "\(booking.startDateTime!)/"
+      //  baseURL += "\(booking.endDateTime!)"
+       // baseURL += "\(booking.duration!)/"
+       // baseURL += "\(booking.court?.courtNumber)/"
         // baseURL += "\(booking.comment!)/"
         //  baseURL += "\(booking.payment!)"
-        baseURL += "\(booking.facilityName!)"
+      //  baseURL += "\(booking.facilityName!)"
         
         print(baseURL)
         
@@ -159,15 +160,15 @@ class Booking: NSObject {
                    // booking.bookingId = dict["bookingId"] as! Int
                     booking.customerEmail = dict["customerEmail"] as? NSString
                     booking.customerName = dict["customerName"] as? NSString
-                   // booking.bookingDate = dict["bookingDate"] as! Date
+                    booking.bookingDate = dict["bookingDate"] as! Date
                     booking.bookingType = dict["bookingType"] as? NSString
                     booking.status = dict["status"] as? NSString
                     booking.startDateTime = dict["startDateTime"] as! Date
                     booking.endDateTime = dict["endDateTime"] as! Date
                     booking.duration = dict["duration"] as! Int
                     booking.court?.courtNumber = dict["court"] as! Int
-                   // booking.comment = dict["comment"] as? NSString
-                   // booking.payment = dict["payment"] as! Payment
+                    booking.comment = dict["comment"] as? NSString
+                    booking.payment = dict["payment"] as! Payment
                     booking.facilityName = dict["facilityName"] as? NSString
                     //print ("customer name is \(customer.firstName)")
                     fetchedBooking = booking
