@@ -84,15 +84,17 @@ import CoreLocation
  */
  
  }*/
-class SearchFacilityViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate {
+class SearchFacilityViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate {
     
     @IBOutlet weak var segment: UISegmentedControl!
     @IBOutlet var myTableView : UITableView!
     @IBOutlet weak var menuButton : UIBarButtonItem!
+    @IBOutlet var searchBar : UISearchBar!
     
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     var facilityList:Array<FacilityData> = []
     var viewingFacilities:Array<FacilityData> = []
+    var currentViewingFacs:Array<FacilityData> = []
     var initialLocation:CLLocation = CLLocation()
     var locationManager = CLLocationManager()
     
@@ -104,6 +106,24 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
     func locationManager(_ manager:CLLocationManager, didFailWithError error: Error)
     {
         print("unable to access your current location")
+    }
+    
+    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
+    {
+        guard !searchText.isEmpty else { self.currentViewingFacs = viewingFacilities
+            self.myTableView.reloadData()
+            return
+        }
+        self.currentViewingFacs = viewingFacilities.filter({fac -> Bool in
+            //guard let text = searchBar.text else {return false}
+            return fac.facilityName.contains(searchText)
+        })
+        self.myTableView.reloadData()
+    }
+    
+    public func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int)
+    {
+        
     }
     
     
@@ -119,6 +139,7 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
                     viewingFacilities.append(each)
                 }
             }
+            self.currentViewingFacs = viewingFacilities
             self.myTableView.reloadData()
             
         case 1:
@@ -128,6 +149,7 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
                     viewingFacilities.append(each)
                 }
             }
+            self.currentViewingFacs = viewingFacilities
             self.myTableView.reloadData()
         case 2:
             for each:FacilityData in self.facilityList{
@@ -136,6 +158,7 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
                     viewingFacilities.append(each)
                 }
             }
+            self.currentViewingFacs = viewingFacilities
             self.myTableView.reloadData()
         case 3:
             for each:FacilityData in self.facilityList{
@@ -144,9 +167,11 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
                     viewingFacilities.append(each)
                 }
             }
+            self.currentViewingFacs = viewingFacilities
             self.myTableView.reloadData()
         case 4:
             viewingFacilities = self.facilityList
+            self.currentViewingFacs = viewingFacilities
             self.myTableView.reloadData()
         default:
             print("No select")
@@ -194,7 +219,7 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
             let facLocation = CLLocation(latitude: each.lat, longitude: each.long)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 let dist = (self.initialLocation.distance(from: facLocation))/1000
-            each.distance = dist
+                each.distance = dist
             }
         }
     }
@@ -292,7 +317,7 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         //return self.facilityList.count
-        return self.viewingFacilities.count
+        return self.currentViewingFacs.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -302,10 +327,10 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tableCell : SiteCell = tableView.dequeueReusableCell(withIdentifier: "cell") as? SiteCell ?? SiteCell(style: .default, reuseIdentifier: "cell")
         
-        let facilityName = self.viewingFacilities[indexPath.row].facilityName
-        let city = self.viewingFacilities[indexPath.row].city
-        let province = self.viewingFacilities[indexPath.row].province
-        let distance = self.viewingFacilities[indexPath.row].distance
+        let facilityName = self.currentViewingFacs[indexPath.row].facilityName
+        let city = self.currentViewingFacs[indexPath.row].city
+        let province = self.currentViewingFacs[indexPath.row].province
+        let distance = self.currentViewingFacs[indexPath.row].distance
         
         tableCell.facilityName.text = facilityName as String
         tableCell.city.text = city as String
@@ -322,7 +347,7 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        mainDelegate.selectedFacilityData = self.viewingFacilities[indexPath.row]
+        mainDelegate.selectedFacilityData = self.currentViewingFacs[indexPath.row]
         performSegue(withIdentifier: "segueToCourtsViewController", sender: nil)
     }
     
@@ -330,10 +355,13 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
         return this.distance < that.distance
     }
     
+    func alterLayout()
+    {
+        myTableView.tableHeaderView = UIView()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         if CLLocationManager.locationServicesEnabled() == true {
             
@@ -363,8 +391,10 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
             print("reloading")
             self.facilityList.sort(by: self.sorterForFacilityDistanceASC)
             self.viewingFacilities = self.facilityList
+            self.currentViewingFacs = self.viewingFacilities
             self.myTableView.reloadData()
         })
+        alterLayout()
         
         sideMenu()
     }

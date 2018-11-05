@@ -1140,6 +1140,7 @@
                     <connections>
                         <outlet property="menuButton" destination="zGW-gV-ynL" id="HZo-Km-67A"/>
                         <outlet property="myTableView" destination="HGF-HD-KJz" id="9p5-3q-DkD"/>
+                        <outlet property="searchBar" destination="LCP-bz-UpH" id="HL7-9w-gth"/>
                         <outlet property="searchDisplayController" destination="gVB-Jm-bjQ" id="ZVk-SO-TFp"/>
                         <outlet property="segment" destination="Xls-ak-l2d" id="XNS-Rp-9CH"/>
                         <segue destination="mhL-Ka-mdT" kind="presentation" identifier="segueToCourtsViewController" id="gwW-wx-VLp"/>
