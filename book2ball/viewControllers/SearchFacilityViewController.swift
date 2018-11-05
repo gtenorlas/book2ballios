@@ -188,6 +188,17 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
         return facility
     }
     
+    func findDistFromLatLong()
+    {
+        for each:FacilityData in self.facilityList{
+            let facLocation = CLLocation(latitude: each.lat, longitude: each.long)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                let dist = (self.initialLocation.distance(from: facLocation))/1000
+            each.distance = dist
+            }
+        }
+    }
+    
     func fetch(){
         
         let semaphore = DispatchSemaphore (value : 0)
@@ -229,6 +240,8 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
                 
                 facility.contactNumber = jsonDict!["contactNumber"] as! NSString
                 facility.distance = 0.00
+                facility.lat = Double(jsonDict!["lat"] as! String)!
+                facility.long = Double(jsonDict!["lng"] as! String)!
                 self.facilityList.append(facility)
                 
                 print("----------------------")
@@ -339,14 +352,14 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
         }
         
         self.fetch()
+        self.findDistFromLatLong()
         
-        
-        self.getDistanceForFacilities()
+        //self.getDistanceForFacilities()
         print("!!!!!!!!!!!!!!!!!!!!")
         print(self.facilityList.count)
         print("!!!!!!!!!!!!!!!!!!!!")
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4*facilityList.count), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3*facilityList.count), execute: {
             print("reloading")
             self.facilityList.sort(by: self.sorterForFacilityDistanceASC)
             self.viewingFacilities = self.facilityList
