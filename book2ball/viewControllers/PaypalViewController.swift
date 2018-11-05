@@ -69,7 +69,7 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
         var payment = mainDelegate.payment
         
         
-        let book: Booking = Booking(customerEmail: user.email  ,customerName: ((user.firstName as String) + (user.lastName as String)) as String as NSString, bookingType: "basketball", status: "Active", startDateTime: booking.startDateTime! , endDateTime: booking.endDateTime!, duration: booking.duration! , court: court , comment : "null" , payment : payment , facilityName : facility.facilityName)
+        let book: Booking = Booking(customerEmail: user.email  ,customerName: ((user.firstName as String) + (user.lastName as String)) as String as NSString, bookingType: "basketball", status: "Active", startDateTime: booking.startDateTime! , endDateTime: booking.endDateTime!, duration: booking.duration! , court: court , comment : "null" , payment : payment , facilityName : facility.facilityName, courtName: mainDelegate.selectedCourt.courtName)
         
         let id =  Booking.save(booking: book)
         if let respose = id as? String {

@@ -21,12 +21,13 @@ class Booking: NSObject {
     var comment:NSString?
     var payment:Payment?
     var facilityName:NSString?
+    var courtName:NSString?
     
     public override init() {
         
     }
     
-    public init(customerEmail : NSString, customerName : NSString , bookingType:NSString, status:NSString, startDateTime:Date, endDateTime:Date, duration:Int, court:Court , comment:NSString, payment:Payment , facilityName:NSString){
+    public init(customerEmail : NSString, customerName : NSString , bookingType:NSString, status:NSString, startDateTime:Date, endDateTime:Date, duration:Int, court:Court , comment:NSString, payment:Payment , facilityName:NSString, courtName:NSString){
         
         self.customerEmail = customerEmail
         self.customerName = customerName
@@ -39,6 +40,7 @@ class Booking: NSObject {
         self.comment = comment
         self.payment = payment
         self.facilityName = facilityName
+        self.courtName = courtName
         
     }
     static func save(booking:Booking) -> Any {
@@ -253,8 +255,9 @@ class Booking: NSObject {
                     booking.startDateTime = Booking.setDate(data:dict["startDateTime"])
                     booking.status = dict["status"] as? NSString
                     booking.payment = Payment.fetch(data: dict["payment"])
+                    booking.courtName = dict["courtName"] as? NSString
                     
-                    
+                    print("Payment is " + (booking.payment?.toString())!)
                     fetchedBookings.append(booking)
                 }
             }else {
@@ -297,7 +300,21 @@ class Booking: NSObject {
         let formattedDate = formatterShort.string(from: date)
         return formattedDate
     }
-    
+    public func toString() -> String {
+        var data = ""
+        data += "bookingId: \(self.bookingId) "
+        data += "bookingDate: \(Booking.formatDate(date: self.bookingDate!)) "
+        data += "bookingType: \(self.bookingType) "
+        data += "comment: \(self.comment) "
+        data += "Email: \(self.customerEmail) "
+        data += "Contact: \(self.customerName) "
+        data += "duration: \(self.duration) "
+        data += "startDateTime: \(Booking.formatDate(date: self.startDateTime!)) "
+        data += "endDateTime: \(Booking.formatDate(date: self.endDateTime!)) "
+        data += "Status: \(self.status!) "
+        
+        return data
+    }
     
     
 }

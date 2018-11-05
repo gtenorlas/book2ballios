@@ -15,6 +15,7 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
    var listData:[String]=[]
    // var listData:Array<Booking> = []
+    var bookings:Array<Booking>=[]
     var descriptionData:[String]=[]
     var timeData: Array<String> = []
     
@@ -73,7 +74,9 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
        // var listDataArray:Array<Booking> = []
         //let rowNum = indexPath.row
        // let title = listData[rowNum].facilityName as String
-       // mainDelegate.selectedBooking = listData[indexPath.row]
+       mainDelegate.selectedBooking = bookings[indexPath.row]
+        print(indexPath.row)
+        print (mainDelegate.selectedBooking.toString())
         performSegue(withIdentifier: "segueInvoiceDetailsViewController", sender: nil)
     }
     
@@ -82,8 +85,9 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var bookings:Array<Booking>=[]
+        
         bookings = Booking.fetchByEmail(email: mainDelegate.userLoggedIn.email as String)
+        //mainDelegate.selectedBooking.endDateTime =
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -104,6 +108,7 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
             descriptionData.append("Number of Hours: \(each.duration!)")
             
             timeData.append("Start: \(each.startDateTime!), End: \(each.endDateTime!) ")
+           // mainDelegate.selectedBooking.endDateTime = each.endDateTime
             
             print (  each.facilityName,each.startDateTime)
         }

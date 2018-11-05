@@ -214,7 +214,7 @@ class Payment: NSObject {
                     payment.taxPercentage = (dict["taxPercentage"] )! as! Double
                     payment.taxAmount = (dict["taxAmount"])! as! Double
                     payment.totalAmount = (dict["totalAmount"])! as! Double
-                   // payment.paymentDateTime = (dict["paymentDateTime"] )! as! Date
+                    payment.paymentDateTime = (dict["paymentDateTime"] )! as! Date
                     payment.confirmationNumber = (dict["confirmationNumber"] )! as! String
                     payment.paymentMethod = (dict["paymentMethod"] )! as! String
                     payment.status = (dict["status"] )! as! String
@@ -255,6 +255,27 @@ class Payment: NSObject {
         
         return payment;
         
+    }
+    
+    static func formatToCurrency(num:Double)->String
+    {
+        let formattedCurrency="$\(String(format: "%.2f", num))"
+        return formattedCurrency
+    }
+    
+    public func toString() -> String {
+        var data = ""
+        data += "paymentId: \(self.paymentId) "
+       // data += "paymentDateTime: \(Booking.formatDate(date: self.paymentDateTime!)) "
+        data += "courtCharge: \(Payment.formatToCurrency(num:  self.courtCharge!)) "
+        data += "paymentMethod: \(self.paymentMethod) "
+        data += "subTotal: \(Payment.formatToCurrency(num: self.subTotal!)) "
+        data += "taxAmount: \(Payment.formatToCurrency(num:self.taxAmount!)) "
+        data += "taxPercentage: \(self.taxPercentage) "
+        data += "totalAmount: \(Payment.formatToCurrency(num: self.totalAmount!)) "
+        data += "Status: \(self.status!) "
+        
+        return data
     }
 
 }
