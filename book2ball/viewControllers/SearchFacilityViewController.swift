@@ -387,7 +387,7 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
         print(self.facilityList.count)
         print("!!!!!!!!!!!!!!!!!!!!")
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3*facilityList.count), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
             print("reloading")
             self.facilityList.sort(by: self.sorterForFacilityDistanceASC)
             self.viewingFacilities = self.facilityList
