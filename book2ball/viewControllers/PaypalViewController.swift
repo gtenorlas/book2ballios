@@ -12,15 +12,17 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
     
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     @IBOutlet var courtCharge : UILabel!
-    @IBOutlet var adminFee : UILabel!
+    @IBOutlet var facilityName : UILabel!
     @IBOutlet var subTotal : UILabel!
     @IBOutlet var taxPercentage : UILabel!
     @IBOutlet var taxAmount : UILabel!
     @IBOutlet var totalAmount : UILabel!
     @IBOutlet var paymentDateTime : UILabel!
-    @IBOutlet var confirmationNumber : UILabel!
-    @IBOutlet var paymentMethod : UILabel!
+    @IBOutlet var facilityAddress : UILabel!
+    @IBOutlet var courtName : UILabel!
+    @IBOutlet weak var startDateTime: UILabel!
     @IBOutlet var status : UILabel!
+    @IBOutlet weak var endDateTime: UILabel!
     @IBOutlet var lblPayCnfm : UILabel!
     @IBOutlet var payButton: UIButton!
     
@@ -28,8 +30,13 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
     let button = UIButton(frame: CGRect(x:50, y: 150, width: 300, height: 30))
     
     func setValues(){
+        print(mainDelegate.selectedFacilityData.addLine1)
+        facilityName.text = mainDelegate.selectedFacilityData.facilityName as! String
+        
+        courtName.text = mainDelegate.selectedCourt.courtName as String
+        //startDateTime.text
         courtCharge.text = String(format:"%.1f", mainDelegate.selectedCourt.price)
-        adminFee.text = "0.0"
+        
         subTotal.text = String(format:"%.1f", mainDelegate.payment.subTotal!)
         taxPercentage.text = String(format:"%.1f", mainDelegate.payment.taxPercentage!)
         taxAmount.text = String(format:"%.1f", mainDelegate.payment.taxAmount!)
@@ -46,8 +53,7 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
         // again convert your date to string
         paymentDateTime.text = formatter.string(from: mainDelegate.payment.paymentDateTime!)
         
-        confirmationNumber.text =  ""
-        paymentMethod.text =  mainDelegate.payment.paymentMethod!
+        
         status.text =  "Completed"
         mainDelegate.payment.status = "Completed"
         lblPayCnfm.text=""
