@@ -45,6 +45,7 @@ class ViewController: UIViewController {
             status.text = "Username/password incorrect."
         }else {
             users = response as! Customer
+            mainDelegate.userLoggedIn = users
             performSegue(withIdentifier: "searchFacilitySegue", sender: nil)
         }
 

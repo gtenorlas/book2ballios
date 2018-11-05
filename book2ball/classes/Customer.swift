@@ -92,7 +92,8 @@ class Customer: NSObject, Codable {
         originate = try values.decode (String.self, forKey: .originate) as NSString
     }
     
-    static func save(customer:Customer){
+    static func save(customer:Customer) -> Any {
+        var fetchedResponse : (Any)? = nil
         
         var baseURL = "http://mags.website/api/customer/"
         baseURL += "\(customer.username)/"
@@ -112,18 +113,27 @@ class Customer: NSObject, Codable {
         let url = NSURL(string: baseURL)!
         let request = NSMutableURLRequest(url: url as URL)
         request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         
-        let task = URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
+        let semaphore = DispatchSemaphore(value: 0) //make it synchrounous
+        
+        URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
             if error != nil{
                 print("Error -> \(error)")
                 return
             }
             
-            print (response)
-            print("saved")
-        }
+            print ("response -> \(response)")
+            print ("data -> " + String.init(data: data!, encoding: .ascii)! ?? "no data")
+            
+            fetchedResponse =  String.init(data: data!, encoding: .ascii)
+            
+            semaphore.signal()//wait for synchronous
+            }.resume()
+        _ = semaphore.wait(timeout: .distantFuture)
         
-        task.resume()
+        print ("its here")
+        return fetchedResponse!
         
     }
     

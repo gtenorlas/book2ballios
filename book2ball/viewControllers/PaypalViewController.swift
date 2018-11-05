@@ -57,8 +57,6 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
     
     func updatePayCnfmLbl()
     {
-        //let vol = slVolume.value.rounded();
-        //let strVol = String(format: "%.0f",vol)
         lblPayCnfm.text = "Payment Successful!"
         payButton.isEnabled=false
     
@@ -73,36 +71,37 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
         
         let id =  Booking.save(booking: book)
         if let respose = id as? String {
-            let i=Int(respose)
-            book.bookingId = i
-            
+            if let i = Int(respose) {
+                book.bookingId = i
+                print("Booking is : \(book.bookingId!)")
+                
+                payment.booking = book
+                mainDelegate.payment = payment
+                let paymentResponse = Payment.save(payment: mainDelegate.payment)
+                if let cpResponse = paymentResponse as? String {
+                    if cpResponse == "invalid" {
+                        let passwordFailedAlert = UIAlertController(title: "Payment Cannot save", message: "Error: \(String(describing: (cpResponse as AnyObject).localizedDescription))", preferredStyle: .alert)
+                        passwordFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self.present(passwordFailedAlert, animated: true, completion: nil)
+                    }
+                    else {
+                        performSegue(withIdentifier: "bookingsViewControllerSegue", sender: nil)
+                    }
+                }
+            }
+            else  {
+                if respose == "Court not available" {
+                    let passwordFailedAlert = UIAlertController(title: "Court not available", message: "Error: \(String(describing: (respose as AnyObject).localizedDescription))", preferredStyle: .alert)
+                    passwordFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(passwordFailedAlert, animated: true, completion: nil)
+                }
+                else {
+                    let passwordFailedAlert = UIAlertController(title: "There is an internal error while booking", message: "Error: \(String(describing: (respose as AnyObject).localizedDescription))", preferredStyle: .alert)
+                    passwordFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(passwordFailedAlert, animated: true, completion: nil)
+                }
+            }
         }
-        
-        print("Booking is : \(book.bookingId!)")
-        /*
-        let pay: Payment = Payment( booking: book, courtCharge: (courtCharge.text as? Double)!, adminFee: (adminFee.text as? Double)!, subTotal: (subTotal.text as? Double)!, taxPercentage: (taxPercentage.text as? Double)!, taxAmount: (taxAmount.text as?  Double)!, totalAmount: (totalAmount.text as? Double)!, paymentDateTime: (paymentDateTime.text as?  Date)!, confirmationNumber: confirmationNumber.text as! String, paymentMethod: paymentMethod.text as! String, status : status.text as! String)
-       
-        */
-       payment.booking = book
-        mainDelegate.payment = payment
-        Payment.save(payment: mainDelegate.payment)
-        
-        //set the user is logged in
-       // mainDelegate.payment = pay
-
-        
-        performSegue(withIdentifier: "bookingsViewControllerSegue", sender: nil)
-        /*
-        //add button
-        button.backgroundColor = .gray
-        button.setTitleColor(.blue, for: .normal)
-        button.setTitle("View My Bookings", for: .normal)
-        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        //bottom of the screen and centered
-        button.frame.origin = CGPoint(x:self.view.frame.size.width / 2 - 150, y:self.view.frame.size.height - 40)
-        //add to the view
-        self.view.addSubview(button)
-         */
     }
     
     //go to bookings view controller
