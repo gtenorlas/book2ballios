@@ -850,7 +850,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Active bookings"/>
-                                    <segment title="Previous bookings"/>
+                                    <segment title="Past bookings"/>
                                 </segments>
                             </segmentedControl>
                         </subviews>
@@ -870,6 +870,7 @@
                     <connections>
                         <outlet property="menuButton" destination="Acq-no-wBM" id="ccA-Zr-8n2"/>
                         <outlet property="myTable" destination="7jR-MO-hcK" id="OtR-X5-4Mn"/>
+                        <outlet property="statusCheck" destination="OIB-Oz-jsa" id="qXA-lb-uIA"/>
                         <segue destination="9IQ-QC-QhV" kind="presentation" identifier="segueInvoiceDetailsViewController" id="J0c-6S-2X0"/>
                     </connections>
                 </viewController>

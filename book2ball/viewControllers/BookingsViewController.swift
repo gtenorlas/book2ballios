@@ -12,6 +12,7 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
    
     @IBOutlet weak var menuButton : UIBarButtonItem!
     @IBOutlet weak var myTable : UITableView!
+    @IBOutlet weak var statusCheck: UISegmentedControl!
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
    var listData:[String]=[]
     var bookings:Array<Booking>=[]
@@ -84,23 +85,48 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let myString = formatter.string(from: Date())
         
+        let indexSelected = statusCheck.selectedSegmentIndex
+        
+        switch (indexSelected) {
+        case 0:
+        
         for each:Booking in bookings{
-            
             //add to array
             print ("In for loop")
+            print(each.status)
+            if each.status == "Active" {
             var bookDate = each.bookingDate
             bookDate = formatter.date(from: myString)
             formatter.dateFormat = "dd-MMM-yyyy"
             let str = each.facilityName
-            listData.append("Facility: \(each.facilityName)")
+            listData.append("Facility: \(each.facilityName!) \nCourt:\(each.courtName)")
             descriptionData.append("Number of Hours: \(each.duration!)")
             timeData.append("Start: \(each.startDateTime!), End: \(each.endDateTime!) ")
             
             print (  each.facilityName,each.startDateTime)
+            }
+            
+        }
+        case 1:
+            
+            for each:Booking in bookings{
+                //add to array
+                print ("In for loop")
+                if each.status == "Cancelled" {
+                var bookDate = each.bookingDate
+                bookDate = formatter.date(from: myString)
+                formatter.dateFormat = "dd-MMM-yyyy"
+                let str = each.facilityName
+                listData.append("Facility: \(each.facilityName!) \nCourt:\(each.courtName)")
+                descriptionData.append("Number of Hours: \(each.duration!)")
+                timeData.append("Start: \(each.startDateTime!), End: \(each.endDateTime!) ")
+                }
+            }
+        default:
+            print("nothing to show")
         }
         sideMenu()
-        
-    }
+        }
     
     func sideMenu(){
         
