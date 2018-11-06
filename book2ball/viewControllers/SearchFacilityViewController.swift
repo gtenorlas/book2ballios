@@ -341,10 +341,19 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
         return tableCell
         
     }
+    
+    //func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    //    return searchBar
+    //}
+    
+    //func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    //    return UITableViewAutomaticDimension
+    //}
+    
     // step 9 making cells editable
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
+    //func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    //    return true
+    //}
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         mainDelegate.selectedFacilityData = self.currentViewingFacs[indexPath.row]
@@ -358,6 +367,8 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
     func alterLayout()
     {
         myTableView.tableHeaderView = UIView()
+        myTableView.estimatedSectionHeaderHeight = 60
+        navigationItem.titleView = searchBar
     }
     
     override func viewDidLoad() {
