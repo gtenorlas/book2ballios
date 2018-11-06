@@ -23,6 +23,7 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
     @IBOutlet weak var startDateTime: UILabel!
     @IBOutlet var status : UILabel!
     @IBOutlet weak var endDateTime: UILabel!
+    @IBOutlet weak var duration: UILabel!
     @IBOutlet var lblPayCnfm : UILabel!
     @IBOutlet var payButton: UIButton!
     
@@ -35,12 +36,13 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
         
         courtName.text = mainDelegate.selectedCourt.courtName as String
         //startDateTime.text
-        courtCharge.text = String(format:"%.1f", mainDelegate.selectedCourt.price)
+        courtCharge.text = Payment.formatToCurrency(num:  mainDelegate.selectedCourt.price)
         
-        subTotal.text = String(format:"%.1f", mainDelegate.payment.subTotal!)
-        taxPercentage.text = String(format:"%.1f", mainDelegate.payment.taxPercentage!)
-        taxAmount.text = String(format:"%.1f", mainDelegate.payment.taxAmount!)
-        totalAmount.text = String(format:"%.1f", mainDelegate.payment.totalAmount!)
+        subTotal.text = Payment.formatToCurrency(num: mainDelegate.payment.subTotal!)
+        taxPercentage.text = "\(String(format:"%.1f", mainDelegate.payment.taxPercentage!)) %"
+        taxAmount.text = Payment.formatToCurrency(num:  mainDelegate.payment.taxAmount!)
+        totalAmount.text = Payment.formatToCurrency(num:  mainDelegate.payment.totalAmount!)
+        duration.text = "\(mainDelegate.selectedBooking.duration!)"
         
         let formatter = DateFormatter()
         // initially set the format based on your datepicker date / server String
@@ -52,6 +54,10 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
         formatter.dateFormat = "dd-MMM-yyyy"
         // again convert your date to string
         paymentDateTime.text = formatter.string(from: mainDelegate.payment.paymentDateTime!)
+        
+        startDateTime.text = Booking.formatDate(date: mainDelegate.selectedBooking.startDateTime!)
+        endDateTime.text = Booking.formatDate(date: mainDelegate.selectedBooking.endDateTime!)
+        
         
         
         status.text =  "Completed"

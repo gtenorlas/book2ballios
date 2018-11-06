@@ -54,11 +54,11 @@ class InvoiceDetailsViewController: UIViewController {
         
         courtCharge.text = Payment.formatToCurrency(num:  (mainDelegate.selectedBooking.payment?.courtCharge)!)
         //duration.text = String(format:"%f", mainDelegate.selectedBooking.duration!)
-        duration.text = "\(mainDelegate.selectedBooking.duration)"
-        subTotal.text = String(format:"%.1f", (mainDelegate.selectedBooking.payment?.subTotal)!)
-        taxPercentage.text = String(format:"%.1f", (mainDelegate.selectedBooking.payment?.taxPercentage)!)
-        taxAmount.text = String(format:"%.1f", (mainDelegate.selectedBooking.payment?.taxAmount)!)
-        totalAmount.text = String(format:"%.1f", (mainDelegate.selectedBooking.payment?.totalAmount)!)
+        duration.text = "\(mainDelegate.selectedBooking.duration!)"
+        subTotal.text = Payment.formatToCurrency(num:  (mainDelegate.selectedBooking.payment?.subTotal)!)
+        taxPercentage.text = "\(String(format:"%.1f", (mainDelegate.selectedBooking.payment?.taxPercentage)!)) %"
+        taxAmount.text = Payment.formatToCurrency(num: (mainDelegate.selectedBooking.payment?.taxAmount)!)
+        totalAmount.text = Payment.formatToCurrency(num:  (mainDelegate.selectedBooking.payment?.totalAmount)!)
 
         // Do any additional setup after loading the view.
     }
