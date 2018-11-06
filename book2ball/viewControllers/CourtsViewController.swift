@@ -55,7 +55,7 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
             let payment : Payment = Payment()
             payment.courtCharge = mainDelegate.selectedCourt.price
             payment.adminFee = 0.0
-            payment.subTotal = payment.getSubTotalInINT(facCharge: Int(mainDelegate.selectedCourt.price), hours: duration)
+            payment.subTotal = payment.getSubTotalInDouble(facCharge: mainDelegate.selectedCourt.price, hours: duration)
             payment.taxPercentage = 13.00
             payment.setTaxAmount()
             print(payment.subTotal)

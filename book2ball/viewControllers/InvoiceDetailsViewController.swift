@@ -48,7 +48,7 @@ class InvoiceDetailsViewController: UIViewController {
         // again convert your date to string
         startDateTime.text = Booking.formatDate(date: mainDelegate.selectedBooking.startDateTime!)
         endDateTime.text = Booking.formatDate(date: mainDelegate.selectedBooking.endDateTime!)
-        paymentDateTime.text = Booking.formatDate(date: (mainDelegate.selectedBooking.payment?.paymentDateTime)!)
+        //paymentDateTime.text = Booking.formatDate(date: (mainDelegate.selectedBooking.payment?.paymentDateTime)!)
        
         status.text =  mainDelegate.selectedBooking.payment?.status
         

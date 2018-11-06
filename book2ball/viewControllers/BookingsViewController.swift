@@ -16,6 +16,7 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
    var listData:[String]=[]
     var bookings:Array<Booking>=[]
+    var viewingBookings:Array<Booking>=[]
     var descriptionData:[String]=[]
     var timeData: Array<String> = []
     
@@ -27,6 +28,62 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100;
+    }
+    
+    @IBAction func viewBookingsByType (_ sender: Any)
+    {
+        self.viewingBookings = []
+        listData = []
+        descriptionData = []
+        timeData = []
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let myString = formatter.string(from: Date())
+        
+        let indexSelected = statusCheck.selectedSegmentIndex
+        
+        switch (indexSelected) {
+        case 0:
+            
+            for each:Booking in bookings{
+                //add to array
+                print ("In for loop")
+                print(each.status)
+                if each.status == "Active" {
+                    var bookDate = each.bookingDate
+                    bookDate = formatter.date(from: myString)
+                    formatter.dateFormat = "dd-MMM-yyyy"
+                    let str = each.facilityName
+                    listData.append("Facility: \(each.facilityName!) \nCourt:\(each.courtName)")
+                    descriptionData.append("Number of Hours: \(each.duration!)")
+                    timeData.append("Start: \(each.startDateTime!), End: \(each.endDateTime!) ")
+                    viewingBookings.append(each)
+                    print (  each.facilityName,each.startDateTime)
+                }
+                
+            }
+        case 1:
+            
+            for each:Booking in bookings{
+                //add to array
+                print ("In for loop")
+                if each.status != "Active" {
+                    var bookDate = each.bookingDate
+                    bookDate = formatter.date(from: myString)
+                    formatter.dateFormat = "dd-MMM-yyyy"
+                    let str = each.facilityName
+                    listData.append("Facility: \(each.facilityName!) \nCourt:\(each.courtName)")
+                    descriptionData.append("Number of Hours: \(each.duration!)")
+                    timeData.append("Start: \(each.startDateTime!), End: \(each.endDateTime!) ")
+                    viewingBookings.append(each)
+                }
+            }
+        default:
+            print("nothing to show")
+        }
+        
+        myTable.reloadData()
     }
     
     
@@ -67,7 +124,7 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        mainDelegate.selectedBooking = bookings[indexPath.row]
+        mainDelegate.selectedBooking = viewingBookings[indexPath.row]
         print(indexPath.row)
         print (mainDelegate.selectedBooking.toString())
         performSegue(withIdentifier: "segueInvoiceDetailsViewController", sender: nil)
@@ -77,56 +134,11 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         bookings = Booking.fetchByEmail(email: mainDelegate.userLoggedIn.email as String)
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let myString = formatter.string(from: Date())
-        
-        let indexSelected = statusCheck.selectedSegmentIndex
-        
-        switch (indexSelected) {
-        case 0:
-        
-        for each:Booking in bookings{
-            //add to array
-            print ("In for loop")
-            print(each.status)
-            if each.status == "Active" {
-            var bookDate = each.bookingDate
-            bookDate = formatter.date(from: myString)
-            formatter.dateFormat = "dd-MMM-yyyy"
-            let str = each.facilityName
-            listData.append("Facility: \(each.facilityName!) \nCourt:\(each.courtName)")
-            descriptionData.append("Number of Hours: \(each.duration!)")
-            timeData.append("Start: \(each.startDateTime!), End: \(each.endDateTime!) ")
-            
-            print (  each.facilityName,each.startDateTime)
-            }
-            
-        }
-        case 1:
-            
-            for each:Booking in bookings{
-                //add to array
-                print ("In for loop")
-                if each.status == "Cancelled" {
-                var bookDate = each.bookingDate
-                bookDate = formatter.date(from: myString)
-                formatter.dateFormat = "dd-MMM-yyyy"
-                let str = each.facilityName
-                listData.append("Facility: \(each.facilityName!) \nCourt:\(each.courtName)")
-                descriptionData.append("Number of Hours: \(each.duration!)")
-                timeData.append("Start: \(each.startDateTime!), End: \(each.endDateTime!) ")
-                }
-            }
-        default:
-            print("nothing to show")
-        }
+        statusCheck.selectedSegmentIndex = 0;
+        self.viewBookingsByType(statusCheck)
         sideMenu()
-        }
+    }
     
     func sideMenu(){
         

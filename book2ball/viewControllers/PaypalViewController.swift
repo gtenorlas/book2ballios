@@ -39,7 +39,7 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
         courtCharge.text = Payment.formatToCurrency(num:  mainDelegate.selectedCourt.price)
         
         subTotal.text = Payment.formatToCurrency(num: mainDelegate.payment.subTotal!)
-        taxPercentage.text = "\(String(format:"%.1f", mainDelegate.payment.taxPercentage!)) %"
+        taxPercentage.text = "\(String(format:"%.2f", mainDelegate.payment.taxPercentage!)) %"
         taxAmount.text = Payment.formatToCurrency(num:  mainDelegate.payment.taxAmount!)
         totalAmount.text = Payment.formatToCurrency(num:  mainDelegate.payment.totalAmount!)
         duration.text = "\(mainDelegate.selectedBooking.duration!)"
@@ -185,7 +185,7 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
     
     @IBAction func paymentInitiation(_ sender: Any) {
         
-        let Charge = String(format:"%.1f", mainDelegate.payment.courtCharge!)
+        let Charge = String(format:"%.2f", mainDelegate.payment.courtCharge!)
         
         let item1 = PayPalItem(name: mainDelegate.selectedFacilityData.facilityName as String, withQuantity: UInt(mainDelegate.selectedBooking.duration!), withPrice: NSDecimalNumber(string : Charge), withCurrency: "CAD", withSku: mainDelegate.selectedCourt.courtName as String)
         
@@ -194,7 +194,7 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
         
         // Optional: include payment details
         let shipping = NSDecimalNumber(string: "0.00")
-        let taxTotal = String(format:"%.1f", mainDelegate.payment.taxAmount!)
+        let taxTotal = String(format:"%.2f", mainDelegate.payment.taxAmount!)
         let tax =  NSDecimalNumber(string : taxTotal)
         let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
         

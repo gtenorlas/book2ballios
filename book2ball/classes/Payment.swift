@@ -103,15 +103,15 @@ class Payment: NSObject {
     
     //calculate the amount owing without tax
     //based on facility charge * the amount of hours of rental
-    func getSubTotal(facCharge:Int,hours:Int)->String
+    func getSubTotal(facCharge:Double,hours:Int)->String
     {
-        let sub=(facCharge * hours)
+        let sub=(facCharge * Double(hours))
         let realValue=String(format: "%.2f", sub)
         return realValue
     }
-    func getSubTotalInINT(facCharge:Int,hours:Int)->Double
+    func getSubTotalInDouble(facCharge:Double,hours:Int)->Double
     {
-        let sub=(facCharge * hours)
+        let sub=(facCharge * Double(hours))
         //let realValue=String(format: "%.2f", sub)
         return Double(sub)
     }
