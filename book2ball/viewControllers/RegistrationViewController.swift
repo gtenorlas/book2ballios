@@ -59,8 +59,8 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate, UINavig
                 status.text = "No spaces please."
             }
             else {
-                    if((username.text!.characters.count) > 20 || (password1.text!.characters.count) > 20  || (password2.text!.characters.count) > 20 || (firstName.text!.characters.count) > 20 || (lastName.text!.characters.count) > 20 || (email.text!.characters.count) > 20 || (username.text!.characters.count) < 8 || (password1.text!.characters.count) < 8  || (password2.text!.characters.count) < 8 || (firstName.text!.characters.count) < 8 || (lastName.text!.characters.count) < 8 || (email.text!.characters.count) < 8) {
-                        status.text = "Number of charachters must be under 20."
+                    if((username.text!.characters.count) > 20 || (password1.text!.characters.count) > 20  || (password2.text!.characters.count) > 20 || (username.text!.characters.count) < 8 || (password1.text!.characters.count) < 8  || (password2.text!.characters.count) < 8) {
+                        status.text = "Fields must be >=8 and <=20"
                     }
                     else {
                 //create a new user

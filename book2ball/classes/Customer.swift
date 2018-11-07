@@ -149,7 +149,7 @@ class Customer: NSObject, Codable {
         // create post request
         let url = NSURL(string: baseURL)!
         let request = NSMutableURLRequest(url: url as URL)
-        request.httpMethod = "GET"
+        request.httpMethod = "POST"
         
         // insert json data to the request
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
