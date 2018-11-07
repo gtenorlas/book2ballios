@@ -34,31 +34,31 @@ class InvoiceDetailsViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        let booking = mainDelegate.selectedBooking
         
-        print("This is invoice detail" + mainDelegate.selectedBooking.toString())
-        let formatter = DateFormatter()
-        // initially set the format based on your datepicker date / server String
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let myString = formatter.string(from: Date()) // string purpose I add here
-        
+
+  
         facilityName.text = mainDelegate.selectedBooking.facilityName as! String
-        //facilityAddress.text = (mainDelegate.selectedFacilityData.addLine1 as String) + (mainDelegate.selectedFacilityData.city as String) + (mainDelegate.selectedFacilityData.country as String)
+
         courtName.text = mainDelegate.selectedBooking.courtName as! String
         
         // again convert your date to string
-        startDateTime.text = Booking.formatDate(date: mainDelegate.selectedBooking.startDateTime!)
-        endDateTime.text = Booking.formatDate(date: mainDelegate.selectedBooking.endDateTime!)
-        paymentDateTime.text = Booking.formatDate(date: (mainDelegate.selectedBooking.payment?.paymentDateTime)!)
-       
-        status.text =  mainDelegate.selectedBooking.payment?.status
+        startDateTime.text = Booking.formatDate(date: booking.startDateTime!)
+        endDateTime.text = Booking.formatDate(date: booking.endDateTime!)
+        status.text =  booking.status as! String
+         facilityAddress.text = booking.facilityAddress as! String
         
-        courtCharge.text = Payment.formatToCurrency(num:  (mainDelegate.selectedBooking.payment?.courtCharge)!)
-        //duration.text = String(format:"%f", mainDelegate.selectedBooking.duration!)
-        duration.text = "\(mainDelegate.selectedBooking.duration!)"
-        subTotal.text = Payment.formatToCurrency(num:  (mainDelegate.selectedBooking.payment?.subTotal)!)
-        taxPercentage.text = "\(String(format:"%.2f", (mainDelegate.selectedBooking.payment?.taxPercentage)!)) %"
-        taxAmount.text = Payment.formatToCurrency(num: (mainDelegate.selectedBooking.payment?.taxAmount)!)
-        totalAmount.text = Payment.formatToCurrency(num:  (mainDelegate.selectedBooking.payment?.totalAmount)!)
+        if let payment = booking.payment as? Payment{
+        
+            paymentDateTime.text = Booking.formatDate(date: (payment.paymentDateTime!))
+            courtCharge.text = Payment.formatToCurrency(num:  (payment.courtCharge)!)
+           
+            duration.text = "\(mainDelegate.selectedBooking.duration!)"
+            subTotal.text = Payment.formatToCurrency(num:  (mainDelegate.selectedBooking.payment?.subTotal)!)
+            taxPercentage.text = "\(String(format:"%.2f", (mainDelegate.selectedBooking.payment?.taxPercentage)!)) %"
+            taxAmount.text = Payment.formatToCurrency(num: (mainDelegate.selectedBooking.payment?.taxAmount)!)
+            totalAmount.text = Payment.formatToCurrency(num:  (mainDelegate.selectedBooking.payment?.totalAmount)!)
+        }
 
         // Do any additional setup after loading the view.
     }

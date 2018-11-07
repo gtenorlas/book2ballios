@@ -107,8 +107,10 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
                 print("Booking is : \(book.bookingId!)")
                 
                 payment.booking = book
-                mainDelegate.payment = payment
-                let paymentResponse = Payment.save(payment: mainDelegate.payment)
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+
+                    self.mainDelegate.payment = payment
+                    let paymentResponse = Payment.save(payment: self.mainDelegate.payment)
                 if let cpResponse = paymentResponse as? String {
                     if cpResponse == "invalid" {
                         let passwordFailedAlert = UIAlertController(title: "Payment Cannot save", message: "Error: \(String(describing: (cpResponse as AnyObject).localizedDescription))", preferredStyle: .alert)
@@ -116,9 +118,10 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
                         self.present(passwordFailedAlert, animated: true, completion: nil)
                     }
                     else {
-                        performSegue(withIdentifier: "bookingsViewControllerSegue", sender: nil)
+                        self.performSegue(withIdentifier: "bookingsViewControllerSegue", sender: nil)
                     }
                 }
+                      })
             }
             else  {
                 if respose == "Court not available" {

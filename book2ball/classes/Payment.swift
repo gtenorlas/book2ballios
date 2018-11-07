@@ -166,6 +166,7 @@ class Payment: NSObject {
         
     }
     
+    /*
     static func fetch(payment:Payment)->Any{
         var fetchedPayment : (Any)? = nil
         var baseURL = "http://mags.website/api/payment/"
@@ -245,14 +246,17 @@ class Payment: NSObject {
         
         
     }
-    static func fetch(data:Any) -> Payment{
+ */
+    static func fetch(data:Any) -> AnyObject{
         print ("fetching Payment")
+    
+        guard let dict = data as? [String : Any] else {return "" as AnyObject}
         let payment = Payment()
-        guard let dict = data as? [String : Any] else {return payment}
         
         payment.adminFee = dict["adminFee"] as? Double
         payment.confirmationNumber = dict["confirmationNumber"] as? String
         payment.courtCharge = dict["courtCharge"] as? Double
+        print ("Payment Date time is \(dict["paymentDateTime"])" )
         payment.paymentDateTime = Booking.setDate(data: dict["paymentDateTime"])
         payment.paymentId = dict["paymentId"] as? Int
         payment.paymentMethod = dict["paymentMethod"] as? String
@@ -275,7 +279,7 @@ class Payment: NSObject {
     public func toString() -> String {
         var data = ""
         data += "paymentId: \(self.paymentId) "
-       // data += "paymentDateTime: \(Booking.formatDate(date: self.paymentDateTime!)) "
+        //data += "paymentDateTime: \(Booking.formatDate(date: self.paymentDateTime!)) "
         data += "courtCharge: \(Payment.formatToCurrency(num:  self.courtCharge!)) "
         data += "paymentMethod: \(self.paymentMethod) "
         data += "subTotal: \(Payment.formatToCurrency(num: self.subTotal!)) "

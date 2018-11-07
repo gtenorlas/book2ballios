@@ -258,11 +258,13 @@ class Booking: NSObject {
                     booking.facilityName = dict["facilityName"] as? NSString
                     booking.startDateTime = Booking.setDate(data:dict["startDateTime"])
                     booking.status = dict["status"] as? NSString
-                    booking.payment = Payment.fetch(data: dict["payment"])
+                    if let payment = Payment.fetch(data: dict["payment"]) as? Payment{
+                        booking.payment=payment
+                    }
                     booking.courtName = dict["courtName"] as? NSString
-                    booking.facilityAddress = dict["facilityAddress"] as? NSString
+                    booking.facilityAddress = dict["faciltyAddress"] as? NSString
                     
-                    print("Payment is " + (booking.payment?.toString())!)
+                    //print("Payment is " + (booking.payment?.toString())!)
                     fetchedBookings.append(booking)
                 }
             }else {
