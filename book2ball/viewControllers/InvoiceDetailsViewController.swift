@@ -48,7 +48,7 @@ class InvoiceDetailsViewController: UIViewController {
         // again convert your date to string
         startDateTime.text = Booking.formatDate(date: mainDelegate.selectedBooking.startDateTime!)
         endDateTime.text = Booking.formatDate(date: mainDelegate.selectedBooking.endDateTime!)
-        //paymentDateTime.text = Booking.formatDate(date: (mainDelegate.selectedBooking.payment?.paymentDateTime)!)
+        paymentDateTime.text = Booking.formatDate(date: (mainDelegate.selectedBooking.payment?.paymentDateTime)!)
        
         status.text =  mainDelegate.selectedBooking.payment?.status
         
@@ -56,7 +56,7 @@ class InvoiceDetailsViewController: UIViewController {
         //duration.text = String(format:"%f", mainDelegate.selectedBooking.duration!)
         duration.text = "\(mainDelegate.selectedBooking.duration!)"
         subTotal.text = Payment.formatToCurrency(num:  (mainDelegate.selectedBooking.payment?.subTotal)!)
-        taxPercentage.text = "\(String(format:"%.1f", (mainDelegate.selectedBooking.payment?.taxPercentage)!)) %"
+        taxPercentage.text = "\(String(format:"%.2f", (mainDelegate.selectedBooking.payment?.taxPercentage)!)) %"
         taxAmount.text = Payment.formatToCurrency(num: (mainDelegate.selectedBooking.payment?.taxAmount)!)
         totalAmount.text = Payment.formatToCurrency(num:  (mainDelegate.selectedBooking.payment?.totalAmount)!)
 

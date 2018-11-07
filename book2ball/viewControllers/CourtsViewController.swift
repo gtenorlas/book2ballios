@@ -58,6 +58,7 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
             payment.subTotal = payment.getSubTotalInDouble(facCharge: mainDelegate.selectedCourt.price, hours: duration)
             payment.taxPercentage = 13.00
             payment.setTaxAmount()
+            print("$$$$$$$$$$$$$$$")
             print(payment.subTotal)
             print(payment.taxAmount)
             payment.totalAmount = payment.getTotalInDouble(subTot : payment.subTotal!, tax : payment.taxAmount!)
@@ -147,7 +148,7 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
         for eachCourt:Court in courtList {
             //add to array
             listData.append(eachCourt.courtName as String)
-            descriptionData.append("Max Players: \(eachCourt.maxPlayer)    Hourly Cost: $\(eachCourt.price)")
+            descriptionData.append("Max Players: \(eachCourt.maxPlayer)    Hourly Cost: $\(String(format:"%.2f", eachCourt.price))")
         }
         myTableView.reloadData()
     }
@@ -163,7 +164,8 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        segment.selectedSegmentIndex = 0;
+        self.indexChanged(sender: segment)
         //change the min and max for date/time in the datepicker
         //5 hours fron the current time for min
         //14 days from the current date/time for max

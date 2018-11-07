@@ -130,7 +130,8 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
     @IBAction func viewWithinDistance(_ sender: Any) {
         let indexSelected = segment.selectedSegmentIndex
         self.viewingFacilities = []
-        
+        if(!self.facilityList.isEmpty)
+        {
         switch (indexSelected) {
         case 0:
             for each:FacilityData in self.facilityList{
@@ -176,6 +177,7 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
         default:
             print("No select")
         }
+        }
     }
     
     
@@ -215,12 +217,15 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
     
     func findDistFromLatLong()
     {
+        if(!facilityList.isEmpty)
+        {
         for each:FacilityData in self.facilityList{
             let facLocation = CLLocation(latitude: each.lat, longitude: each.long)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 let dist = (self.initialLocation.distance(from: facLocation))/1000
                 each.distance = dist
             }
+        }
         }
     }
     
@@ -245,7 +250,7 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
             }
             
             let json =  (try? JSONSerialization.jsonObject(with: data!, options: [])) as? NSArray
-            
+            if (json != nil){
             for eachObject in json! {
                 let facility = FacilityData()
                 let jsonDict = eachObject as? NSDictionary
@@ -285,7 +290,7 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
                 print("----------------------")
                 print("court count: \(facility.courtsList.count)")
             }
-            
+            }
             
             semaphore.signal()
             }.resume()
