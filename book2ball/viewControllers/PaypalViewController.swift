@@ -17,11 +17,11 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
     @IBOutlet var taxPercentage : UILabel!
     @IBOutlet var taxAmount : UILabel!
     @IBOutlet var totalAmount : UILabel!
-    @IBOutlet var paymentDateTime : UILabel!
+  //  @IBOutlet var paymentDateTime : UILabel!
     @IBOutlet var facilityAddress : UILabel!
     @IBOutlet var courtName : UILabel!
     @IBOutlet weak var startDateTime: UILabel!
-    @IBOutlet var status : UILabel!
+   // @IBOutlet var status : UILabel!
     @IBOutlet weak var endDateTime: UILabel!
     @IBOutlet weak var duration: UILabel!
     @IBOutlet var lblPayCnfm : UILabel!
@@ -39,7 +39,7 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
         courtCharge.text = Payment.formatToCurrency(num:  mainDelegate.selectedCourt.price)
         
         subTotal.text = Payment.formatToCurrency(num: mainDelegate.payment.subTotal!)
-        taxPercentage.text = "\(String(format:"%.2f", mainDelegate.payment.taxPercentage!)) %"
+        taxPercentage.text = "\(String(format:"%.2f", mainDelegate.payment.taxPercentage!))%"
         taxAmount.text = Payment.formatToCurrency(num:  mainDelegate.payment.taxAmount!)
         totalAmount.text = Payment.formatToCurrency(num:  mainDelegate.payment.totalAmount!)
         duration.text = "\(mainDelegate.selectedBooking.duration!)"
@@ -53,17 +53,36 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
         //then again set the date format whhich type of output you need
         formatter.dateFormat = "dd-MMM-yyyy"
         // again convert your date to string
-        paymentDateTime.text = formatter.string(from: mainDelegate.payment.paymentDateTime!)
+        //paymentDateTime.text = formatter.string(from: mainDelegate.payment.paymentDateTime!)
         
         startDateTime.text = Booking.formatDate(date: mainDelegate.selectedBooking.startDateTime!)
         endDateTime.text = Booking.formatDate(date: mainDelegate.selectedBooking.endDateTime!)
         
         
         
-        status.text =  "Completed"
-        mainDelegate.payment.status = "Completed"
+//        status.text =  "Completed"
+        mainDelegate.payment.status = "Paid"
         lblPayCnfm.text=""
         payButton.isEnabled=true
+        
+        let facility=mainDelegate.selectedFacilityData
+        var address = ("\(facility.addLine1) \n")
+        if facility.addLine2 == nil {
+            address += ("\(facility.addLine2) \n")
+        }
+        if facility.addLine3 == nil {
+            address += ("\(facility.addLine3) \n")
+        }
+        address += ("\(facility.city), ")
+        address += ("\(facility.province) \n")
+        if facility.postalCode == nil {
+            address += ("\(facility.postalCode) \n")
+        }
+        address += ("\(facility.country)")
+
+        
+        facilityAddress.text = address
+        
         
     }
     
@@ -79,7 +98,7 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
         var payment = mainDelegate.payment
         
         
-        let book: Booking = Booking(customerEmail: user.email  ,customerName: ((user.firstName as String) + (user.lastName as String)) as String as NSString, bookingType: "basketball", status: "Active", startDateTime: booking.startDateTime! , endDateTime: booking.endDateTime!, duration: booking.duration! , court: court , comment : "null" , payment : payment , facilityName : facility.facilityName, courtName: mainDelegate.selectedCourt.courtName)
+        let book: Booking = Booking(customerEmail: user.email  ,customerName: ((user.firstName as String) + " " + (user.lastName as String)) as NSString, bookingType: "basketball", status: "Active", startDateTime: booking.startDateTime! , endDateTime: booking.endDateTime!, duration: booking.duration! , court: court , comment : "null" , payment : payment , facilityName : facility.facilityName, courtName: mainDelegate.selectedCourt.courtName)
         
         let id =  Booking.save(booking: book)
         if let respose = id as? String {

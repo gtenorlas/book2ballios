@@ -268,7 +268,7 @@ class Payment: NSObject {
     
     static func formatToCurrency(num:Double)->String
     {
-        let formattedCurrency="$\(String(format: "%.2f", num))"
+        let formattedCurrency="\(String(format: "$%.02f", num))"
         return formattedCurrency
     }
     

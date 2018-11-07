@@ -21,6 +21,7 @@ class Booking: NSObject {
     var comment:NSString?
     var payment:Payment?
     var facilityName:NSString?
+    var facilityAddress:NSString?
     var courtName:NSString?
     
     public override init() {
@@ -41,6 +42,7 @@ class Booking: NSObject {
         self.payment = payment
         self.facilityName = facilityName
         self.courtName = courtName
+        self.facilityAddress = ""
         
     }
     static func save(booking:Booking) -> Any {
@@ -75,6 +77,8 @@ class Booking: NSObject {
         let aString = "\(booking.facilityName!)"
         let newString = aString.replacingOccurrences(of: " ", with: "%20")
         baseURL += newString
+        baseURL = baseURL.replacingOccurrences(of: " ", with: "%20")
+        baseURL = baseURL.replacingOccurrences(of: ",", with: "%2c")
         
         print(baseURL)
         
@@ -256,6 +260,7 @@ class Booking: NSObject {
                     booking.status = dict["status"] as? NSString
                     booking.payment = Payment.fetch(data: dict["payment"])
                     booking.courtName = dict["courtName"] as? NSString
+                    booking.facilityAddress = dict["facilityAddress"] as? NSString
                     
                     print("Payment is " + (booking.payment?.toString())!)
                     fetchedBookings.append(booking)
