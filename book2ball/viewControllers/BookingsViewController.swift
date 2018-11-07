@@ -19,6 +19,7 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
     var viewingBookings:Array<Booking>=[]
     var descriptionData:[String]=[]
     var timeData: Array<String> = []
+    var endTimeData: Array<String> = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print ("list data count \(listData.count)")
@@ -36,12 +37,15 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
         listData = []
         descriptionData = []
         timeData = []
+        endTimeData = []
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let myString = formatter.string(from: Date())
         
         let indexSelected = statusCheck.selectedSegmentIndex
+        
+        self.bookings.sort(by: self.sorterForFacilityDistanceASC)
         
         switch (indexSelected) {
         case 0:
@@ -57,7 +61,9 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
                     let str = each.facilityName
                     listData.append("Facility: \(each.facilityName!) \nCourt:\(each.courtName)")
                     descriptionData.append("Number of Hours: \(each.duration!)")
-                    timeData.append("Start: \(each.startDateTime!), End: \(each.endDateTime!) ")
+                    
+                    timeData.append("Start: \(Booking.formatDate(date: each.startDateTime!))")
+                        endTimeData.append("End: \(Booking.formatDate(date: each.endDateTime!))")
                     viewingBookings.append(each)
                     print (  each.facilityName,each.startDateTime)
                 }
@@ -75,7 +81,8 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
                     let str = each.facilityName
                     listData.append("Facility: \(each.facilityName!) \nCourt:\(each.courtName)")
                     descriptionData.append("Number of Hours: \(each.duration!)")
-                    timeData.append("Start: \(each.startDateTime!), End: \(each.endDateTime!) ")
+                    timeData.append("Start: \(Booking.formatDate(date: each.startDateTime!))")
+                    endTimeData.append("End: \(Booking.formatDate(date: each.endDateTime!))")
                     viewingBookings.append(each)
                 }
             }
@@ -86,6 +93,9 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
         myTable.reloadData()
     }
     
+    func sorterForFacilityDistanceASC(this:Booking, that:Booking) -> Bool {
+        return this.startDateTime! < that.startDateTime!
+    }
     
     @IBAction func unwindToBookingsViewController(sender : UIStoryboardSegue)
     {
@@ -106,10 +116,12 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
         let title = listData[rowNum]//.facilityName
         let description = descriptionData[rowNum]
         let timeHours = timeData[rowNum]
+        let endTimeHours = endTimeData[rowNum]
         
         tableCell.primaryLabel.text =  title //as! String
         tableCell.secondaryLabel.text = description
         tableCell.thirdLabel.text = timeHours
+         tableCell.fourthLabel.text = endTimeHours
         tableCell.accessoryType = .none
         
         // step 12c - return the cell

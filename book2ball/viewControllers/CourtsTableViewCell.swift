@@ -34,9 +34,9 @@ class CourtsTableViewCell: UITableViewCell {
         
         //configure secondaryLabel
         secondaryLabel.textAlignment = NSTextAlignment.left
-        secondaryLabel.font = UIFont.boldSystemFont(ofSize: 11)
+        secondaryLabel.font = UIFont.boldSystemFont(ofSize: 16)
         secondaryLabel.backgroundColor = UIColor.clear
-        secondaryLabel.textColor = UIColor.black
+        secondaryLabel.textColor = UIColor(red: 82.0/255, green: 103.0/255, blue: 137.0/255, alpha: 1.0)
         
         //All all the subviews
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -48,15 +48,15 @@ class CourtsTableViewCell: UITableViewCell {
     //define the size and location of all 3 items as below
     override func layoutSubviews() {
         //primaryLabel location on the cell
-        var f = CGRect(x: 0, y: 5, width: 270, height: 30)
+        var f = CGRect(x: 16, y: 5, width: 350, height: 30)
         primaryLabel.frame = f
         
         //secondaryLabel location on the cell
-        f = CGRect(x: 0, y: 40, width: 270, height: 20)
+        f = CGRect(x: 16, y: 40, width: 330, height: 20)
         secondaryLabel.frame = f
         
         //arrowImage location on the cell
-        f = CGRect(x: 330, y: 5, width: 40, height: 45)
+        f = CGRect(x: 360, y: 5, width: 40, height: 45)
         arrowImage.frame = f
         
         

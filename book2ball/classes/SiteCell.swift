@@ -18,24 +18,24 @@ class SiteCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         facilityName.textAlignment = .left
-        facilityName.font = UIFont.boldSystemFont(ofSize: 30)
+        facilityName.font = UIFont.boldSystemFont(ofSize: 20)
         facilityName.backgroundColor = .clear
         facilityName.textColor = .black
         
         city.textAlignment = .left
-        city.font = UIFont.boldSystemFont(ofSize: 12)
+        city.font = UIFont.boldSystemFont(ofSize: 16)
         city.backgroundColor = .clear
-        city.textColor = .blue
+        city.textColor = UIColor(red: 82.0/255, green: 103.0/255, blue: 137.0/255, alpha: 1.0)
         
         province.textAlignment = .left
-        province.font = UIFont.boldSystemFont(ofSize: 12)
+        province.font = UIFont.boldSystemFont(ofSize: 16)
         province.backgroundColor = .clear
-        province.textColor = .blue
+        province.textColor = UIColor(red: 82.0/255, green: 103.0/255, blue: 137.0/255, alpha: 1.0)
         
         distance.textAlignment = .right
-        distance.font = UIFont.boldSystemFont(ofSize: 12)
+        distance.font = UIFont.boldSystemFont(ofSize: 16)
         distance.backgroundColor = .clear
-        distance.textColor = .blue
+        distance.textColor = UIColor(red: 82.0/255, green: 103.0/255, blue: 137.0/255, alpha: 1.0)
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(facilityName)

@@ -13,6 +13,7 @@ class PaymentTableViewCell: UITableViewCell {
     let primaryLabel = UILabel()
     let secondaryLabel = UILabel()
     let thirdLabel = UILabel()
+    let fourthLabel = UILabel()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,21 +30,27 @@ class PaymentTableViewCell: UITableViewCell {
         
         // step 11c - configure primaryLabel
         primaryLabel.textAlignment = NSTextAlignment.left
-        primaryLabel.font = UIFont.boldSystemFont(ofSize: 26)
+        primaryLabel.font = UIFont.boldSystemFont(ofSize: 20)
         primaryLabel.backgroundColor = UIColor.clear
         primaryLabel.textColor = UIColor.black
         
         // step 11d - configure secondaryLabel
         secondaryLabel.textAlignment = NSTextAlignment.left
-        secondaryLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        secondaryLabel.font = UIFont.boldSystemFont(ofSize: 18)
         secondaryLabel.backgroundColor = UIColor.clear
-        secondaryLabel.textColor = UIColor.gray
+        secondaryLabel.textColor = UIColor(red: 82.0/255, green: 103.0/255, blue: 137.0/255, alpha: 1.0)
         
         // step 11d - configure thirdLabel
         thirdLabel.textAlignment = NSTextAlignment.left
-        thirdLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        thirdLabel.font = UIFont.boldSystemFont(ofSize: 18)
         thirdLabel.backgroundColor = UIColor.clear
-        thirdLabel.textColor = UIColor.gray
+        thirdLabel.textColor = UIColor(red: 82.0/255, green: 103.0/255, blue: 137.0/255, alpha: 1.0)
+        
+        // step 11d - configure thirdLabel
+        fourthLabel.textAlignment = NSTextAlignment.left
+        fourthLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        fourthLabel.backgroundColor = UIColor.clear
+        fourthLabel.textColor = UIColor(red: 82.0/255, green: 103.0/255, blue: 137.0/255, alpha: 1.0)
         
         
         // step 11e - no configuring of myImageView needed, instead add all 3 items manually as below
@@ -51,6 +58,7 @@ class PaymentTableViewCell: UITableViewCell {
         contentView.addSubview(primaryLabel)
         contentView.addSubview(secondaryLabel)
         contentView.addSubview(thirdLabel)
+        contentView.addSubview(fourthLabel)
         
     }
     
@@ -58,14 +66,17 @@ class PaymentTableViewCell: UITableViewCell {
     // return to BookingsViewController.swift
     override func layoutSubviews() {
         
-        var f = CGRect(x: 1, y: 5, width: 300, height: 30)
+        var f = CGRect(x: 16, y: 5, width: 300, height: 30)
         primaryLabel.frame = f
         
-        f = CGRect(x: 1, y: 35, width: 500, height: 20)
+        f = CGRect(x:16 , y: 35, width: 500, height: 20)
         secondaryLabel.frame = f
         
-        f = CGRect(x: 1, y: 55, width: 500, height: 20)
+        f = CGRect(x: 16, y: 55, width: 500, height: 20)
         thirdLabel.frame = f
+        
+        f = CGRect(x: 16, y: 75, width: 500, height: 20)
+        fourthLabel.frame = f
         
     }
     

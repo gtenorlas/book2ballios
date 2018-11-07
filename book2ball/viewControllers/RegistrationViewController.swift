@@ -60,7 +60,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate, UINavig
             }
             else {
                     if((username.text!.characters.count) > 20 || (password1.text!.characters.count) > 20  || (password2.text!.characters.count) > 20 || (username.text!.characters.count) < 8 || (password1.text!.characters.count) < 8  || (password2.text!.characters.count) < 8) {
-                        status.text = "Fields must be >=8 and <=20"
+                        status.text = "Username/Password fields must be >=8 and <=20"
                     }
                     else {
                 //create a new user

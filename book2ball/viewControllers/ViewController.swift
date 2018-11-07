@@ -46,6 +46,9 @@ class ViewController: UIViewController {
         }else {
             users = response as! Customer
             mainDelegate.userLoggedIn = users
+            userName.text = ""
+            passWord.text = ""
+            status.text = ""
             performSegue(withIdentifier: "searchFacilitySegue", sender: nil)
         }
 
