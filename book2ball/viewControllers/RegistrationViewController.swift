@@ -56,20 +56,20 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate, UINavig
             else {
                 if ((username.text?.trimmingCharacters(in: .whitespaces).isEmpty)! || (password1.text?.trimmingCharacters(in: .whitespaces).isEmpty)! || (password2.text?.trimmingCharacters(in: .whitespaces).isEmpty)! || (firstName.text?.trimmingCharacters(in: .whitespaces).isEmpty)! || (lastName.text?.trimmingCharacters(in: .whitespaces).isEmpty)! || (email.text?.trimmingCharacters(in: .whitespaces).isEmpty)!)
                 {
-                status.text = "No spaces please."
-            }
-            else {
+                    status.text = "No spaces please."
+                }
+                else {
                     if((username.text!.characters.count) > 20 || (password1.text!.characters.count) > 20  || (password2.text!.characters.count) > 20 || (username.text!.characters.count) < 8 || (password1.text!.characters.count) < 8  || (password2.text!.characters.count) < 8) {
                         status.text = "Username/Password fields must be >=8 and <=20"
                     }
                     else {
-                //create a new user
-                let user: Customer = Customer( username: username.text as! NSString, password: password1.text as! NSString, firstName: firstName.text as! NSString, lastName: lastName.text as! NSString, email: email.text as! NSString,contactNumber: contactNumber.text as! NSString, startDate: "10-22-2018-13-30" ,endDate: "null" , status: "Active", originate: "Standard")
-                print(username.text)
-                print(password1.text)
-                print(firstName.text)
-                print(lastName.text)
-                let response = Customer.save(customer: user)
+                        //create a new user
+                        let user: Customer = Customer( username: username.text as! NSString, password: password1.text as! NSString, firstName: firstName.text as! NSString, lastName: lastName.text as! NSString, email: email.text as! NSString,contactNumber: contactNumber.text as! NSString, startDate: "10-22-2018-13-30" ,endDate: "null" , status: "Active", originate: "Standard")
+                        print(username.text)
+                        print(password1.text)
+                        print(firstName.text)
+                        print(lastName.text)
+                        let response = Customer.save(customer: user)
                         if response as? String == "success" {
                             //set the user is logged in
                             mainDelegate.userLoggedIn = user

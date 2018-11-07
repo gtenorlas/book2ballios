@@ -137,6 +137,51 @@ class Customer: NSObject, Codable {
         
     }
     
+    static func saveUpdatedProfile(customer:Customer) -> Any {
+        var fetchedResponse : (Any)? = nil
+        
+        var baseURL = "http://mags.website/api/customer/update/"
+        baseURL += "\(customer.username)/"
+        baseURL += "\(customer.password)/"
+        baseURL += "\(customer.firstName)/"
+        baseURL += "\(customer.lastName)/"
+        baseURL += "\(customer.email)/"
+        baseURL += "\(customer.contactNumber)/"
+        baseURL += "\(customer.startDate)/"
+        baseURL += "\(customer.endDate)/"
+        baseURL += "\(customer.status)/"
+        baseURL += "\(customer.originate)"
+        
+        print(baseURL)
+        
+        // create post request
+        let url = NSURL(string: baseURL)!
+        let request = NSMutableURLRequest(url: url as URL)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let semaphore = DispatchSemaphore(value: 0) //make it synchrounous
+        
+        URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
+            if error != nil{
+                print("Error -> \(error)")
+                return
+            }
+            
+            print ("response -> \(response)")
+            print ("data -> " + String.init(data: data!, encoding: .ascii)! ?? "no data")
+            
+            fetchedResponse =  String.init(data: data!, encoding: .ascii)
+            
+            semaphore.signal()//wait for synchronous
+            }.resume()
+        _ = semaphore.wait(timeout: .distantFuture)
+        
+        print ("its here")
+        return fetchedResponse!
+        
+    }
+    
     static func fetch(customer:Customer)->Any{
         var fetchedCustomer : (Any)? = nil
         var baseURL = "http://mags.website/api/customer/"

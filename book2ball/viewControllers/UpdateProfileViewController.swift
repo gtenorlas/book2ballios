@@ -58,28 +58,27 @@ class UpdateProfileViewController: UIViewController, UITextFieldDelegate, UINavi
             if(password1.text != password2.text){
                 status.text = "Password do not match."
             }else {
-                /*
-                if (try! mainDelegate.dao.readFromTableUserByUsername(username: username.text as! NSString) == true) {
-                    //user already exist
-                    status.text = "Username already taken."
-                } else {
- */
-                    status.text = "success"
-                    
+                if((password1.text!.characters.count) > 20  || (password2.text!.characters.count) > 20 || (password1.text!.characters.count) < 8  || (password2.text!.characters.count) < 8) {
+                    status.text = "Password fields must be >=8 and <=20"
+                }
+                else {
                     //create a new user
                     let user: Customer = Customer( username: username.text as! NSString, password: password1.text as! NSString, firstName: firstName.text as! NSString, lastName: lastName.text as! NSString, email: email.text as! NSString,contactNumber: contactNumber.text as! NSString, startDate: "10-22-2018-13-30" ,endDate: "null" , status: "Active", originate: "Standard")
                     print(username.text)
                     print(password1.text)
                     print(firstName.text)
                     print(lastName.text)
-                    Customer.save(customer: user)
-                    
-                    //set the user is logged in
-                    mainDelegate.userLoggedIn = user
-                    
-                    //go to searchFacility
-                    performSegue(withIdentifier: "searchFacilitySegue", sender: nil)
-               // }
+                    let response = Customer.saveUpdatedProfile(customer: user)
+                    if response as? String == "success" {
+                        //set the user is logged in
+                        mainDelegate.userLoggedIn = user
+                        //go to searchFacility
+                        performSegue(withIdentifier: "searchFacilitySegue", sender: nil)
+                        
+                    }else {
+                        status.text = "Username already taken."
+                    }
+                }
             }
         }
     }
