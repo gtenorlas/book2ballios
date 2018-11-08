@@ -138,8 +138,6 @@
 		34E8556D216BA3B700C2AD71 /* book2ball */ = {
 			isa = PBXGroup;
 			children = (
-				AE6DA56A2184412500DF0F55 /* SWRevealViewController.h */,
-				AE6DA56B2184412500DF0F55 /* SWRevealViewController.m */,
 				AED2CD28217E28120013F560 /* viewControllers */,
 				CE0FB95721717B6F003038B5 /* classes */,
 				34E85581216BA41400C2AD71 /* images */,
@@ -147,6 +145,7 @@
 				34E8556E216BA3B700C2AD71 /* AppDelegate.swift */,
 				34E85575216BA3B800C2AD71 /* Assets.xcassets */,
 				34E8557A216BA3B800C2AD71 /* Info.plist */,
+				CE17122B2193E7400010E9B4 /* specialPods */,
 				AEEFA5AC2183606200B80BCE /* book2ball-Bridging-Header.h */,
 			);
 			path = book2ball;
@@ -220,6 +219,15 @@
 				AE2B1C5C218E9FF6003C2726 /* Location.gpx */,
 			);
 			path = classes;
+			sourceTree = "<group>";
+		};
+		CE17122B2193E7400010E9B4 /* specialPods */ = {
+			isa = PBXGroup;
+			children = (
+				AE6DA56B2184412500DF0F55 /* SWRevealViewController.m */,
+				AE6DA56A2184412500DF0F55 /* SWRevealViewController.h */,
+			);
+			path = specialPods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

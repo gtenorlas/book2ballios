@@ -1,10 +1,12 @@
 //
 //  ViewController.swift
-//  book2ball
-//
-//  Created by moghid saad on 2018-10-08.
+//  MAGS
 //  Copyright © 2018 moghid saad. All rights reserved.
 //
+/*
+ This class is for the user to log in using a regular login, facebook or google.
+ The user can register or to locate a forgotten password
+*/
 
 import UIKit
 import Firebase
