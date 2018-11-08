@@ -1,10 +1,13 @@
 //
 //  SiteCell.swift
-//  book2ball
+//  MAGS
 //
 //  Created by Xcode User on 2018-10-24.
 //  Copyright © 2018 moghid saad. All rights reserved.
 //
+/*
+ This Class will design how the table cell will look like in the SearchFacilityViewController classs.
+ */
 
 import Foundation
 import UIKit

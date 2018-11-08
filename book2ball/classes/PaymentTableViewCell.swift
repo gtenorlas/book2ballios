@@ -2,9 +2,12 @@
 //  PaymentTableViewCell.swift
 //  Book2Ball
 //
-//  Created by Gene Tenorlas User on 2018-04-19.
+//  Created by Gene Tenorlas User on 2018-10-19.
 //  Copyright © 2018 Xcode User. All rights reserved.
 //
+/*
+ This Class will design how the table cell will look like in the InvoiceDeailsViewController classs.
+ */
 
 import UIKit
 

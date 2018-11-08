@@ -1,8 +1,8 @@
 //
 //  FaceBookRegistration.swift
-//  Book2Ball
+//  MAGS
 //
-//  Created by  Shanu Shanu User on 2018-03-27.
+//  Created by  Shanu Shanu User on 2018-10-27.
 //  Copyright © 2018 Xcode User. All rights reserved.
 //  The purpose of this class is to fetch the data from the facebook user's account
 

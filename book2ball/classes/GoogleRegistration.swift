@@ -1,8 +1,8 @@
 //
 //  GoogleRegistration.swift
-//  Book2Ball
+//  MAGS
 //
-//  Created by Moghid Saad User on 2018-04-19.
+//  Created by Moghid Saad User on 2018-10-19.
 //  Copyright © 2018 Xcode User. All rights reserved.
 //
 //  Class for customers logging in using their google account

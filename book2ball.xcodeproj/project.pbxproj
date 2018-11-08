@@ -146,6 +146,7 @@
 				34E85580216BA3D500C2AD71 /* storyboards */,
 				34E8556E216BA3B700C2AD71 /* AppDelegate.swift */,
 				34E85575216BA3B800C2AD71 /* Assets.xcassets */,
+				AE2B1C5C218E9FF6003C2726 /* Location.gpx */,
 				34E8557A216BA3B800C2AD71 /* Info.plist */,
 				CE17122B2193E7400010E9B4 /* specialPods */,
 				AEEFA5AC2183606200B80BCE /* book2ball-Bridging-Header.h */,
@@ -196,7 +197,6 @@
 				AE6DA5682184293F00DF0F55 /* ForgetPasswordViewController.swift */,
 				AE6DA56D218446D400DF0F55 /* PaypalViewController.swift */,
 				CEFBFE212188F72100678A5C /* CourtsViewController.swift */,
-				CEFBFE23218A83DB00678A5C /* CourtsTableViewCell.swift */,
 				AEBEC550218BD394001480CB /* UpdateProfileViewController.swift */,
 				AEBEC552218BD3CC001480CB /* RearViewController.swift */,
 				AEBEC554218BD520001480CB /* AboutUsViewController.swift */,
@@ -209,6 +209,7 @@
 		CE0FB95721717B6F003038B5 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				CEFBFE23218A83DB00678A5C /* CourtsTableViewCell.swift */,
 				AED2CD2F217E60D80013F560 /* PaymentTableViewCell.swift */,
 				AEF7CB272183D52700AE5D80 /* SiteCell.swift */,
 				CE0FB95921717CC4003038B5 /* Court.swift */,
@@ -219,7 +220,6 @@
 				CE0FB95F21717CDF003038B5 /* Payment.swift */,
 				CE0FB95B21717CCD003038B5 /* Customer.swift */,
 				AE4046EA218CD8B300F79935 /* Booking.swift */,
-				AE2B1C5C218E9FF6003C2726 /* Location.gpx */,
 			);
 			path = classes;
 			sourceTree = "<group>";

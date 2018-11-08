@@ -1,8 +1,6 @@
 //
-//  Registration.swift
-//  SQLiteNew
 //
-//  Created by Gene Teniorlas User on 2018-03-29.
+//  Created by Gene Teniorlas User on 2018-10-29.
 //  Copyright © 2018 Xcode User. All rights reserved.
 //  The purpose of this class is to hold the new customer registration and to hold the user that is currently logged in to the application
 

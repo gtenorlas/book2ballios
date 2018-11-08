@@ -1,15 +1,13 @@
 //
 //  Payment.swift
-//  payPalIntegration
 //
-//  Created by Chathu Anthony on 2018-04-13.
+//  Created by Chathu Anthony on 2018-10-13.
 //  Copyright © 2018 Xcode User. All rights reserved.
 //
-//This purpose of this class is to create an invoice and to create a booking for a customer
+//This purpose of this class is to handle the invoice and payment information for the customer purchase.
 
 import UIKit
 
-//just a comment to remove
 
 class Payment: NSObject {
     

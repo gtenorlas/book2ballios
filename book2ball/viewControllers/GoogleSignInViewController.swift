@@ -1,10 +1,14 @@
 //
 //  GoogleSignInViewController.swift
-//  Book2Ball
+//  MAGS
 //
-//  Created by Moghid Saad User on 2018-04-14.
+//  Created by Moghid Saad User on 2018-10-14.
 //  Copyright © 2018 Xcode User. All rights reserved.
 //
+/*
+ This class is for the user to log in using Google. All the delegations are happening here to handle
+ of prompting the user Google login and fetching the user information data.
+ */
 
 import UIKit
 import GoogleSignIn

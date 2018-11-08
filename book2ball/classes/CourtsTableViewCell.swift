@@ -5,6 +5,9 @@
 //  Created by Gene Tenorlas on 2018-10-31.
 //  Copyright © 2018 MAGS. All rights reserved.
 //
+/*
+ This Class will design how the table cell will look like in the CourtsViewController classs.
+ */
 
 import UIKit
 

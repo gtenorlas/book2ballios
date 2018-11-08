@@ -1,10 +1,13 @@
 //
 //  BookingsViewController.swift
-//  Book2Ball
+//  MAGS
 //
-//  Created by Gene Tenorlas User on 2018-04-19.
+//  Created by Gene Tenorlas User on 2018-10-19.
 //  Copyright © 2018 Xcode User. All rights reserved.
 //
+/*
+ This Class is the view presented to the screen for displaying all the fetched bookings from the remote database for the logged in user.
+ */
 
 import UIKit
 

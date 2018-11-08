@@ -1,10 +1,13 @@
 //
 //  CourtsViewController.swift
-//  book2ball
+//  MAGS
 //
 //  Created by Admin on 2018-10-30.
 //  Copyright © 2018 moghid saad. All rights reserved.
 //
+/*
+ This Class is the view presented to the screen for prompting the user for the start date time and the duration. Upon click on the search, request is sent to the RESTful API to see all the courts available within the facility and the response are show in the screen for the user to select the desired court to book.
+ */
 
 import UIKit
 

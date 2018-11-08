@@ -1,11 +1,15 @@
 //
 //  Court.swift
 //
-//  Created by Moghid Saad User on 2018-04-10.
+//  Created by Moghid Saad User on 2018-10-10.
 //  Copyright © 2018 Xcode User. All rights reserved.
 //
-//  The purpose of this class is to hold the court information that are inside the facility
-//  Each facility can have multiple courts.
+
+/*
+   The purpose of this class is to hold the court information that are inside the facility
+   Each facility can have multiple courts. This class also communicate in the remote database using RESTful services to grab all the active courts and available courts for a particular facility 
+ */
+
 
 import UIKit
 

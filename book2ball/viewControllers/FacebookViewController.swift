@@ -1,10 +1,14 @@
 //
 //  FacebookViewController.swift
-//  Book2Ball
+//  MAGS
 //
-//  Created by Shanu Shanu User on 2018-04-15.
+//  Created by Shanu Shanu User on 2018-10-15.
 //  Copyright © 2018 Xcode User. All rights reserved.
 //
+/*
+ This class is for the user to log in using Google. All the delegations are happening here to handle
+ of prompting the user Google login and fetching the user information data.
+ */
 
 import UIKit
 import FBSDKLoginKit

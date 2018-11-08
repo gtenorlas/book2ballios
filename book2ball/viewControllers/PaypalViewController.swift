@@ -1,10 +1,13 @@
 //
 //  PaypalViewController.swift
-//  Book2Ball
+//  MAGS
 //
-//  Created by Chathu Anthony User on 2018-04-16.
+//  Created by Chathu Anthony User on 2018-10-16.
 //  Copyright © 2018 Xcode User. All rights reserved.
 //
+/*
+ This Class is the view presented to the user for confirming the rental details and paying the service using paypal.
+ */
 
 import UIKit
 

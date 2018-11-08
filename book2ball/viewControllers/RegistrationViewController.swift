@@ -1,11 +1,13 @@
 //
 //  RegistrationViewController.swift
-//  Book2Ball
+//  MAGS
 //
-//  Created by Gene Tenorlas User on 2018-04-15.
+//  Created by Gene Tenorlas User on 2018-10-15.
 //  Copyright © 2018 Xcode User. All rights reserved.
 //
-
+/*
+ This class is the user registration view presented to the screen. 
+ */
 import UIKit
 
 class RegistrationViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate,UIImagePickerControllerDelegate{

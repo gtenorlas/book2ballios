@@ -1,9 +1,9 @@
 //
 //  InvoiceDetailsViewController.swift
-//  book2ball
+//  MAGS
 //
 //  Created by Xcode User on 2018-11-03.
-//  Copyright © 2018 moghid saad. All rights reserved.
+//  Copyright © 2018 Gene Tenorlas. All rights reserved.
 //
 
 import UIKit
