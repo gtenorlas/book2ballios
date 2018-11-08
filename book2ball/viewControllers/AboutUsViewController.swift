@@ -11,6 +11,8 @@ import UIKit
 class AboutUsViewController: UIViewController {
     
     @IBOutlet weak var menuButton : UIBarButtonItem!
+    var sidebarView: RearTableViewController!
+    var blackScreen: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +30,11 @@ class AboutUsViewController: UIViewController {
             revealViewController().rightViewRevealWidth = 160
             
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            
+          
         }
+   
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
