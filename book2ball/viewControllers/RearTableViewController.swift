@@ -12,10 +12,12 @@ class RearTableViewController: UITableViewController {
 
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var email: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        username.text = mainDelegate.userLoggedIn.username as String
+        username.text = (mainDelegate.userLoggedIn.firstName as String) + " " + (mainDelegate.userLoggedIn.lastName as String)
+        email.text = mainDelegate.userLoggedIn.email as String
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
