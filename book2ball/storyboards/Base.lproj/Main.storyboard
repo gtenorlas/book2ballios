@@ -397,7 +397,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcd-cI-fnQ">
-                                <rect key="frame" x="173.66666666666666" y="436" width="67" height="33"/>
+                                <rect key="frame" x="173.66666666666666" y="419" width="67" height="33"/>
                                 <color key="backgroundColor" red="0.0024504750040000001" green="0.4010392129" blue="0.79995733499999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="SUBMIT">
@@ -408,7 +408,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="etN-wP-yGy">
-                                <rect key="frame" x="16" y="136" width="382" height="270"/>
+                                <rect key="frame" x="16" y="119" width="382" height="270"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AXN-ix-Qod">
                                         <rect key="frame" x="86.666666666666657" y="0.0" width="295.33333333333337" height="30"/>
@@ -473,7 +473,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m2l-Ix-99g">
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m2l-Ix-99g">
                                                 <rect key="frame" x="53.666666666666657" y="0.0" width="200" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -490,7 +490,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lb2-sd-8n3">
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lb2-sd-8n3">
                                                 <rect key="frame" x="91.333333333333314" y="0.0" width="200" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -542,8 +542,8 @@
                                     <constraint firstItem="53o-IR-Ux7" firstAttribute="width" secondItem="XUt-Y3-bKN" secondAttribute="width" id="u7J-Zn-2mY"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wds-9T-o9P">
-                                <rect key="frame" x="16" y="99" width="382" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wds-9T-o9P">
+                                <rect key="frame" x="16" y="99" width="382" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="1" green="0.15781137449999999" blue="0.16727354829999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1880,8 +1880,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="9Ma-XJ-0v2"/>
-        <segue reference="FdD-9Y-BT0"/>
+        <segue reference="qF2-Ph-PO2"/>
         <segue reference="6Gx-W6-iN0"/>
-        <segue reference="LCQ-jn-Cpm"/>
+        <segue reference="BRF-cs-Niz"/>
     </inferredMetricsTieBreakers>
 </document>
