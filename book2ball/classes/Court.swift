@@ -65,12 +65,16 @@ class Court: NSObject {
             court.courtType = (dict["courtType"] as? NSString)!
             court.price = (dict["price"] as? Double)!
             print("court #: \(court.courtNumber)")
+            if (court.availability.lowercased == "active") {
             fetchedCourts.append(court)
+            }
         }
         
         
         return fetchedCourts
     }
+    
+    //validate if court is available
     static func fetch(facilityId:Int,startDateTime:String,endDateTime:String) -> Array<Court>{
         
         var fetchedCourts: Array<Court>=Array()
