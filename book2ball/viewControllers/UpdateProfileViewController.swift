@@ -23,7 +23,7 @@ class UpdateProfileViewController: UIViewController, UITextFieldDelegate, UINavi
     @IBOutlet var contactNumber: UITextField!
     @IBOutlet weak var myImageView : UIImageView!
     
-    var user: Customer = Customer()
+    var userLoggedIn: Customer = Customer()
     
     @IBAction func uploadPhoto(_ sender: AnyObject){
         
@@ -76,7 +76,7 @@ class UpdateProfileViewController: UIViewController, UITextFieldDelegate, UINavi
                         performSegue(withIdentifier: "searchFacilitySegue", sender: nil)
                         
                     }else {
-                        status.text = "Username already taken."
+                        status.text = "Username/email already taken."
                     }
                 }
             }
@@ -92,20 +92,16 @@ class UpdateProfileViewController: UIViewController, UITextFieldDelegate, UINavi
         navigationController?.navigationBar.titleTextAttributes =
         [NSAttributedStringKey.foregroundColor : UIColor.white]
         
-        let response = Customer.fetch(customer: user)
-        if let invalid = response as? String {
-            print ("response is \(invalid)")
-            status.text = "Username/password incorrect."
-        }else {
-            user = response as! Customer
-            username.text = user.username as String
-            print(username.text)
-            firstName.text = user.firstName as String
-            // lastName.text = user.lastName as String
-            email.text = user.email as String
-            contactNumber.text = user.contactNumber as String
-            //performSegue(withIdentifier: "searchFacilitySegue", sender: nil)
-        }
+     
+        userLoggedIn = mainDelegate.userLoggedIn
+        
+            username.text = userLoggedIn.username as String
+
+            firstName.text = userLoggedIn.firstName as String
+            lastName.text = userLoggedIn.lastName as String
+            email.text = userLoggedIn.email as String
+            contactNumber.text = userLoggedIn.contactNumber as String
+     
         
     }
     

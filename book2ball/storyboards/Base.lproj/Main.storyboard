@@ -397,54 +397,89 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="p1n-uY-hxi">
-                                <rect key="frame" x="16" y="124" width="382" height="290"/>
+                                <rect key="frame" x="16" y="124" width="382" height="330"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFS-03-7qE">
-                                        <rect key="frame" x="0.0" y="0.0" width="208" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="1" green="0.15781137449999999" blue="0.16727354829999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="qOn-wD-wWK">
-                                        <rect key="frame" x="0.0" y="60" width="112.33333333333333" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Name" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="5ln-bw-52i">
+                                        <rect key="frame" x="0.0" y="60" width="300" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="1I2-YE-8o0"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" textContentType="name"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="p1n-uY-hxi" id="Uz3-Lo-6xY"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="n2B-PC-tku">
-                                        <rect key="frame" x="0.0" y="100" width="114.33333333333333" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Last Name" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="qOn-wD-wWK">
+                                        <rect key="frame" x="0.0" y="100" width="300" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="x7z-uA-7dj"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="username"/>
+                                        <textInputTraits key="textInputTraits" textContentType="name"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="p1n-uY-hxi" id="53n-1b-QFi"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="GUx-yA-e09">
-                                        <rect key="frame" x="0.0" y="140" width="82.666666666666671" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="lfr-oY-4Kq">
+                                        <rect key="frame" x="0.0" y="140" width="300" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="p1n-uY-hxi" id="Xy2-dv-XOm"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="GUx-yA-e09">
+                                        <rect key="frame" x="0.0" y="180" width="300" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="lfr-oY-4Kq">
-                                        <rect key="frame" x="0.0" y="180" width="89" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="n2B-PC-tku">
+                                        <rect key="frame" x="0.0" y="220" width="300" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                        <textInputTraits key="textInputTraits" textContentType="username"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="PHU-ff-5zu">
-                                        <rect key="frame" x="0.0" y="220" width="110.33333333333333" height="30"/>
+                                        <rect key="frame" x="0.0" y="260" width="300" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="p1n-uY-hxi" id="dfr-50-FIN"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="zww-wz-pVe">
-                                        <rect key="frame" x="0.0" y="260" width="166" height="30"/>
+                                        <rect key="frame" x="0.0" y="300" width="300" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="p1n-uY-hxi" id="89e-U9-m1h"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="n2B-PC-tku" firstAttribute="width" secondItem="qOn-wD-wWK" secondAttribute="width" id="EMG-BA-13X"/>
+                                    <constraint firstItem="lfr-oY-4Kq" firstAttribute="width" secondItem="qOn-wD-wWK" secondAttribute="width" id="WC5-DS-viJ"/>
+                                    <constraint firstItem="zww-wz-pVe" firstAttribute="width" secondItem="qOn-wD-wWK" secondAttribute="width" id="cZs-lZ-tLz"/>
+                                    <constraint firstItem="GUx-yA-e09" firstAttribute="width" secondItem="qOn-wD-wWK" secondAttribute="width" id="cvc-29-U1N"/>
+                                    <constraint firstItem="VFS-03-7qE" firstAttribute="width" secondItem="qOn-wD-wWK" secondAttribute="width" id="p12-7W-gXF"/>
+                                    <constraint firstItem="PHU-ff-5zu" firstAttribute="width" secondItem="qOn-wD-wWK" secondAttribute="width" id="yJ8-7N-DGq"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcd-cI-fnQ">
-                                <rect key="frame" x="173.66666666666666" y="444" width="67" height="33"/>
+                                <rect key="frame" x="173.66666666666666" y="484" width="67" height="33"/>
                                 <color key="backgroundColor" red="0.0024504750040000001" green="0.4010392129" blue="0.79995733499999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="SUBMIT">
@@ -481,6 +516,7 @@
                         <outlet property="contactNumber" destination="lfr-oY-4Kq" id="hPE-IE-Ed8"/>
                         <outlet property="email" destination="GUx-yA-e09" id="c71-SA-5Fp"/>
                         <outlet property="firstName" destination="qOn-wD-wWK" id="ggv-kz-5uh"/>
+                        <outlet property="lastName" destination="qOn-wD-wWK" id="G4c-iy-gLb"/>
                         <outlet property="menuButton" destination="TLj-Fd-CAZ" id="Mkl-95-Dyj"/>
                         <outlet property="password1" destination="PHU-ff-5zu" id="uI2-P0-f0v"/>
                         <outlet property="password2" destination="zww-wz-pVe" id="o5J-VW-2LD"/>
