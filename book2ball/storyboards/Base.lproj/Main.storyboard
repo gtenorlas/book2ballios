@@ -900,18 +900,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7jR-MO-hcK">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7jR-MO-hcK">
                                 <rect key="frame" x="0.0" y="122" width="414" height="614"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="RlC-uO-e6u" id="iTC-SO-KxH"/>
                                     <outlet property="delegate" destination="RlC-uO-e6u" id="yZm-d5-PZp"/>
                                 </connections>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="OIB-Oz-jsa">
-                                <rect key="frame" x="20" y="74" width="366" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="OIB-Oz-jsa">
+                                <rect key="frame" x="0.0" y="94" width="414" height="29"/>
                                 <segments>
                                     <segment title="Active bookings"/>
                                     <segment title="Past bookings"/>
@@ -922,6 +920,15 @@
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7jR-MO-hcK" firstAttribute="top" secondItem="OIB-Oz-jsa" secondAttribute="bottom" id="FHF-4p-6SO"/>
+                            <constraint firstItem="OIB-Oz-jsa" firstAttribute="top" secondItem="SfA-F3-qdA" secondAttribute="top" constant="30" id="Tbf-KI-pP6"/>
+                            <constraint firstItem="SfA-F3-qdA" firstAttribute="trailing" secondItem="OIB-Oz-jsa" secondAttribute="trailing" id="XOs-zA-mmv"/>
+                            <constraint firstItem="7jR-MO-hcK" firstAttribute="bottom" secondItem="SfA-F3-qdA" secondAttribute="bottom" id="c5L-vK-xCa"/>
+                            <constraint firstItem="OIB-Oz-jsa" firstAttribute="leading" secondItem="SfA-F3-qdA" secondAttribute="leading" id="mUg-UR-626"/>
+                            <constraint firstItem="7jR-MO-hcK" firstAttribute="trailing" secondItem="SfA-F3-qdA" secondAttribute="trailing" id="mhC-un-Fbf"/>
+                            <constraint firstItem="7jR-MO-hcK" firstAttribute="leading" secondItem="SfA-F3-qdA" secondAttribute="leading" id="zuG-De-NJw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="SfA-F3-qdA"/>
                     </view>
                     <navigationItem key="navigationItem" title="Bookings" id="OaG-yJ-rsO">

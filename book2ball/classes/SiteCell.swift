@@ -26,17 +26,17 @@ class SiteCell: UITableViewCell {
         facilityName.textColor = .black
         
         city.textAlignment = .left
-        city.font = UIFont.boldSystemFont(ofSize: 16)
+        city.font = UIFont.boldSystemFont(ofSize: 15)
         city.backgroundColor = .clear
         city.textColor = UIColor(red: 82.0/255, green: 103.0/255, blue: 137.0/255, alpha: 1.0)
         
         province.textAlignment = .left
-        province.font = UIFont.boldSystemFont(ofSize: 16)
+        province.font = UIFont.boldSystemFont(ofSize: 15)
         province.backgroundColor = .clear
         province.textColor = UIColor(red: 82.0/255, green: 103.0/255, blue: 137.0/255, alpha: 1.0)
         
         distance.textAlignment = .right
-        distance.font = UIFont.boldSystemFont(ofSize: 16)
+        distance.font = UIFont.boldSystemFont(ofSize: 15)
         distance.backgroundColor = .clear
         distance.textColor = UIColor(red: 82.0/255, green: 103.0/255, blue: 137.0/255, alpha: 1.0)
         
@@ -49,10 +49,10 @@ class SiteCell: UITableViewCell {
     }
     
     override func layoutSubviews() {
-        facilityName.frame = CGRect(x: 20, y: 5, width: 300, height: 30)
+        facilityName.frame = CGRect(x: 20, y: 5, width: 220, height: 30)
         province.frame = CGRect(x: 130, y: 30, width: 100, height: 20)
         city.frame = CGRect(x: 20, y: 30, width: 100, height: 20)
-        distance.frame = CGRect(x: 250, y: 30, width: 120, height: 20)
+        distance.frame = CGRect(x: 220, y: 30, width: 140, height: 20)
     }
     
     
