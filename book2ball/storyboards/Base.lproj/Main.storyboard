@@ -369,10 +369,10 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="About Us" id="LqR-UX-9Ez">
                         <barButtonItem key="leftBarButtonItem" title="Back" image="menu" id="Vv1-2g-Vby">
-                            <color key="tintColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
+                            <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="home" id="0xV-IH-lTK">
-                            <color key="tintColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
+                            <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             <connections>
                                 <segue destination="vTJ-gF-y9C" kind="unwind" unwindAction="unwindToViewControllerWithSender:" id="zXf-nO-xfs"/>
                             </connections>
@@ -565,10 +565,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="TAP-wC-4J0">
                         <barButtonItem key="leftBarButtonItem" title="Back" image="menu" id="TLj-Fd-CAZ">
-                            <color key="tintColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
+                            <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="home" id="nLy-ta-WGm">
-                            <color key="tintColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
+                            <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             <connections>
                                 <segue destination="Ixr-J5-RDW" kind="unwind" unwindAction="unwindToViewControllerWithSender:" id="259-yv-JaZ"/>
                             </connections>
@@ -933,9 +933,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Bookings" id="OaG-yJ-rsO">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="menu" id="Acq-no-wBM">
-                            <color key="tintColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
+                            <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="home" id="MLJ-ch-cjk">
+                            <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             <connections>
                                 <segue destination="Bk8-mw-onz" kind="unwind" unwindAction="unwindToViewControllerWithSender:" id="OH7-LK-9UJ"/>
                             </connections>
@@ -1298,6 +1299,7 @@
                             <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" placeholder="Search facility" translatesAutoresizingMaskIntoConstraints="NO" id="LCP-bz-UpH">
                                 <rect key="frame" x="0.0" y="174" width="414" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="lo6-a0-UI9" id="hEB-uz-3FJ"/>
@@ -1336,9 +1338,10 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Search" id="vxs-Po-tp0">
                         <barButtonItem key="leftBarButtonItem" title="Back" image="menu" id="zGW-gV-ynL">
-                            <color key="tintColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
+                            <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="home" id="Xz2-yn-LUN">
+                            <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             <connections>
                                 <segue destination="GRn-0Q-Bir" kind="unwind" unwindAction="unwindToViewControllerWithSender:" id="2tZ-lF-Dqq"/>
                             </connections>
