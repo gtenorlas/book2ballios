@@ -35,7 +35,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onLogin(_ sender: UIButton) {
-       // var users:Array<Customer>
         
         users.username = userName.text as! NSString
         users.password = passWord.text as! NSString
@@ -67,7 +66,6 @@ class ViewController: UIViewController {
         forgotPasswordAlert.addAction(UIAlertAction(title: "Reset Password", style: .default, handler: { (action) in
             resetEmail = (forgotPasswordAlert.textFields?.first?.text)!
             let response = Customer.sendToken(email: resetEmail)
-          //  Auth.auth().sendPasswordReset(withEmail: resetEmail!, completion: { (error) in
                 if response as? String == "invalid" {
                     let resetFailedAlert = UIAlertController(title: "Reset Failed", message: "Error: \(String(describing: (response as AnyObject).localizedDescription))", preferredStyle: .alert)
                     resetFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -100,11 +98,8 @@ class ViewController: UIViewController {
                                 textField2.isSecureTextEntry = true
                                 password2 = textField2.text!
                             }
-                            //resetPasswordAlert.addTextField(configurationHandler: password1)
                             resetPasswordAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                             resetPasswordAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                                // password1 = resetPasswordAlert.textFields?.first?.text
-                               // let password2 = resetPasswordAlert.textFields?.first?.text
                                 if password1 != password2 {
                                     let passwordNotMatched = UIAlertController(title: "Password must be the same", message: "Error: \(String(describing: (response as AnyObject).localizedDescription))", preferredStyle: .alert)
                                     passwordNotMatched.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))

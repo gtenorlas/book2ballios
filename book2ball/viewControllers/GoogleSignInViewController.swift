@@ -58,7 +58,6 @@ class GoogleSignInViewController: UIViewController, GIDSignInUIDelegate, GIDSign
             
             mainDelegate.userLoggedIn = user //user signed in
             
-           // performSegue(withIdentifier: "segueToSearchFacility", sender: nil)
         }
     }
     

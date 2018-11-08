@@ -154,6 +154,10 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
         statusCheck.selectedSegmentIndex = 0;
         self.viewBookingsByType(statusCheck)
         sideMenu()
+        navigationController?.navigationBar.tintColor = UIColor(red: 54.0/255, green: 116.0/255, blue: 216.0/255, alpha: 1.0)
+        navigationController?.navigationBar.barTintColor = UIColor(red: 54.0/255, green: 116.0/255, blue: 216.0/255, alpha: 1.0)
+        navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedStringKey.foregroundColor : UIColor.white]
     }
     
     func sideMenu(){

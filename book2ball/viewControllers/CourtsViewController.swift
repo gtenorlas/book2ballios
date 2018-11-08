@@ -65,7 +65,6 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
             print(payment.subTotal)
             print(payment.taxAmount)
             payment.totalAmount = payment.getTotalInDouble(subTot : payment.subTotal!, tax : payment.taxAmount!)
-           // payment.totalAmount = payment.getTotal(subTot: (Float(payment.subTotal! as Double) ), tax: Float(payment.taxAmount! as Double))
             payment.paymentDateTime = nil
             payment.confirmationNumber = nil
             payment.paymentMethod = "payPal"

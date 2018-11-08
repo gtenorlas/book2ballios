@@ -29,10 +29,8 @@ class ForgetPasswordViewController: UIViewController {
     
     @IBAction func calcelButton(_ sender: Any) {
        self.dismiss(animated: true, completion: nil)
-        //self.dissmissViewControllerAnimated(true,dismiss(animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>))
     }
     
-   // @IBOutlet weak var cancelButton: UIButton!
     /*
     // MARK: - Navigation
 

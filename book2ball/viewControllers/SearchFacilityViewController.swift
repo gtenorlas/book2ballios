@@ -251,7 +251,6 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        //return self.facilityList.count
         return self.currentViewingFacs.count
     }
     
@@ -276,19 +275,6 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
         return tableCell
         
     }
-    
-    //func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    //    return searchBar
-    //}
-    
-    //func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    //    return UITableViewAutomaticDimension
-    //}
-    
-    // step 9 making cells editable
-    //func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-    //    return true
-    //}
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         mainDelegate.selectedFacilityData = self.currentViewingFacs[indexPath.row]
@@ -328,7 +314,6 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
         self.fetch()
         self.findDistFromLatLong()
         
-        //self.getDistanceForFacilities()
         print("!!!!!!!!!!!!!!!!!!!!")
         print(self.facilityList.count)
         print("!!!!!!!!!!!!!!!!!!!!")
@@ -343,6 +328,10 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
         alterLayout()
         
         sideMenu()
+        navigationController?.navigationBar.tintColor = UIColor(red: 54.0/255, green: 116.0/255, blue: 216.0/255, alpha: 1.0)
+        navigationController?.navigationBar.barTintColor = UIColor(red: 54.0/255, green: 116.0/255, blue: 216.0/255, alpha: 1.0)
+        navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedStringKey.foregroundColor : UIColor.white]
     }
     
     func sideMenu(){

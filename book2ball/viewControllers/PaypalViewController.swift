@@ -20,11 +20,9 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
     @IBOutlet var taxPercentage : UILabel!
     @IBOutlet var taxAmount : UILabel!
     @IBOutlet var totalAmount : UILabel!
-  //  @IBOutlet var paymentDateTime : UILabel!
     @IBOutlet var facilityAddress : UILabel!
     @IBOutlet var courtName : UILabel!
     @IBOutlet weak var startDateTime: UILabel!
-   // @IBOutlet var status : UILabel!
     @IBOutlet weak var endDateTime: UILabel!
     @IBOutlet weak var duration: UILabel!
     @IBOutlet var lblPayCnfm : UILabel!
@@ -38,7 +36,6 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
         facilityName.text = mainDelegate.selectedFacilityData.facilityName as! String
         
         courtName.text = mainDelegate.selectedCourt.courtName as String
-        //startDateTime.text
         courtCharge.text = Payment.formatToCurrency(num:  mainDelegate.selectedCourt.price)
         
         subTotal.text = Payment.formatToCurrency(num: mainDelegate.payment.subTotal!)
@@ -56,14 +53,10 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
         //then again set the date format whhich type of output you need
         formatter.dateFormat = "dd-MMM-yyyy"
         // again convert your date to string
-        //paymentDateTime.text = formatter.string(from: mainDelegate.payment.paymentDateTime!)
         
         startDateTime.text = Booking.formatDate(date: mainDelegate.selectedBooking.startDateTime!)
         endDateTime.text = Booking.formatDate(date: mainDelegate.selectedBooking.endDateTime!)
         
-        
-        
-//        status.text =  "Completed"
         mainDelegate.payment.status = "Paid"
         lblPayCnfm.text=""
         payButton.isEnabled=true
@@ -163,8 +156,6 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
     
     func payPalPaymentDidCancel(_ paymentViewController: PayPalPaymentViewController) {
         print("PayPal Payment Cancelled")
-        //resultText = ""
-        //successView.isHidden = true
         paymentViewController.dismiss(animated: true, completion: nil)
     }
     
@@ -174,8 +165,6 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
             // send completed confirmaion to your server
             print("Here is your proof of payment:\n\n\(completedPayment.confirmation)\n\nSend this to your server for confirmation and fulfillment.")
             
-            //self.resultText = completedPayment.description
-            //self.showSuccess()
         })
         updatePayCnfmLbl()
     }
