@@ -285,7 +285,7 @@ class Booking: NSObject {
         dateComponents.year = (dict["year"] as? Int)!
         dateComponents.month = (dict["monthValue"] as? Int)!
         dateComponents.day = (dict["dayOfMonth"] as? Int)!
-        dateComponents.timeZone = TimeZone(abbreviation: "BST") // EET, CET Standard Time
+        dateComponents.timeZone = TimeZone(abbreviation: "EST") // EET, CET, BST Standard Time
         dateComponents.hour = (dict["hour"] as? Int)!
         dateComponents.minute = (dict["minute"] as? Int)!
         dateComponents.second = 0

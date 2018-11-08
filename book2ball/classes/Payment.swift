@@ -247,6 +247,26 @@ class Payment: NSObject {
         
     }
  */
+    static func setDate(data:Any) -> Date{
+        
+        guard let dict = data as? [String : Any] else {return Date()}
+        var dateComponents = DateComponents()
+        dateComponents.year = (dict["year"] as? Int)!
+        dateComponents.month = (dict["monthValue"] as? Int)!
+        dateComponents.day = (dict["dayOfMonth"] as? Int)!
+        dateComponents.timeZone = TimeZone(abbreviation: "BST") // EET, CET, BST Standard Time
+        dateComponents.hour = (dict["hour"] as? Int)!
+        dateComponents.minute = (dict["minute"] as? Int)!
+        dateComponents.second = 0
+        
+        
+        var calendar = Calendar(identifier: .iso8601)
+        // calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+        let someDateTime = calendar.date(from: dateComponents)
+        print (Booking.formatDate(date: someDateTime!))
+        return someDateTime!
+    }
+    
     static func fetch(data:Any) -> AnyObject{
         print ("fetching Payment")
     
@@ -257,7 +277,7 @@ class Payment: NSObject {
         payment.confirmationNumber = dict["confirmationNumber"] as? String
         payment.courtCharge = dict["courtCharge"] as? Double
         print ("Payment Date time is \(dict["paymentDateTime"])" )
-        payment.paymentDateTime = Booking.setDate(data: dict["paymentDateTime"])
+        payment.paymentDateTime = Payment.setDate(data: dict["paymentDateTime"])
         payment.paymentId = dict["paymentId"] as? Int
         payment.paymentMethod = dict["paymentMethod"] as? String
         payment.status = dict["status"] as? String
