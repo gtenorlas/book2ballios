@@ -64,7 +64,7 @@ class UpdateProfileViewController: UIViewController, UITextFieldDelegate, UINavi
                 }
                 else {
                     //create a new user
-                    let user: Customer = Customer( username: username.text as! NSString, password: password1.text as! NSString, firstName: firstName.text as! NSString, lastName: lastName.text as! NSString, email: email.text as! NSString,contactNumber: contactNumber.text as! NSString, startDate: "10-22-2018-13-30" ,endDate: "null" , status: "Active", originate: "Standard")
+                    let user: Customer = Customer( username: username.text as! NSString, password: password1.text as! NSString, firstName: firstName.text as! NSString, lastName: lastName.text as! NSString, email: email.text as! NSString,contactNumber: contactNumber.text as! NSString, startDate: "10-22-2018-13-30" ,endDate: "null" , status: "Active", originate: mainDelegate.userLoggedIn.originate)
                     print(username.text)
                     print(password1.text)
                     print(firstName.text)
@@ -88,8 +88,8 @@ class UpdateProfileViewController: UIViewController, UITextFieldDelegate, UINavi
         super.viewDidLoad()
         sideMenu()
         // Do any additional setup after loading the view.
-        navigationController?.navigationBar.tintColor = .blue
-        navigationController?.navigationBar.barTintColor = .blue
+        navigationController?.navigationBar.tintColor = UIColor(red: 54.0/255, green: 116.0/255, blue: 216.0/255, alpha: 1.0)
+        navigationController?.navigationBar.barTintColor = UIColor(red: 54.0/255, green: 116.0/255, blue: 216.0/255, alpha: 1.0)
         navigationController?.navigationBar.titleTextAttributes =
         [NSAttributedStringKey.foregroundColor : UIColor.white]
         

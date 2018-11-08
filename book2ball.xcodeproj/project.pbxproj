@@ -37,7 +37,6 @@
 		AEF7CB292183D52700AE5D80 /* SiteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7CB272183D52700AE5D80 /* SiteCell.swift */; };
 		CE0FB96121717CE4003038B5 /* Court.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95921717CC4003038B5 /* Court.swift */; };
 		CE0FB96321717CE4003038B5 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95B21717CCD003038B5 /* Customer.swift */; };
-		CE0FB96421717CE4003038B5 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95C21717CD2003038B5 /* DAO.swift */; };
 		CE0FB96521717CE4003038B5 /* FaceBookRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95D21717CD6003038B5 /* FaceBookRegistration.swift */; };
 		CE0FB96621717CE4003038B5 /* FacilityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95E21717CDA003038B5 /* FacilityData.swift */; };
 		CE0FB96721717CE4003038B5 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95F21717CDF003038B5 /* Payment.swift */; };
@@ -83,7 +82,6 @@
 		AEF7CB272183D52700AE5D80 /* SiteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteCell.swift; sourceTree = "<group>"; };
 		CE0FB95921717CC4003038B5 /* Court.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Court.swift; sourceTree = "<group>"; };
 		CE0FB95B21717CCD003038B5 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
-		CE0FB95C21717CD2003038B5 /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		CE0FB95D21717CD6003038B5 /* FaceBookRegistration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceBookRegistration.swift; sourceTree = "<group>"; };
 		CE0FB95E21717CDA003038B5 /* FacilityData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacilityData.swift; sourceTree = "<group>"; };
 		CE0FB95F21717CDF003038B5 /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 				AED2CD2F217E60D80013F560 /* PaymentTableViewCell.swift */,
 				AEF7CB272183D52700AE5D80 /* SiteCell.swift */,
 				CE0FB95921717CC4003038B5 /* Court.swift */,
-				CE0FB95C21717CD2003038B5 /* DAO.swift */,
 				CE0FB95D21717CD6003038B5 /* FaceBookRegistration.swift */,
 				CE0FB95E21717CDA003038B5 /* FacilityData.swift */,
 				CE0FB96021717CE4003038B5 /* GoogleRegistration.swift */,
@@ -393,7 +390,6 @@
 				AE6DA56E218446D400DF0F55 /* PaypalViewController.swift in Sources */,
 				AEBEC551218BD394001480CB /* UpdateProfileViewController.swift in Sources */,
 				CEFBFE24218A83DB00678A5C /* CourtsTableViewCell.swift in Sources */,
-				CE0FB96421717CE4003038B5 /* DAO.swift in Sources */,
 				34E85571216BA3B700C2AD71 /* ViewController.swift in Sources */,
 				AE6DA5692184293F00DF0F55 /* ForgetPasswordViewController.swift in Sources */,
 				AED2CD25217E19FD0013F560 /* FacebookViewController.swift in Sources */,

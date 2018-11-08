@@ -5,6 +5,9 @@
 //  Created by Xcode User on 2018-11-08.
 //  Copyright © 2018 moghid saad. All rights reserved.
 //
+/*
+ This is the sidebar menu contents that is presented to the user upon clicking the navigation bar.
+ */
 
 import UIKit
 

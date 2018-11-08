@@ -5,6 +5,9 @@
 //  Created by Xcode User on 2018-11-01.
 //  Copyright © 2018 moghid saad. All rights reserved.
 //
+/*
+ This controls all the view controllers segue for all the view controllers that has the navigator controller menu
+ */
 
 import UIKit
 
