@@ -44,9 +44,11 @@ class GoogleSignInViewController: UIViewController, GIDSignInUIDelegate, GIDSign
                 user.endDate = "null"
                 user.status = "Active"
                 Customer.save(customer: user)
+                mainDelegate.userLoggedIn = user
                 performSegue(withIdentifier: "searchFacilitySegue", sender: nil)
             }else {
                 user = response as! Customer
+                mainDelegate.userLoggedIn = user
                 performSegue(withIdentifier: "searchFacilitySegue", sender: nil)
             }
             
