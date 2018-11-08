@@ -33,6 +33,7 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
     
     @IBAction func viewBookingsByType (_ sender: Any)
     {
+        bookings = Booking.fetchByEmail(email: mainDelegate.userLoggedIn.email as String)
         self.viewingBookings = []
         listData = []
         descriptionData = []
