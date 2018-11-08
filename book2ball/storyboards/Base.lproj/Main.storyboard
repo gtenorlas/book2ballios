@@ -584,7 +584,7 @@
                         <outlet property="password2" destination="iyn-tJ-JHY" id="8eW-Yg-p2d"/>
                         <outlet property="status" destination="wds-9T-o9P" id="6S0-wq-m2F"/>
                         <outlet property="username" destination="lb2-sd-8n3" id="ttH-T7-uy0"/>
-                        <segue destination="lo6-a0-UI9" kind="presentation" identifier="searchFacilitySegue" id="6Gx-W6-iN0"/>
+                        <segue destination="WfL-ZB-6KH" kind="presentation" identifier="searchFacilitySegue" id="zqe-Fh-YG1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jWb-BR-CMf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1275,7 +1275,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HGF-HD-KJz">
-                                <rect key="frame" x="0.0" y="127" width="414" height="609"/>
+                                <rect key="frame" x="0.0" y="171" width="414" height="565"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="lo6-a0-UI9" id="Mcj-oR-OVe"/>
@@ -1283,7 +1283,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance (km)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWe-oz-BV4">
-                                <rect key="frame" x="16" y="50" width="382" height="21"/>
+                                <rect key="frame" x="16" y="94" width="382" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1297,7 +1297,7 @@
                                 </connections>
                             </searchBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="4" translatesAutoresizingMaskIntoConstraints="NO" id="Xls-ak-l2d">
-                                <rect key="frame" x="16" y="79" width="382" height="29"/>
+                                <rect key="frame" x="16" y="123" width="382" height="29"/>
                                 <segments>
                                     <segment title="10"/>
                                     <segment title="20"/>
@@ -1881,7 +1881,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="9Ma-XJ-0v2"/>
         <segue reference="qF2-Ph-PO2"/>
-        <segue reference="6Gx-W6-iN0"/>
-        <segue reference="BRF-cs-Niz"/>
+        <segue reference="zqe-Fh-YG1"/>
     </inferredMetricsTieBreakers>
 </document>
