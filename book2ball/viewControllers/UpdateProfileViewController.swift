@@ -50,6 +50,7 @@ class UpdateProfileViewController: UIViewController, UITextFieldDelegate, UINavi
     }
     
     @IBAction func onUpdateTap(_ sender: UIButton) {
+        print ("onupdateTap")
         //check if fields are valid
         if (username.text == "" || password1.text == "" || password2.text == "" || firstName.text == "" || lastName.text == "" || email.text == "") {
             status.text = "All fields must be filled in."

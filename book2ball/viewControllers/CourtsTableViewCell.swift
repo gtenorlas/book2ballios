@@ -48,7 +48,7 @@ class CourtsTableViewCell: UITableViewCell {
     //define the size and location of all 3 items as below
     override func layoutSubviews() {
         //primaryLabel location on the cell
-        var f = CGRect(x: 16, y: 5, width: 350, height: 30)
+        var f = CGRect(x: 16, y: 5, width: 325, height: 30)
         primaryLabel.frame = f
         
         //secondaryLabel location on the cell
@@ -56,7 +56,7 @@ class CourtsTableViewCell: UITableViewCell {
         secondaryLabel.frame = f
         
         //arrowImage location on the cell
-        f = CGRect(x: 360, y: 5, width: 40, height: 45)
+        f = CGRect(x: 330, y: 5, width: 40, height: 45)
         arrowImage.frame = f
         
         
