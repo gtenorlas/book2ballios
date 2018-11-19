@@ -7,14 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3419B05C21A079A8009DED9F /* bgball.png in Resources */ = {isa = PBXBuildFile; fileRef = 3419B05B21A079A8009DED9F /* bgball.png */; };
+		3419B05E21A07BFB009DED9F /* Untitled design-9.png in Resources */ = {isa = PBXBuildFile; fileRef = 3419B05D21A07BFA009DED9F /* Untitled design-9.png */; };
+		3419B06321A0DA85009DED9F /* shanu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3419B05F21A0DA7D009DED9F /* shanu.png */; };
+		3419B06421A0DA85009DED9F /* anthony.png in Resources */ = {isa = PBXBuildFile; fileRef = 3419B06021A0DA7D009DED9F /* anthony.png */; };
+		3419B06521A0DA85009DED9F /* gene.png in Resources */ = {isa = PBXBuildFile; fileRef = 3419B06121A0DA7E009DED9F /* gene.png */; };
+		3419B06621A0DA85009DED9F /* mo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3419B06221A0DA83009DED9F /* mo.png */; };
 		343AEE282183754800A8C111 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 343AEE272183754800A8C111 /* bg.jpg */; };
 		343AEE2A2183775A00A8C111 /* bg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 343AEE292183775A00A8C111 /* bg1.jpg */; };
+		34CE0F7A21A33F9200534C59 /* contact.png in Resources */ = {isa = PBXBuildFile; fileRef = 34CE0F7921A33F9100534C59 /* contact.png */; };
+		34CE0F7C21A33FC400534C59 /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = 34CE0F7B21A33FC200534C59 /* password.png */; };
+		34CE0F8221A344E000534C59 /* username.png in Resources */ = {isa = PBXBuildFile; fileRef = 34CE0F8121A344DF00534C59 /* username.png */; };
+		34CE0F8421A344E500534C59 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 34CE0F8321A344E400534C59 /* email.png */; };
+		34CE0F8621A3451D00534C59 /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 34CE0F8521A3451C00534C59 /* phone.png */; };
+		34CE0F8821A34D7500534C59 /* UIImgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CE0F8721A34D7500534C59 /* UIImgView.swift */; };
 		34E8556F216BA3B700C2AD71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E8556E216BA3B700C2AD71 /* AppDelegate.swift */; };
 		34E85571216BA3B700C2AD71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E85570216BA3B700C2AD71 /* ViewController.swift */; };
 		34E85574216BA3B700C2AD71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34E85572216BA3B700C2AD71 /* Main.storyboard */; };
 		34E85576216BA3B800C2AD71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34E85575216BA3B800C2AD71 /* Assets.xcassets */; };
 		34E85579216BA3B800C2AD71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34E85577216BA3B800C2AD71 /* LaunchScreen.storyboard */; };
 		34E85583216BA43300C2AD71 /* Book 2 Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E85582216BA43300C2AD71 /* Book 2 Ball.png */; };
+		34FC4EC621A33C4900F80633 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FC4EC521A33C4900F80633 /* DesignableTextField.swift */; };
 		6F3B7563EF122C2CFDB5AF29 /* Pods_book2ball.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D89524B4D9FCD63E4FFB59D0 /* Pods_book2ball.framework */; };
 		AE2F4C2A21941F9D0085A688 /* RearTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2F4C2921941F9D0085A688 /* RearTableViewController.swift */; };
 		AE4046EB218CD8B300F79935 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4046EA218CD8B300F79935 /* Booking.swift */; };
@@ -48,8 +61,20 @@
 
 /* Begin PBXFileReference section */
 		134D3D10162E535E8A38AD8B /* Pods-book2ball.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-book2ball.debug.xcconfig"; path = "book2ball/Pods/Target Support Files/Pods-book2ball/Pods-book2ball.debug.xcconfig"; sourceTree = "<group>"; };
+		3419B05B21A079A8009DED9F /* bgball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgball.png; sourceTree = "<group>"; };
+		3419B05D21A07BFA009DED9F /* Untitled design-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Untitled design-9.png"; sourceTree = "<group>"; };
+		3419B05F21A0DA7D009DED9F /* shanu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shanu.png; sourceTree = "<group>"; };
+		3419B06021A0DA7D009DED9F /* anthony.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = anthony.png; sourceTree = "<group>"; };
+		3419B06121A0DA7E009DED9F /* gene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gene.png; sourceTree = "<group>"; };
+		3419B06221A0DA83009DED9F /* mo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mo.png; sourceTree = "<group>"; };
 		343AEE272183754800A8C111 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		343AEE292183775A00A8C111 /* bg1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg1.jpg; sourceTree = "<group>"; };
+		34CE0F7921A33F9100534C59 /* contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = contact.png; path = ../../../Downloads/contact.png; sourceTree = "<group>"; };
+		34CE0F7B21A33FC200534C59 /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password.png; sourceTree = "<group>"; };
+		34CE0F8121A344DF00534C59 /* username.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = username.png; sourceTree = "<group>"; };
+		34CE0F8321A344E400534C59 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
+		34CE0F8521A3451C00534C59 /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone.png; sourceTree = "<group>"; };
+		34CE0F8721A34D7500534C59 /* UIImgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImgView.swift; sourceTree = "<group>"; };
 		34E8556B216BA3B700C2AD71 /* book2ball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = book2ball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34E8556E216BA3B700C2AD71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34E85570216BA3B700C2AD71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +83,7 @@
 		34E85578216BA3B800C2AD71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34E8557A216BA3B800C2AD71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34E85582216BA43300C2AD71 /* Book 2 Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Book 2 Ball.png"; sourceTree = "<group>"; };
+		34FC4EC521A33C4900F80633 /* DesignableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		AE2B1C5C218E9FF6003C2726 /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
 		AE2F4C2921941F9D0085A688 /* RearTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RearTableViewController.swift; sourceTree = "<group>"; };
 		AE4046EA218CD8B300F79935 /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
@@ -144,10 +170,16 @@
 				34E85580216BA3D500C2AD71 /* storyboards */,
 				34E8556E216BA3B700C2AD71 /* AppDelegate.swift */,
 				34E85575216BA3B800C2AD71 /* Assets.xcassets */,
+				34CE0F8321A344E400534C59 /* email.png */,
+				34CE0F8521A3451C00534C59 /* phone.png */,
+				34CE0F8121A344DF00534C59 /* username.png */,
+				34CE0F7921A33F9100534C59 /* contact.png */,
+				34CE0F7B21A33FC200534C59 /* password.png */,
 				AE2B1C5C218E9FF6003C2726 /* Location.gpx */,
 				34E8557A216BA3B800C2AD71 /* Info.plist */,
 				CE17122B2193E7400010E9B4 /* specialPods */,
 				AEEFA5AC2183606200B80BCE /* book2ball-Bridging-Header.h */,
+				34FC4EC521A33C4900F80633 /* DesignableTextField.swift */,
 			);
 			path = book2ball;
 			sourceTree = "<group>";
@@ -164,8 +196,14 @@
 		34E85581216BA41400C2AD71 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				3419B06021A0DA7D009DED9F /* anthony.png */,
+				3419B06121A0DA7E009DED9F /* gene.png */,
+				3419B06221A0DA83009DED9F /* mo.png */,
+				3419B05F21A0DA7D009DED9F /* shanu.png */,
 				CEFBFE25218A890500678A5C /* arrow.jpeg */,
+				3419B05B21A079A8009DED9F /* bgball.png */,
 				343AEE292183775A00A8C111 /* bg1.jpg */,
+				3419B05D21A07BFA009DED9F /* Untitled design-9.png */,
 				343AEE272183754800A8C111 /* bg.jpg */,
 				34E85582216BA43300C2AD71 /* Book 2 Ball.png */,
 			);
@@ -186,6 +224,7 @@
 		AED2CD28217E28120013F560 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				34CE0F8721A34D7500534C59 /* UIImgView.swift */,
 				34E85570216BA3B700C2AD71 /* ViewController.swift */,
 				AED2CD26217E280D0013F560 /* GoogleSignInViewController.swift */,
 				AED2CD24217E19FD0013F560 /* FacebookViewController.swift */,
@@ -292,13 +331,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3419B06621A0DA85009DED9F /* mo.png in Resources */,
+				34CE0F7A21A33F9200534C59 /* contact.png in Resources */,
+				34CE0F7C21A33FC400534C59 /* password.png in Resources */,
+				3419B05C21A079A8009DED9F /* bgball.png in Resources */,
 				343AEE2A2183775A00A8C111 /* bg1.jpg in Resources */,
+				3419B06521A0DA85009DED9F /* gene.png in Resources */,
+				3419B05E21A07BFB009DED9F /* Untitled design-9.png in Resources */,
+				34CE0F8421A344E500534C59 /* email.png in Resources */,
 				343AEE282183754800A8C111 /* bg.jpg in Resources */,
 				CEFBFE26218A890500678A5C /* arrow.jpeg in Resources */,
+				3419B06321A0DA85009DED9F /* shanu.png in Resources */,
 				34E85579216BA3B800C2AD71 /* LaunchScreen.storyboard in Resources */,
 				34E85576216BA3B800C2AD71 /* Assets.xcassets in Resources */,
 				34E85583216BA43300C2AD71 /* Book 2 Ball.png in Resources */,
+				34CE0F8621A3451D00534C59 /* phone.png in Resources */,
+				3419B06421A0DA85009DED9F /* anthony.png in Resources */,
 				34E85574216BA3B700C2AD71 /* Main.storyboard in Resources */,
+				34CE0F8221A344E000534C59 /* username.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +444,9 @@
 				AE6DA5692184293F00DF0F55 /* ForgetPasswordViewController.swift in Sources */,
 				AED2CD25217E19FD0013F560 /* FacebookViewController.swift in Sources */,
 				34E8556F216BA3B700C2AD71 /* AppDelegate.swift in Sources */,
+				34FC4EC621A33C4900F80633 /* DesignableTextField.swift in Sources */,
 				AED2CD30217E60D80013F560 /* PaymentTableViewCell.swift in Sources */,
+				34CE0F8821A34D7500534C59 /* UIImgView.swift in Sources */,
 				AED2CD2C217E3E370013F560 /* RegistrationViewController.swift in Sources */,
 				CE0FB96621717CE4003038B5 /* FacilityData.swift in Sources */,
 				CE0FB96321717CE4003038B5 /* Customer.swift in Sources */,

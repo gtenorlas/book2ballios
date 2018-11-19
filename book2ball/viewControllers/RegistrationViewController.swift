@@ -13,6 +13,8 @@ import UIKit
 class RegistrationViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate,UIImagePickerControllerDelegate{
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    
+    
     @IBOutlet var status: UILabel!
     @IBOutlet var username: UITextField!
     @IBOutlet var password1: UITextField!

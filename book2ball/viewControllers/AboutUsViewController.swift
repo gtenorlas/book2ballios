@@ -14,8 +14,21 @@ class AboutUsViewController: UIViewController {
     var sidebarView: RearTableViewController!
     var blackScreen: UIView!
     
+    @IBOutlet weak var imgGene: UIImageView!
+    @IBOutlet weak var imgMo: UIImageView!
+    @IBOutlet weak var imgShanu: UIImageView!
+    @IBOutlet weak var imgAnthony: UIImageView!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        imgMo.roundedImage()
+        imgGene.roundedImage()
+        imgShanu.roundedImage()
+        imgAnthony.roundedImage()
+        
         sideMenu()
         // Do any additional setup after loading the view.
         navigationController?.navigationBar.tintColor = UIColor(red: 54.0/255, green: 116.0/255, blue: 216.0/255, alpha: 1.0)
