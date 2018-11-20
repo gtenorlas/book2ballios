@@ -15,7 +15,6 @@
 		3419B06621A0DA85009DED9F /* mo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3419B06221A0DA83009DED9F /* mo.png */; };
 		343AEE282183754800A8C111 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 343AEE272183754800A8C111 /* bg.jpg */; };
 		343AEE2A2183775A00A8C111 /* bg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 343AEE292183775A00A8C111 /* bg1.jpg */; };
-		34CE0F7A21A33F9200534C59 /* contact.png in Resources */ = {isa = PBXBuildFile; fileRef = 34CE0F7921A33F9100534C59 /* contact.png */; };
 		34CE0F7C21A33FC400534C59 /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = 34CE0F7B21A33FC200534C59 /* password.png */; };
 		34CE0F8221A344E000534C59 /* username.png in Resources */ = {isa = PBXBuildFile; fileRef = 34CE0F8121A344DF00534C59 /* username.png */; };
 		34CE0F8421A344E500534C59 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 34CE0F8321A344E400534C59 /* email.png */; };
@@ -69,7 +68,6 @@
 		3419B06221A0DA83009DED9F /* mo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mo.png; sourceTree = "<group>"; };
 		343AEE272183754800A8C111 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		343AEE292183775A00A8C111 /* bg1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg1.jpg; sourceTree = "<group>"; };
-		34CE0F7921A33F9100534C59 /* contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = contact.png; path = ../../../Downloads/contact.png; sourceTree = "<group>"; };
 		34CE0F7B21A33FC200534C59 /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password.png; sourceTree = "<group>"; };
 		34CE0F8121A344DF00534C59 /* username.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = username.png; sourceTree = "<group>"; };
 		34CE0F8321A344E400534C59 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
@@ -173,7 +171,6 @@
 				34CE0F8321A344E400534C59 /* email.png */,
 				34CE0F8521A3451C00534C59 /* phone.png */,
 				34CE0F8121A344DF00534C59 /* username.png */,
-				34CE0F7921A33F9100534C59 /* contact.png */,
 				34CE0F7B21A33FC200534C59 /* password.png */,
 				AE2B1C5C218E9FF6003C2726 /* Location.gpx */,
 				34E8557A216BA3B800C2AD71 /* Info.plist */,
@@ -332,7 +329,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3419B06621A0DA85009DED9F /* mo.png in Resources */,
-				34CE0F7A21A33F9200534C59 /* contact.png in Resources */,
 				34CE0F7C21A33FC400534C59 /* password.png in Resources */,
 				3419B05C21A079A8009DED9F /* bgball.png in Resources */,
 				343AEE2A2183775A00A8C111 /* bg1.jpg in Resources */,
