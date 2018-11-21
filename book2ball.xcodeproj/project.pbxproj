@@ -46,6 +46,7 @@
 		AEEFA5A721835FEB00B80BCE /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEFA5A621835FEA00B80BCE /* Accelerate.framework */; };
 		AEEFA5A92183601500B80BCE /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEFA5A82183601500B80BCE /* SafariServices.framework */; };
 		AEEFA5AB2183602400B80BCE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEFA5AA2183602400B80BCE /* SystemConfiguration.framework */; };
+		AEF2BF4321A5A7D300626D97 /* FacilityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF2BF4221A5A7D300626D97 /* FacilityTableViewCell.swift */; };
 		AEF7CB292183D52700AE5D80 /* SiteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7CB272183D52700AE5D80 /* SiteCell.swift */; };
 		CE0FB96121717CE4003038B5 /* Court.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95921717CC4003038B5 /* Court.swift */; };
 		CE0FB96321717CE4003038B5 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95B21717CCD003038B5 /* Customer.swift */; };
@@ -104,6 +105,7 @@
 		AEEFA5A82183601500B80BCE /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		AEEFA5AA2183602400B80BCE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AEEFA5AC2183606200B80BCE /* book2ball-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "book2ball-Bridging-Header.h"; sourceTree = "<group>"; };
+		AEF2BF4221A5A7D300626D97 /* FacilityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacilityTableViewCell.swift; sourceTree = "<group>"; };
 		AEF7CB272183D52700AE5D80 /* SiteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteCell.swift; sourceTree = "<group>"; };
 		CE0FB95921717CC4003038B5 /* Court.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Court.swift; sourceTree = "<group>"; };
 		CE0FB95B21717CCD003038B5 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				CE0FB95B21717CCD003038B5 /* Customer.swift */,
 				AE4046EA218CD8B300F79935 /* Booking.swift */,
 				CE163ECD21A58F9200445956 /* CardView.swift */,
+				AEF2BF4221A5A7D300626D97 /* FacilityTableViewCell.swift */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				AEBEC553218BD3CC001480CB /* RearViewController.swift in Sources */,
 				AED2CD2A217E29B40013F560 /* SearchFacilityViewController.swift in Sources */,
 				AE4046EB218CD8B300F79935 /* Booking.swift in Sources */,
+				AEF2BF4321A5A7D300626D97 /* FacilityTableViewCell.swift in Sources */,
 				CE0FB96721717CE4003038B5 /* Payment.swift in Sources */,
 				CEFBFE222188F72100678A5C /* CourtsViewController.swift in Sources */,
 				AED2CD27217E280D0013F560 /* GoogleSignInViewController.swift in Sources */,

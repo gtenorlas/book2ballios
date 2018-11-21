@@ -1558,6 +1558,84 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HGF-HD-KJz">
                                 <rect key="frame" x="0.0" y="171" width="414" height="565"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FacilityTableViewCell" rowHeight="153" id="km0-78-wHT" customClass="FacilityTableViewCell" customModule="book2ball" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="153"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="km0-78-wHT" id="3tc-FY-5b2">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="152.66666666666666"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jl9-1e-lF9" customClass="CardView" customModule="book2ball" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="398" height="136.66666666666666"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facility Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yfb-Vd-kD0">
+                                                            <rect key="frame" x="8" y="7.9999999999999982" width="382" height="20.333333333333329"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BYR-au-tlF">
+                                                            <rect key="frame" x="8" y="36.333333333333336" width="382" height="92.333333333333314"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZr-Ym-eNI">
+                                                                    <rect key="frame" x="0.0" y="72" width="307" height="20.333333333333329"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g14-9D-3Ap">
+                                                                    <rect key="frame" x="315" y="72" width="67" height="20.333333333333329"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="BYR-au-tlF" secondAttribute="bottom" constant="8" id="0rS-0l-v95"/>
+                                                        <constraint firstItem="Yfb-Vd-kD0" firstAttribute="leading" secondItem="Jl9-1e-lF9" secondAttribute="leading" constant="8" id="3AG-Fj-n73"/>
+                                                        <constraint firstAttribute="trailing" secondItem="BYR-au-tlF" secondAttribute="trailing" constant="8" id="P7Y-10-bMx"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Yfb-Vd-kD0" secondAttribute="trailing" constant="8" id="PM7-Ih-rkX"/>
+                                                        <constraint firstItem="Yfb-Vd-kD0" firstAttribute="top" secondItem="Jl9-1e-lF9" secondAttribute="top" constant="8" id="Rdu-4o-ggJ"/>
+                                                        <constraint firstItem="BYR-au-tlF" firstAttribute="top" secondItem="Yfb-Vd-kD0" secondAttribute="bottom" constant="8" id="pUq-aE-oCV"/>
+                                                        <constraint firstItem="BYR-au-tlF" firstAttribute="leading" secondItem="Jl9-1e-lF9" secondAttribute="leading" constant="8" id="zqv-XF-PRu"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOffSetHeight">
+                                                            <integer key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOffSetWidth">
+                                                            <integer key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Jl9-1e-lF9" firstAttribute="top" secondItem="3tc-FY-5b2" secondAttribute="top" constant="8" id="6Ec-Ne-0pm"/>
+                                                <constraint firstItem="Jl9-1e-lF9" firstAttribute="leading" secondItem="3tc-FY-5b2" secondAttribute="leading" constant="8" id="6tZ-SS-Pb6"/>
+                                                <constraint firstAttribute="trailing" secondItem="Jl9-1e-lF9" secondAttribute="trailing" constant="8" id="BTi-5E-WWN"/>
+                                                <constraint firstAttribute="bottom" secondItem="Jl9-1e-lF9" secondAttribute="bottom" constant="8" id="Jq3-75-m7n"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellView" destination="Jl9-1e-lF9" id="jTk-Ey-bAn"/>
+                                            <outlet property="facilityAddress" destination="UZr-Ym-eNI" id="JwW-xs-tQ6"/>
+                                            <outlet property="facilityDistance" destination="g14-9D-3Ap" id="DJq-ea-UDZ"/>
+                                            <outlet property="facilityName" destination="Yfb-Vd-kD0" id="fWM-nT-hr5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="lo6-a0-UI9" id="Mcj-oR-OVe"/>
                                     <outlet property="delegate" destination="lo6-a0-UI9" id="llS-P8-aBa"/>
