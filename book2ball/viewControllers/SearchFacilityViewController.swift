@@ -44,6 +44,7 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
     var currentViewingFacs:Array<FacilityData> = []
     var initialLocation:CLLocation = CLLocation()
     var locationManager = CLLocationManager()
+    var SegmentIndexSelected:Int = 4
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.locationManager.stopUpdatingLocation()
@@ -89,6 +90,7 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
             }
             self.currentViewingFacs = viewingFacilities
             self.myTableView.reloadData()
+            self.SegmentIndexSelected = 0
             
         case 1:
             for each:FacilityData in self.facilityList{
@@ -99,6 +101,7 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
             }
             self.currentViewingFacs = viewingFacilities
             self.myTableView.reloadData()
+            self.SegmentIndexSelected = 1
         case 2:
             for each:FacilityData in self.facilityList{
                 if(each.distance <= 30.00)
@@ -108,6 +111,7 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
             }
             self.currentViewingFacs = viewingFacilities
             self.myTableView.reloadData()
+            self.SegmentIndexSelected = 2
         case 3:
             for each:FacilityData in self.facilityList{
                 if(each.distance <= 40.00)
@@ -117,10 +121,12 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
             }
             self.currentViewingFacs = viewingFacilities
             self.myTableView.reloadData()
+            self.SegmentIndexSelected = 3
         case 4:
             viewingFacilities = self.facilityList
             self.currentViewingFacs = viewingFacilities
             self.myTableView.reloadData()
+            self.SegmentIndexSelected = 4
         default:
             print("No select")
         }
@@ -398,7 +404,15 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
     
     @IBAction func unwindToSeachFacilityViewController(sender : UIStoryboardSegue)
     {
+        facilityList = []
+        viewingFacilities = []
+        currentViewingFacs = []
+        self.myTableView.reloadData()
         viewDidLoad()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+            self.segment.selectedSegmentIndex = self.SegmentIndexSelected
+            self.viewWithinDistance(self.segment)
+        })
     }
     /*
      // MARK: - Navigation
