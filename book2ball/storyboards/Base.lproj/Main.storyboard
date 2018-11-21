@@ -1575,6 +1575,15 @@
                                                             <color key="textColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53a-3K-V3n">
+                                                            <rect key="frame" x="293" y="53" width="82" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <state key="normal" title="Select">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                        </button>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BYR-au-tlF">
                                                             <rect key="frame" x="8" y="36.333333333333336" width="382" height="92.333333333333314"/>
                                                             <subviews>
@@ -1633,6 +1642,7 @@
                                             <outlet property="facilityAddress" destination="UZr-Ym-eNI" id="JwW-xs-tQ6"/>
                                             <outlet property="facilityDistance" destination="g14-9D-3Ap" id="DJq-ea-UDZ"/>
                                             <outlet property="facilityName" destination="Yfb-Vd-kD0" id="fWM-nT-hr5"/>
+                                            <outlet property="select" destination="53a-3K-V3n" id="y5W-eU-d5I"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

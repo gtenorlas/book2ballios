@@ -286,6 +286,10 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
         
         let distance = self.currentViewingFacs[indexPath.row].distance
         
+        //cell.selectionStyle = .none
+        
+        
+        
         cell.cellView.backgroundColor = UIColor(rgb: 0xFFFFFF)
         cell.facilityName.text = self.currentViewingFacs[indexPath.row].facilityName as String
         cell.facilityAddress.text = self.currentViewingFacs[indexPath.row].city as String
@@ -313,6 +317,7 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      
         mainDelegate.selectedFacilityData = self.currentViewingFacs[indexPath.row]
         performSegue(withIdentifier: "segueToCourtsViewController", sender: nil)
     }
@@ -393,7 +398,7 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
     
     @IBAction func unwindToSeachFacilityViewController(sender : UIStoryboardSegue)
     {
-        
+        viewDidLoad()
     }
     /*
      // MARK: - Navigation

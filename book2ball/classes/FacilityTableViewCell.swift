@@ -14,6 +14,7 @@ class FacilityTableViewCell: UITableViewCell {
     @IBOutlet var facilityName : UILabel!
     @IBOutlet var facilityAddress : UILabel!
     @IBOutlet var facilityDistance : UILabel!
+    @IBOutlet var select : UIButton!
     
 
     override func awakeFromNib() {
