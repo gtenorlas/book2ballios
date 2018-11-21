@@ -259,6 +259,15 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellCardView", for: indexPath) as! UITableViewCell
+        
+        cell.contentView.backgroundColor = UIColor (white: 0.90, alpha: 1)
+        
+        return cell
+        
+        
+        /*
         let tableCell : SiteCell = tableView.dequeueReusableCell(withIdentifier: "cell") as? SiteCell ?? SiteCell(style: .default, reuseIdentifier: "cell")
         
         let facilityName = self.currentViewingFacs[indexPath.row].facilityName
@@ -273,6 +282,7 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
         
         
         return tableCell
+        */
         
     }
     
@@ -294,6 +304,8 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        myTableView.separatorColor = UIColor(white: 0.95, alpha: 1)
         
         if CLLocationManager.locationServicesEnabled() == true {
             

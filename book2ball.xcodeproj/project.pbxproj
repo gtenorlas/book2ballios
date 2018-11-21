@@ -53,6 +53,7 @@
 		CE0FB96621717CE4003038B5 /* FacilityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95E21717CDA003038B5 /* FacilityData.swift */; };
 		CE0FB96721717CE4003038B5 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB95F21717CDF003038B5 /* Payment.swift */; };
 		CE0FB96821717CE4003038B5 /* GoogleRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FB96021717CE4003038B5 /* GoogleRegistration.swift */; };
+		CE163ECE21A58F9200445956 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE163ECD21A58F9200445956 /* CardView.swift */; };
 		CEFBFE222188F72100678A5C /* CourtsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBFE212188F72100678A5C /* CourtsViewController.swift */; };
 		CEFBFE24218A83DB00678A5C /* CourtsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBFE23218A83DB00678A5C /* CourtsTableViewCell.swift */; };
 		CEFBFE26218A890500678A5C /* arrow.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CEFBFE25218A890500678A5C /* arrow.jpeg */; };
@@ -110,6 +111,7 @@
 		CE0FB95E21717CDA003038B5 /* FacilityData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacilityData.swift; sourceTree = "<group>"; };
 		CE0FB95F21717CDF003038B5 /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		CE0FB96021717CE4003038B5 /* GoogleRegistration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleRegistration.swift; sourceTree = "<group>"; };
+		CE163ECD21A58F9200445956 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		CEFBFE212188F72100678A5C /* CourtsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtsViewController.swift; sourceTree = "<group>"; };
 		CEFBFE23218A83DB00678A5C /* CourtsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtsTableViewCell.swift; sourceTree = "<group>"; };
 		CEFBFE25218A890500678A5C /* arrow.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = arrow.jpeg; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				CE0FB95F21717CDF003038B5 /* Payment.swift */,
 				CE0FB95B21717CCD003038B5 /* Customer.swift */,
 				AE4046EA218CD8B300F79935 /* Booking.swift */,
+				CE163ECD21A58F9200445956 /* CardView.swift */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				34CE0F8821A34D7500534C59 /* UIImgView.swift in Sources */,
 				AED2CD2C217E3E370013F560 /* RegistrationViewController.swift in Sources */,
 				CE0FB96621717CE4003038B5 /* FacilityData.swift in Sources */,
+				CE163ECE21A58F9200445956 /* CardView.swift in Sources */,
 				CE0FB96321717CE4003038B5 /* Customer.swift in Sources */,
 				AEF7CB292183D52700AE5D80 /* SiteCell.swift in Sources */,
 				CE0FB96521717CE4003038B5 /* FaceBookRegistration.swift in Sources */,
