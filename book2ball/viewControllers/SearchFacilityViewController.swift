@@ -395,8 +395,8 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
         alterLayout()
         
         sideMenu()
-        navigationController?.navigationBar.tintColor = UIColor(red: 54.0/255, green: 116.0/255, blue: 216.0/255, alpha: 1.0)
-        navigationController?.navigationBar.barTintColor = UIColor(red: 54.0/255, green: 116.0/255, blue: 216.0/255, alpha: 1.0)
+        navigationController?.navigationBar.tintColor = UIColor(red: 1.0/255, green: 90.0/255, blue: 201.0/255, alpha: 1.0)
+        navigationController?.navigationBar.barTintColor = UIColor(red: 1.0/255, green: 90.0/255, blue: 201.0/255, alpha: 1.0)
         navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedStringKey.foregroundColor : UIColor.white]
     }
