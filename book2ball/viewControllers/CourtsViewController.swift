@@ -16,17 +16,37 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet var navImage : UIImageView!
     @IBOutlet var navBar : UINavigationBar!
     
+    var willHideBook = true;
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listData.count;
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60;
+        return 90;
     }
     
     //define table method what to display on each cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: FacilityTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cellCardView") as? FacilityTableViewCell ?? FacilityTableViewCell(style: .default, reuseIdentifier: "cellCardView")
+        
+        cell.contentView.backgroundColor = UIColor (white: 0.90, alpha: 1)
+        
+        
+        
+        //populate the cell
+        let rowNum = indexPath.row
+        cell.select.backgroundColor = UIColor(red: 8.0/255, green: 104.0/255, blue: 244.0/255, alpha: 1.0)
+        cell.select.isHidden = willHideBook
+        cell.cellView.backgroundColor = UIColor(rgb: 0xFFFFFF)
+        cell.facilityName.text = listData[rowNum]
+        cell.facilityAddress.text = descriptionData[rowNum]
+        cell.facilityDistance.text  = ""
+        return cell
+        
+        
+        /*
         let tableCell : CourtsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell") as? CourtsTableViewCell ?? CourtsTableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
         
         //populate the cell
@@ -41,6 +61,7 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
         tableCell.accessoryType = .none
         
         return tableCell
+         */
     }
     
     //define the table method for clicking on a cell
@@ -138,6 +159,7 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
         
         generateTableData(courtList: courts)
         didSearch = true
+        willHideBook = false
         
         if courts.count == 0 {
             showAlert(alertString: "No available courts found with the selected date/time and duration")
@@ -167,6 +189,8 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        myTableView.separatorColor = UIColor(white: 0.95, alpha: 1)
         
         navImage.backgroundColor = UIColor(red: 1.0/255, green: 90.0/255, blue: 201.0/255, alpha: 1.0)
         navBar.barTintColor = UIColor(red: 1.0/255, green: 90.0/255, blue: 201.0/255, alpha: 1.0)
