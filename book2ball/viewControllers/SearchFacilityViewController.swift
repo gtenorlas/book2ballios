@@ -294,11 +294,29 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
         
         //cell.selectionStyle = .none
         
+        let currentFacility = self.currentViewingFacs[indexPath.row]
+        
+        var address = ("\(currentFacility.addLine1) \n")
+        if currentFacility.addLine2 != "" {
+            address += ("\(currentFacility.addLine2) \n")
+        }
+        if currentFacility.addLine3 != "" {
+            address += ("\(currentFacility.addLine3) \n")
+        }
+        address += ("\(currentFacility.city), ")
+        address += ("\(currentFacility.province)   ")
+        if currentFacility.postalCode != "" {
+            address += ("\(currentFacility.postalCode) \n")
+        }
+        address += ("\(currentFacility.country) \n")
+        address += ("\(currentFacility.contactNumber)")
         
         
+        
+        cell.select.backgroundColor = UIColor(red: 8.0/255, green: 104.0/255, blue: 244.0/255, alpha: 1.0)
         cell.cellView.backgroundColor = UIColor(rgb: 0xFFFFFF)
         cell.facilityName.text = self.currentViewingFacs[indexPath.row].facilityName as String
-        cell.facilityAddress.text = self.currentViewingFacs[indexPath.row].city as String
+        cell.facilityAddress.text = address as String
         cell.facilityDistance.text  = String(format:"%.2f", distance)+" km away"
         return cell
         

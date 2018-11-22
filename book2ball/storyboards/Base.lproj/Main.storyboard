@@ -1575,41 +1575,49 @@
                                                             <color key="textColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53a-3K-V3n">
-                                                            <rect key="frame" x="293" y="53" width="82" height="30"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <color key="backgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                            <state key="normal" title="Select">
-                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                        </button>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BYR-au-tlF">
-                                                            <rect key="frame" x="8" y="36.333333333333336" width="382" height="92.333333333333314"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZr-Ym-eNI">
-                                                                    <rect key="frame" x="0.0" y="72" width="307" height="20.333333333333329"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g14-9D-3Ap">
-                                                                    <rect key="frame" x="315" y="72" width="67" height="20.333333333333329"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZr-Ym-eNI">
+                                                            <rect key="frame" x="8" y="8.0000000000000071" width="200" height="120.66666666666669"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="200" id="Mnl-ks-wAk"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g14-9D-3Ap">
+                                                            <rect key="frame" x="239" y="109" width="151" height="20"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epy-Hl-pNc" customClass="LabelTemplate" customModule="book2ball" customModuleProvider="target">
+                                                            <rect key="frame" x="325" y="56.333333333333329" width="65" height="25"/>
+                                                            <color key="backgroundColor" red="0.28876304180000001" green="0.49188618290000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="25" id="6xR-TU-Vi1"/>
+                                                                <constraint firstAttribute="width" constant="65" id="VzV-UV-dCy"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                            <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="corderRadius">
+                                                                    <real key="value" value="12"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="BYR-au-tlF" secondAttribute="bottom" constant="8" id="0rS-0l-v95"/>
                                                         <constraint firstItem="Yfb-Vd-kD0" firstAttribute="leading" secondItem="Jl9-1e-lF9" secondAttribute="leading" constant="8" id="3AG-Fj-n73"/>
-                                                        <constraint firstAttribute="trailing" secondItem="BYR-au-tlF" secondAttribute="trailing" constant="8" id="P7Y-10-bMx"/>
+                                                        <constraint firstAttribute="trailing" secondItem="epy-Hl-pNc" secondAttribute="trailing" constant="8" id="6Na-7Y-ZSv"/>
+                                                        <constraint firstItem="UZr-Ym-eNI" firstAttribute="leading" secondItem="Jl9-1e-lF9" secondAttribute="leading" constant="8" id="GXe-uj-RVO"/>
+                                                        <constraint firstAttribute="trailing" secondItem="g14-9D-3Ap" secondAttribute="trailing" constant="8" id="KA6-Rl-V4t"/>
                                                         <constraint firstAttribute="trailing" secondItem="Yfb-Vd-kD0" secondAttribute="trailing" constant="8" id="PM7-Ih-rkX"/>
                                                         <constraint firstItem="Yfb-Vd-kD0" firstAttribute="top" secondItem="Jl9-1e-lF9" secondAttribute="top" constant="8" id="Rdu-4o-ggJ"/>
-                                                        <constraint firstItem="BYR-au-tlF" firstAttribute="top" secondItem="Yfb-Vd-kD0" secondAttribute="bottom" constant="8" id="pUq-aE-oCV"/>
-                                                        <constraint firstItem="BYR-au-tlF" firstAttribute="leading" secondItem="Jl9-1e-lF9" secondAttribute="leading" constant="8" id="zqv-XF-PRu"/>
+                                                        <constraint firstAttribute="bottom" secondItem="UZr-Ym-eNI" secondAttribute="bottom" constant="8" id="Zv2-61-OLl"/>
+                                                        <constraint firstItem="epy-Hl-pNc" firstAttribute="centerY" secondItem="Jl9-1e-lF9" secondAttribute="centerY" id="rxM-mq-Azk"/>
+                                                        <constraint firstItem="UZr-Ym-eNI" firstAttribute="top" secondItem="Jl9-1e-lF9" secondAttribute="top" constant="8" id="vJj-h5-Se7"/>
+                                                        <constraint firstAttribute="bottom" secondItem="g14-9D-3Ap" secondAttribute="bottom" constant="8" id="zik-c1-XB5"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1642,7 +1650,7 @@
                                             <outlet property="facilityAddress" destination="UZr-Ym-eNI" id="JwW-xs-tQ6"/>
                                             <outlet property="facilityDistance" destination="g14-9D-3Ap" id="DJq-ea-UDZ"/>
                                             <outlet property="facilityName" destination="Yfb-Vd-kD0" id="fWM-nT-hr5"/>
-                                            <outlet property="select" destination="53a-3K-V3n" id="y5W-eU-d5I"/>
+                                            <outlet property="select" destination="epy-Hl-pNc" id="cVN-Zq-bWy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
