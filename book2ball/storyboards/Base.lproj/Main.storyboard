@@ -979,29 +979,38 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="127.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VG6-JD-DMu">
-                                                    <rect key="frame" x="41" y="11" width="142" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <color key="textColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4O-yK-Vzg">
-                                                    <rect key="frame" x="41" y="89" width="353" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4O-yK-Vzg">
+                                                    <rect key="frame" x="28" y="96" width="358" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miU-r3-UwE">
-                                                    <rect key="frame" x="41" y="53" width="353" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miU-r3-UwE">
+                                                    <rect key="frame" x="28" y="65" width="358" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <color key="textColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VG6-JD-DMu">
+                                                    <rect key="frame" x="28" y="19" width="358" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <color key="textColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.90561169385910034" green="0.90487927198410034" blue="0.97473889589309692" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="miU-r3-UwE" firstAttribute="top" secondItem="VG6-JD-DMu" secondAttribute="bottom" constant="16" id="2CU-g1-u1C"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="miU-r3-UwE" secondAttribute="trailing" constant="8" id="2jn-KD-u0j"/>
+                                                <constraint firstItem="U4O-yK-Vzg" firstAttribute="leading" secondItem="Nby-XS-xVc" secondAttribute="leadingMargin" constant="8" id="7kX-HC-qj6"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="VG6-JD-DMu" secondAttribute="trailing" constant="8" id="8ei-C7-SgK"/>
+                                                <constraint firstItem="U4O-yK-Vzg" firstAttribute="top" secondItem="miU-r3-UwE" secondAttribute="bottom" id="aOy-Ts-45h"/>
+                                                <constraint firstItem="U4O-yK-Vzg" firstAttribute="top" secondItem="miU-r3-UwE" secondAttribute="bottom" constant="8" id="by5-Ef-fba"/>
+                                                <constraint firstItem="VG6-JD-DMu" firstAttribute="top" secondItem="Nby-XS-xVc" secondAttribute="topMargin" constant="8" id="ciV-ON-bGs"/>
+                                                <constraint firstItem="miU-r3-UwE" firstAttribute="leading" secondItem="Nby-XS-xVc" secondAttribute="leadingMargin" constant="8" id="dAV-NF-ttG"/>
+                                                <constraint firstItem="VG6-JD-DMu" firstAttribute="leading" secondItem="Nby-XS-xVc" secondAttribute="leadingMargin" constant="8" id="j9F-dZ-OHv"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="U4O-yK-Vzg" secondAttribute="trailing" constant="8" id="pRv-s1-VUd"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="JcP-6c-RZP">
@@ -1012,7 +1021,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Skn-vN-f7o">
-                                                    <rect key="frame" x="44" y="11" width="93" height="28"/>
+                                                    <rect key="frame" x="20" y="11" width="93" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <color key="textColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
@@ -1032,7 +1041,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Update Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gS8-WP-4ko">
-                                                    <rect key="frame" x="44" y="11" width="142" height="28"/>
+                                                    <rect key="frame" x="20" y="11" width="142" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <color key="textColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
@@ -1052,7 +1061,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search Facility " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEe-Oq-sny">
-                                                    <rect key="frame" x="44" y="11" width="150" height="28"/>
+                                                    <rect key="frame" x="20" y="11" width="150" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <color key="textColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
@@ -1072,7 +1081,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Bookings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="td8-QI-fay">
-                                                    <rect key="frame" x="43" y="7" width="129" height="28"/>
+                                                    <rect key="frame" x="20" y="7" width="129" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <color key="textColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
@@ -1092,7 +1101,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWe-QA-DvE">
-                                                    <rect key="frame" x="43" y="3" width="337" height="30"/>
+                                                    <rect key="frame" x="20" y="6" width="337" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
@@ -2444,7 +2453,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Nab-Bx-wT7"/>
-        <segue reference="qF2-Ph-PO2"/>
+        <segue reference="FdD-9Y-BT0"/>
         <segue reference="eea-1T-dMa"/>
     </inferredMetricsTieBreakers>
 </document>

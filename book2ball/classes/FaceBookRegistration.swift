@@ -42,6 +42,7 @@ class FaceBookRegistration: NSObject {
                     let first_name = dict["first_name"] as? String,
                     let last_name = dict["last_name"] as? String{
                     
+                   // user.username = email as NSString
                     user.email = email as NSString
                     user.firstName = first_name as NSString
                     user.lastName = last_name as NSString

@@ -244,20 +244,22 @@ class Customer: NSObject, Codable {
         
         
     }
-    
+    /*
+     facebook and google
+ */
     static func fetchAccount(customer:Customer)->Any{
         var fetchedCustomer : (Any)? = nil
         var baseURL = "http://mags.website/api/customer/"
         baseURL += "\(customer.email)/"
-        baseURL += "\(customer.firstName)/"
-        baseURL += "\(customer.lastName)/"
+        //baseURL += "\(customer.firstName)/"
+        baseURL += "null/"
         baseURL += "\(customer.originate)"
         print(baseURL)
         
         // create post request
         let url = NSURL(string: baseURL)!
         let request = NSMutableURLRequest(url: url as URL)
-        request.httpMethod = "GET"
+        request.httpMethod = "POST"
         
         // insert json data to the request
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -286,11 +288,13 @@ class Customer: NSObject, Codable {
                 if let dict = objData as? [String:Any] {
                     print("yes it is a dictionary")
                     //grabbing the data from dictionary and saving it to the customer attributes
+                    customer.username = (dict["username"] as? NSString)!
                     customer.contactNumber = (dict["contactNumber"] as? NSString)!
                     customer.email = (dict["email"] as? NSString)!
                     customer.firstName = (dict["firstName"] as? NSString)!
                     customer.lastName = (dict["lastName"] as? NSString)!
                     customer.status = (dict["status"] as? NSString)!
+                    customer.originate = (dict["originate"] as? NSString)!
                     //print ("customer name is \(customer.firstName)")
                     fetchedCustomer = customer
                     

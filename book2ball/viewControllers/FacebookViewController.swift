@@ -41,6 +41,7 @@ class FacebookViewController: UIViewController, FBSDKLoginButtonDelegate {
         if FBSDKAccessToken.current() != nil {
             lblStatus.text = "Already Logged In"
             fetchProfile()
+            
         }else {
             lblStatus.text = "Please Login to Facebook"
         }
@@ -69,6 +70,7 @@ class FacebookViewController: UIViewController, FBSDKLoginButtonDelegate {
             //login success
             lblStatus.text = "User logged in"
             fetchProfile()
+            
         }
         
     }
@@ -86,7 +88,7 @@ class FacebookViewController: UIViewController, FBSDKLoginButtonDelegate {
         print("fetch profile")
         
         mainDelegate.userLoggedIn = fb.fetchProfile()
-        
+        print("fetch profile main delegate" +  (mainDelegate.userLoggedIn.username as String))
         //add a button to continue to search facility
         
         button.backgroundColor = UIColor(red: 114.0/255, green: 148.0/255, blue: 201.0/255, alpha: 1.0)
