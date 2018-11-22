@@ -10,7 +10,8 @@ import UIKit
 
 class InvoiceDetailsViewController: UIViewController {
 
-    
+    @IBOutlet var navImage : UIImageView!
+    @IBOutlet var navBar : UINavigationBar!
     @IBOutlet weak var facilityName: UILabel!
     @IBOutlet weak var facilityAddress: UILabel!
     @IBOutlet weak var courtName: UILabel!
@@ -34,6 +35,9 @@ class InvoiceDetailsViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        navImage.backgroundColor = UIColor(red: 1.0/255, green: 90.0/255, blue: 201.0/255, alpha: 1.0)
+        navBar.barTintColor = UIColor(red: 1.0/255, green: 90.0/255, blue: 201.0/255, alpha: 1.0)
+        
         let booking = mainDelegate.selectedBooking
         
 

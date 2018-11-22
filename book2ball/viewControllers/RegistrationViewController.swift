@@ -14,7 +14,8 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate, UINavig
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     
     
-    
+    @IBOutlet var navImage : UIImageView!
+    @IBOutlet var navBar : UINavigationBar!
     @IBOutlet var status: UILabel!
     @IBOutlet var username: UITextField!
     @IBOutlet var password1: UITextField!
@@ -91,7 +92,8 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navImage.backgroundColor = UIColor(red: 1.0/255, green: 90.0/255, blue: 201.0/255, alpha: 1.0)
+        navBar.barTintColor = UIColor(red: 1.0/255, green: 90.0/255, blue: 201.0/255, alpha: 1.0)
         // Do any additional setup after loading the view.
     }
     

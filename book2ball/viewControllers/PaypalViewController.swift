@@ -14,6 +14,8 @@ import UIKit
 class PaypalViewController: UIViewController, PayPalPaymentDelegate {
     
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
+    @IBOutlet var navImage : UIImageView!
+    @IBOutlet var navBar : UINavigationBar!
     @IBOutlet var courtCharge : UILabel!
     @IBOutlet var facilityName : UILabel!
     @IBOutlet var subTotal : UILabel!
@@ -182,6 +184,9 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navImage.backgroundColor = UIColor(red: 1.0/255, green: 90.0/255, blue: 201.0/255, alpha: 1.0)
+        navBar.barTintColor = UIColor(red: 1.0/255, green: 90.0/255, blue: 201.0/255, alpha: 1.0)
+        
         setValues()
         setupPayPal()
         

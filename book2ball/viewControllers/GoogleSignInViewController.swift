@@ -14,6 +14,9 @@ import UIKit
 import GoogleSignIn
 
 class GoogleSignInViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
+    @IBOutlet var navImage : UIImageView!
+    @IBOutlet var navBar : UINavigationBar!
+    
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     @IBOutlet weak var menuButton : UIBarButtonItem!
     
@@ -74,6 +77,8 @@ class GoogleSignInViewController: UIViewController, GIDSignInUIDelegate, GIDSign
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navImage.backgroundColor = UIColor(red: 1.0/255, green: 90.0/255, blue: 201.0/255, alpha: 1.0)
+        navBar.barTintColor = UIColor(red: 1.0/255, green: 90.0/255, blue: 201.0/255, alpha: 1.0)
         
         //requirement for Google to delegate to self
         GIDSignIn.sharedInstance().uiDelegate = self

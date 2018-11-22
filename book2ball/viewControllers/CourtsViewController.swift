@@ -13,7 +13,8 @@ import UIKit
 
 class CourtsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    
+    @IBOutlet var navImage : UIImageView!
+    @IBOutlet var navBar : UINavigationBar!
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -166,6 +167,11 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navImage.backgroundColor = UIColor(red: 1.0/255, green: 90.0/255, blue: 201.0/255, alpha: 1.0)
+        navBar.barTintColor = UIColor(red: 1.0/255, green: 90.0/255, blue: 201.0/255, alpha: 1.0)
+ 
+        
         segment.selectedSegmentIndex = 0;
         self.indexChanged(sender: segment)
         //change the min and max for date/time in the datepicker

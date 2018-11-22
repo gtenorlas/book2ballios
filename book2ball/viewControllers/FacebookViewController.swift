@@ -14,6 +14,9 @@ import UIKit
 import FBSDKLoginKit
 
 class FacebookViewController: UIViewController, FBSDKLoginButtonDelegate {
+    @IBOutlet var navImage : UIImageView!
+    @IBOutlet var navBar : UINavigationBar!
+    
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     @IBOutlet var lblStatus: UILabel!
     let button = UIButton(frame: CGRect(x:50, y: 150, width: 300, height: 30))
@@ -22,6 +25,9 @@ class FacebookViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navImage.backgroundColor = UIColor(red: 1.0/255, green: 90.0/255, blue: 201.0/255, alpha: 1.0)
+        navBar.barTintColor = UIColor(red: 1.0/255, green: 90.0/255, blue: 201.0/255, alpha: 1.0)
         
         // Do any additional setup after loading the view.
         let btnFBLogin = FBSDKLoginButton()
@@ -83,11 +89,13 @@ class FacebookViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         //add a button to continue to search facility
         
-        button.backgroundColor = .gray
-        button.setTitleColor(.blue, for: .normal)
+        button.backgroundColor = UIColor(red: 114.0/255, green: 148.0/255, blue: 201.0/255, alpha: 1.0)
+        button.setTitleColor(UIColor(red: 225.0/255, green: 227.0/255, blue: 232.0/255, alpha: 1.0), for: .normal)
         button.setTitle("Continue To Search Facility", for: .normal)
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         button.center.x = self.view.frame.midX //center horizontally
+        button.center.y = self.view.frame.midY - 40 //center vertically
+        button.layer.cornerRadius = CGFloat(12.0)
         self.view.addSubview(button)
     }
     
