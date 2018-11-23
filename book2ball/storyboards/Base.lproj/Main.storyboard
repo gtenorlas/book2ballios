@@ -41,7 +41,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="contact.png"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
@@ -60,7 +60,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="password.png"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
@@ -222,7 +222,7 @@
                                         <rect key="frame" x="0.0" y="60" width="382" height="50"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="username"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="username"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="username.png"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
@@ -237,7 +237,7 @@
                                         <rect key="frame" x="0.0" y="120" width="382" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="name"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="name"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="contact.png"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
@@ -252,7 +252,7 @@
                                         <rect key="frame" x="0.0" y="160" width="382" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="name"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="name"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="contact.png"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
@@ -267,7 +267,7 @@
                                         <rect key="frame" x="0.0" y="200" width="382" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" textContentType="email"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="email.png"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
@@ -282,7 +282,7 @@
                                         <rect key="frame" x="0.0" y="240" width="382" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" textContentType="tel"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="phone.png"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
@@ -297,7 +297,7 @@
                                         <rect key="frame" x="0.0" y="280" width="382" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" textContentType="password"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="password.png"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
@@ -312,7 +312,7 @@
                                         <rect key="frame" x="0.0" y="320" width="382" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" textContentType="password"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="password.png"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
@@ -616,22 +616,22 @@
                                 <rect key="frame" x="16" y="361" width="382" height="270"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AXN-ix-Qod">
-                                        <rect key="frame" x="86.666666666666657" y="0.0" width="295.33333333333337" height="30"/>
+                                        <rect key="frame" x="79.333333333333343" y="0.0" width="302.66666666666663" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1iC-ke-8fw">
-                                                <rect key="frame" x="0.0" y="0.0" width="87.333333333333329" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="64.666666666666671" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XUt-Y3-bKN" customClass="DesignableTextField" customModule="book2ball" customModuleProvider="target">
-                                                <rect key="frame" x="95.333333333333314" y="0.0" width="200" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="XUt-Y3-bKN" customClass="DesignableTextField" customModule="book2ball" customModuleProvider="target">
+                                                <rect key="frame" x="72.666666666666686" y="0.0" width="230" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="8QU-Fv-1iz"/>
+                                                    <constraint firstAttribute="width" constant="230" id="8QU-Fv-1iz"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="given-name"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="contact.png"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
@@ -642,19 +642,19 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4Lz-KI-AFC">
-                                        <rect key="frame" x="87.333333333333343" y="40" width="294.66666666666663" height="30"/>
+                                        <rect key="frame" x="80" y="40" width="302" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILj-eE-dRh">
-                                                <rect key="frame" x="0.0" y="0.0" width="86.666666666666671" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="64" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="53o-IR-Ux7" customClass="DesignableTextField" customModule="book2ball" customModuleProvider="target">
-                                                <rect key="frame" x="94.666666666666686" y="0.0" width="200" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="53o-IR-Ux7" customClass="DesignableTextField" customModule="book2ball" customModuleProvider="target">
+                                                <rect key="frame" x="72" y="0.0" width="230" height="30"/>
                                                 <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="family-name"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="contact.png"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
@@ -665,19 +665,19 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="q85-Vd-Rsj">
-                                        <rect key="frame" x="42.333333333333343" y="80" width="339.66666666666663" height="30"/>
+                                        <rect key="frame" x="47" y="80" width="335" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEQ-pN-3f9">
-                                                <rect key="frame" x="0.0" y="0.0" width="131.66666666666666" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="97" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contact Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ncc-BL-yPE" customClass="DesignableTextField" customModule="book2ball" customModuleProvider="target">
-                                                <rect key="frame" x="139.66666666666666" y="0.0" width="199.99999999999997" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contact Number" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ncc-BL-yPE" customClass="DesignableTextField" customModule="book2ball" customModuleProvider="target">
+                                                <rect key="frame" x="105" y="0.0" width="230" height="30"/>
                                                 <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" textContentType="tel"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="phone.png"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
@@ -688,19 +688,19 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="abg-NA-gPi">
-                                        <rect key="frame" x="128.33333333333337" y="120" width="253.66666666666663" height="30"/>
+                                        <rect key="frame" x="110" y="120" width="272" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Df7-eI-oQL">
-                                                <rect key="frame" x="0.0" y="0.0" width="45.666666666666664" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="34" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m2l-Ix-99g" customClass="DesignableTextField" customModule="book2ball" customModuleProvider="target">
-                                                <rect key="frame" x="53.666666666666657" y="0.0" width="200" height="30"/>
+                                                <rect key="frame" x="42" y="0.0" width="230" height="30"/>
                                                 <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" textContentType="email"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="email.png"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
@@ -711,18 +711,18 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3E4-tg-m0b">
-                                        <rect key="frame" x="90.666666666666657" y="160" width="291.33333333333337" height="30"/>
+                                        <rect key="frame" x="82.666666666666657" y="160" width="299.33333333333337" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVL-2k-RSD">
-                                                <rect key="frame" x="0.0" y="0.0" width="83.333333333333329" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="61.333333333333336" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lb2-sd-8n3" customClass="DesignableTextField" customModule="book2ball" customModuleProvider="target">
-                                                <rect key="frame" x="91.333333333333314" y="0.0" width="200" height="30"/>
+                                                <rect key="frame" x="69.333333333333314" y="0.0" width="230" height="30"/>
                                                 <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="username"/>
@@ -734,19 +734,19 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="85x-q1-j4J">
-                                        <rect key="frame" x="95.666666666666657" y="200" width="286.33333333333337" height="30"/>
+                                        <rect key="frame" x="86" y="200" width="296" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoB-eY-B8L">
-                                                <rect key="frame" x="0.0" y="0.0" width="78.333333333333329" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="58" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NAm-tW-Itt" customClass="DesignableTextField" customModule="book2ball" customModuleProvider="target">
-                                                <rect key="frame" x="86.333333333333314" y="0.0" width="200" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="NAm-tW-Itt" customClass="DesignableTextField" customModule="book2ball" customModuleProvider="target">
+                                                <rect key="frame" x="66" y="0.0" width="230" height="30"/>
                                                 <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" textContentType="password"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="password.png"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
@@ -757,19 +757,19 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Iwl-8Q-bDl">
-                                        <rect key="frame" x="37.333333333333343" y="240" width="344.66666666666663" height="30"/>
+                                        <rect key="frame" x="43" y="240" width="339" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retype Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6T-CZ-NuT">
-                                                <rect key="frame" x="0.0" y="0.0" width="136.66666666666666" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="101" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Retype Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iyn-tJ-JHY" customClass="DesignableTextField" customModule="book2ball" customModuleProvider="target">
-                                                <rect key="frame" x="144.66666666666666" y="0.0" width="199.99999999999997" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Retype Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="iyn-tJ-JHY" customClass="DesignableTextField" customModule="book2ball" customModuleProvider="target">
+                                                <rect key="frame" x="109" y="0.0" width="230" height="30"/>
                                                 <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" textContentType="password"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="password.png"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
@@ -2454,6 +2454,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="Nab-Bx-wT7"/>
         <segue reference="FdD-9Y-BT0"/>
-        <segue reference="eea-1T-dMa"/>
+        <segue reference="zqe-Fh-YG1"/>
     </inferredMetricsTieBreakers>
 </document>
