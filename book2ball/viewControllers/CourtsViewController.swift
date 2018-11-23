@@ -18,13 +18,33 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
     
     var willHideBook = true;
     
+    let mainDelegate = UIApplication.shared.delegate as! AppDelegate
+    var listData:[String]=[]
+    var descriptionData:[String]=[]
+    var courtTypeData: [String] = []
+    var courts:Array<Court>=[]
+    let numIncrement: Double = 0.5
+    var duration: Int = 1
+    var startDateTimeString = ""
+    var endDateTimeString = ""
+    var startDate = ""
+    var startTime = ""
+    var didSearch = false
+    var didSelectDateTime = false
+    var startDateTime : Date? = nil
+    var endDateTime : Date? = nil
+    
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var segment: UISegmentedControl!
+    @IBOutlet weak var myTableView: UITableView!
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listData.count;
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90;
+        return 95;
     }
     
     //define table method what to display on each cell
@@ -42,7 +62,7 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
         cell.cellView.backgroundColor = UIColor(rgb: 0xFFFFFF)
         cell.facilityName.text = listData[rowNum]
         cell.facilityAddress.text = descriptionData[rowNum]
-        cell.facilityDistance.text  = ""
+        cell.facilityDistance.text  = courtTypeData[rowNum]
         return cell
         
         
@@ -101,24 +121,7 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
-    let mainDelegate = UIApplication.shared.delegate as! AppDelegate
-    var listData:[String]=[]
-    var descriptionData:[String]=[]
-    var courts:Array<Court>=[]
-    let numIncrement: Double = 0.5
-    var duration: Int = 1
-    var startDateTimeString = ""
-    var endDateTimeString = ""
-    var startDate = ""
-    var startTime = ""
-    var didSearch = false
-    var didSelectDateTime = false
-    var startDateTime : Date? = nil
-    var endDateTime : Date? = nil
-    
-    @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var segment: UISegmentedControl!
-    @IBOutlet weak var myTableView: UITableView!
+
     
     @IBAction func indexChanged(sender:UISegmentedControl){
         print("# of Segments = \(sender.numberOfSegments)")
@@ -170,10 +173,12 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
     func generateTableData(courtList : Array<Court>){
         listData = []
         descriptionData = []
+        courtTypeData = []
         for eachCourt:Court in courtList {
             //add to array
             listData.append(eachCourt.courtName as String)
             descriptionData.append("Max Players: \(eachCourt.maxPlayer)    Hourly Cost: $\(String(format:"%.2f", eachCourt.price))")
+            courtTypeData.append("Court Type: \(eachCourt.courtType)")
         }
         myTableView.reloadData()
     }
