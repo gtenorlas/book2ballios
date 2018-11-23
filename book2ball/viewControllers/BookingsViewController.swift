@@ -31,7 +31,7 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120;
+        return 124;
     }
     
     @IBAction func viewBookingsByType (_ sender: Any)
