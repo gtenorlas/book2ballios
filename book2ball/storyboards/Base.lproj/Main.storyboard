@@ -1846,35 +1846,43 @@
                                 <rect key="frame" x="0.0" y="381" width="414" height="355"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellCardView" rowHeight="100" id="NvQ-Bi-r10" customClass="FacilityTableViewCell" customModule="book2ball" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellCardView" rowHeight="153" id="5Gf-5x-BWD" customClass="CourtCardViewTableViewCell" customModule="book2ball" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="153"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NvQ-Bi-r10" id="IFl-VK-Fcy" customClass="CardView" customModule="book2ball" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="99.666666666666671"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Gf-5x-BWD" id="eDW-a5-mvZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="152.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xtu-Oa-6Ng" customClass="CardView" customModule="book2ball" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="8" width="398" height="80"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9k-GT-f4Y" customClass="CardView" customModule="book2ball" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="398" height="136.66666666666666"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Court Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZ6-rY-8eJ">
-                                                            <rect key="frame" x="8" y="8" width="342" height="20"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facility Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9P3-b1-5Xo">
+                                                            <rect key="frame" x="8" y="7.9999999999999982" width="382" height="20.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Dd-WW-0fh">
-                                                            <rect key="frame" x="8" y="23" width="274" height="29"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <nil key="textColor"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Oz-rs-4qJ">
+                                                            <rect key="frame" x="8" y="12.000000000000007" width="200" height="116.66666666666669"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="200" id="7sa-po-sFU"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Book" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pn-Xi-Wgs" customClass="LabelTemplate" customModule="book2ball" customModuleProvider="target">
-                                                            <rect key="frame" x="325" y="26" width="65" height="26"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dje-c6-IUz">
+                                                            <rect key="frame" x="8" y="114.66666666666667" width="382" height="14.333333333333329"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTO-7y-qe4" customClass="LabelTemplate" customModule="book2ball" customModuleProvider="target">
+                                                            <rect key="frame" x="325" y="56.333333333333329" width="65" height="25"/>
                                                             <color key="backgroundColor" red="0.28876304180000001" green="0.49188618290000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="25" id="3z5-dv-NQi"/>
+                                                                <constraint firstAttribute="width" constant="65" id="iNl-Lg-qFi"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                             <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             <nil key="highlightedColor"/>
@@ -1884,49 +1892,53 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Max Players" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J42-AQ-DWj">
-                                                            <rect key="frame" x="8" y="45" width="304" height="27"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="kTO-7y-qe4" secondAttribute="trailing" constant="8" id="2Ns-zw-41N"/>
+                                                        <constraint firstItem="kTO-7y-qe4" firstAttribute="centerY" secondItem="v9k-GT-f4Y" secondAttribute="centerY" id="3Ro-Bu-AaH"/>
+                                                        <constraint firstAttribute="trailing" secondItem="dje-c6-IUz" secondAttribute="trailing" constant="8" id="EaE-8S-rfV"/>
+                                                        <constraint firstAttribute="trailing" secondItem="9P3-b1-5Xo" secondAttribute="trailing" constant="8" id="IMY-1G-QAg"/>
+                                                        <constraint firstItem="0Oz-rs-4qJ" firstAttribute="top" secondItem="v9k-GT-f4Y" secondAttribute="top" constant="12" id="Mh5-vm-d3U"/>
+                                                        <constraint firstItem="9P3-b1-5Xo" firstAttribute="leading" secondItem="v9k-GT-f4Y" secondAttribute="leading" constant="8" id="P79-8X-6Kp"/>
+                                                        <constraint firstItem="9P3-b1-5Xo" firstAttribute="top" secondItem="v9k-GT-f4Y" secondAttribute="top" constant="8" id="eqo-0Q-KLF"/>
+                                                        <constraint firstItem="dje-c6-IUz" firstAttribute="leading" secondItem="v9k-GT-f4Y" secondAttribute="leading" constant="8" id="nPT-Ck-2fD"/>
+                                                        <constraint firstItem="0Oz-rs-4qJ" firstAttribute="leading" secondItem="v9k-GT-f4Y" secondAttribute="leading" constant="8" id="qiF-6P-AUU"/>
+                                                        <constraint firstAttribute="bottom" secondItem="0Oz-rs-4qJ" secondAttribute="bottom" constant="8" id="rHa-yX-fRf"/>
+                                                        <constraint firstAttribute="bottom" secondItem="dje-c6-IUz" secondAttribute="bottom" constant="8" id="vlY-Mh-OAT"/>
+                                                    </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="8"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOffSetWidth">
-                                                            <integer key="value" value="3"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOffSetHeight">
-                                                            <integer key="value" value="4"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                            <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                             <real key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOffSetHeight">
+                                                            <integer key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOffSetWidth">
+                                                            <integer key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="3"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOffSetWidth">
-                                                    <integer key="value" value="1"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
+                                            <constraints>
+                                                <constraint firstItem="v9k-GT-f4Y" firstAttribute="top" secondItem="eDW-a5-mvZ" secondAttribute="top" constant="8" id="2a0-7V-eSZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="v9k-GT-f4Y" secondAttribute="bottom" constant="8" id="jX8-gg-weI"/>
+                                                <constraint firstItem="v9k-GT-f4Y" firstAttribute="leading" secondItem="eDW-a5-mvZ" secondAttribute="leading" constant="8" id="kai-fp-Y5V"/>
+                                                <constraint firstAttribute="trailing" secondItem="v9k-GT-f4Y" secondAttribute="trailing" constant="8" id="rl5-ND-8o0"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="cellView" destination="Xtu-Oa-6Ng" id="541-1f-55O"/>
-                                            <outlet property="facilityAddress" destination="J42-AQ-DWj" id="bGG-yl-D2i"/>
-                                            <outlet property="facilityDistance" destination="2Dd-WW-0fh" id="Wgf-DP-7pQ"/>
-                                            <outlet property="facilityName" destination="HZ6-rY-8eJ" id="oEU-QA-4hj"/>
-                                            <outlet property="select" destination="7pn-Xi-Wgs" id="W3b-NP-fwM"/>
+                                            <outlet property="cellView" destination="v9k-GT-f4Y" id="zoD-oJ-12n"/>
+                                            <outlet property="courtDescription" destination="0Oz-rs-4qJ" id="4fe-MB-CYK"/>
+                                            <outlet property="courtName" destination="9P3-b1-5Xo" id="x76-NC-Dcf"/>
+                                            <outlet property="courtType" destination="dje-c6-IUz" id="0dj-vK-d78"/>
+                                            <outlet property="select" destination="kTO-7y-qe4" id="thl-gv-abL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -57,6 +57,7 @@
 		CE163ECE21A58F9200445956 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE163ECD21A58F9200445956 /* CardView.swift */; };
 		CE163ED021A6442900445956 /* ButtonTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE163ECF21A6442900445956 /* ButtonTemplate.swift */; };
 		CE163ED221A646B400445956 /* LabelTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE163ED121A646B400445956 /* LabelTemplate.swift */; };
+		CE163ED421A7BA0600445956 /* CourtCardViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE163ED321A7BA0500445956 /* CourtCardViewTableViewCell.swift */; };
 		CEFBFE222188F72100678A5C /* CourtsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBFE212188F72100678A5C /* CourtsViewController.swift */; };
 		CEFBFE24218A83DB00678A5C /* CourtsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBFE23218A83DB00678A5C /* CourtsTableViewCell.swift */; };
 		CEFBFE26218A890500678A5C /* arrow.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CEFBFE25218A890500678A5C /* arrow.jpeg */; };
@@ -118,6 +119,7 @@
 		CE163ECD21A58F9200445956 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		CE163ECF21A6442900445956 /* ButtonTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTemplate.swift; sourceTree = "<group>"; };
 		CE163ED121A646B400445956 /* LabelTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTemplate.swift; sourceTree = "<group>"; };
+		CE163ED321A7BA0500445956 /* CourtCardViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtCardViewTableViewCell.swift; sourceTree = "<group>"; };
 		CEFBFE212188F72100678A5C /* CourtsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtsViewController.swift; sourceTree = "<group>"; };
 		CEFBFE23218A83DB00678A5C /* CourtsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtsTableViewCell.swift; sourceTree = "<group>"; };
 		CEFBFE25218A890500678A5C /* arrow.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = arrow.jpeg; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				CE163ECD21A58F9200445956 /* CardView.swift */,
 				AEF2BF4221A5A7D300626D97 /* FacilityTableViewCell.swift */,
 				CE163ED121A646B400445956 /* LabelTemplate.swift */,
+				CE163ED321A7BA0500445956 /* CourtCardViewTableViewCell.swift */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				AED2CD2E217E5FF40013F560 /* BookingsViewController.swift in Sources */,
 				AE2F4C2A21941F9D0085A688 /* RearTableViewController.swift in Sources */,
 				AE6DA56C2184412500DF0F55 /* SWRevealViewController.m in Sources */,
+				CE163ED421A7BA0600445956 /* CourtCardViewTableViewCell.swift in Sources */,
 				AE6DA56E218446D400DF0F55 /* PaypalViewController.swift in Sources */,
 				AEBEC551218BD394001480CB /* UpdateProfileViewController.swift in Sources */,
 				CEFBFE24218A83DB00678A5C /* CourtsTableViewCell.swift in Sources */,

@@ -49,7 +49,7 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
     
     //define table method what to display on each cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: FacilityTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cellCardView") as? FacilityTableViewCell ?? FacilityTableViewCell(style: .default, reuseIdentifier: "cellCardView")
+        let cell: CourtCardViewTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cellCardView") as? CourtCardViewTableViewCell ?? CourtCardViewTableViewCell(style: .default, reuseIdentifier: "cellCardView")
         
         cell.contentView.backgroundColor = UIColor (white: 0.90, alpha: 1)
         
@@ -60,9 +60,9 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
         cell.select.backgroundColor = UIColor(red: 8.0/255, green: 104.0/255, blue: 244.0/255, alpha: 1.0)
         cell.select.isHidden = willHideBook
         cell.cellView.backgroundColor = UIColor(rgb: 0xFFFFFF)
-        cell.facilityName.text = listData[rowNum]
-        cell.facilityAddress.text = descriptionData[rowNum]
-        cell.facilityDistance.text  = courtTypeData[rowNum]
+        cell.courtName.text = listData[rowNum]
+        cell.courtType.text = descriptionData[rowNum]
+        cell.courtDescription.text  = courtTypeData[rowNum]
         return cell
         
         
@@ -135,6 +135,7 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     @IBAction func onSearch(_ sender: UIButton){
+        if (didSelectDateTime==true) {
         var formatterShort = DateFormatter()
         formatterShort.locale = Locale(identifier: "US_en")
         formatterShort.dateFormat = "E, dd MMM yyyy"
@@ -166,6 +167,9 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
         
         if courts.count == 0 {
             showAlert(alertString: "No available courts found with the selected date/time and duration")
+        }
+        }else {
+            showAlert(alertString: "Please select the date and time first.")
         }
         
     }
