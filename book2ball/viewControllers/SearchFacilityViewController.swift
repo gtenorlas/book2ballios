@@ -360,6 +360,7 @@ class SearchFacilityViewController: UIViewController, UITableViewDataSource, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
        myTableView.separatorColor = UIColor(white: 0.95, alpha: 1)
         
         if CLLocationManager.locationServicesEnabled() == true {
