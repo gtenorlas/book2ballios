@@ -134,44 +134,48 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
         didSearch = false
     }
     
-    @IBAction func onSearch(_ sender: UIButton){
+    @IBAction func onSearch(_ sender: Any){
+       searchCourts()
+        
+    }
+    
+    func searchCourts(){
         if (didSelectDateTime==true) {
-        var formatterShort = DateFormatter()
-        formatterShort.locale = Locale(identifier: "US_en")
-        formatterShort.dateFormat = "E, dd MMM yyyy"
-        startDate = formatterShort.string(from: datePicker.date)
-        startDateTime = datePicker.date
-        formatterShort.dateFormat = "h:mm"
-        startTime = formatterShort.string(from: datePicker.date)
-        
-        print("StartDate: \(startDate), startTime: \(startTime)")
-        
-        var calendar: Calendar = Calendar(identifier: Calendar.Identifier.gregorian)
-        //local time zone by using .current
-        calendar.timeZone = .current //TimeZone(identifier: "UTC")!
-        var components: DateComponents = DateComponents()
-        components.calendar = calendar
-        components.minute = Int(duration * 60)
-        endDateTime = calendar.date(byAdding: components, to: datePicker.date)!
-        
-        formatterShort.dateFormat = "MM-dd-yyyy-HH-mm"
-        startDateTimeString=formatterShort.string(from:datePicker.date)
-        endDateTimeString=formatterShort.string(from: endDateTime!)
-        print ("StartDateTime -> \(startDateTimeString), EndDateTime -> \(endDateTimeString)")
-        courts = Court.fetch(facilityId: mainDelegate.selectedFacilityData.facilityId, startDateTime: startDateTimeString, endDateTime: endDateTimeString)
-        print ("No of courts returned -> \(courts.count)")
-        
-        generateTableData(courtList: courts)
-        didSearch = true
-        willHideBook = false
-        
-        if courts.count == 0 {
-            showAlert(alertString: "No available courts found with the selected date/time and duration")
-        }
+            var formatterShort = DateFormatter()
+            formatterShort.locale = Locale(identifier: "US_en")
+            formatterShort.dateFormat = "E, dd MMM yyyy"
+            startDate = formatterShort.string(from: datePicker.date)
+            startDateTime = datePicker.date
+            formatterShort.dateFormat = "h:mm"
+            startTime = formatterShort.string(from: datePicker.date)
+            
+            print("StartDate: \(startDate), startTime: \(startTime)")
+            
+            var calendar: Calendar = Calendar(identifier: Calendar.Identifier.gregorian)
+            //local time zone by using .current
+            calendar.timeZone = .current //TimeZone(identifier: "UTC")!
+            var components: DateComponents = DateComponents()
+            components.calendar = calendar
+            components.minute = Int(duration * 60)
+            endDateTime = calendar.date(byAdding: components, to: datePicker.date)!
+            
+            formatterShort.dateFormat = "MM-dd-yyyy-HH-mm"
+            startDateTimeString=formatterShort.string(from:datePicker.date)
+            endDateTimeString=formatterShort.string(from: endDateTime!)
+            print ("StartDateTime -> \(startDateTimeString), EndDateTime -> \(endDateTimeString)")
+            courts = Court.fetch(facilityId: mainDelegate.selectedFacilityData.facilityId, startDateTime: startDateTimeString, endDateTime: endDateTimeString)
+            print ("No of courts returned -> \(courts.count)")
+            
+            generateTableData(courtList: courts)
+            didSearch = true
+            willHideBook = false
+            
+            if courts.count == 0 {
+                showAlert(alertString: "No available courts found with the selected date/time and duration")
+            }
         }else {
             showAlert(alertString: "Please select the date and time first.")
         }
-        
     }
     
     func generateTableData(courtList : Array<Court>){
@@ -238,7 +242,7 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBAction func unwindToCourtsViewController(sender : UIStoryboardSegue)
     {
-        
+        searchCourts()
     }
 
     /*
