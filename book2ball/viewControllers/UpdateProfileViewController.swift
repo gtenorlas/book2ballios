@@ -22,6 +22,8 @@ class UpdateProfileViewController: UIViewController, UITextFieldDelegate, UINavi
     @IBOutlet var email: UITextField!
     @IBOutlet var contactNumber: UITextField!
     @IBOutlet weak var myImageView : UIImageView!
+    @IBOutlet var usernameHeader: UILabel!
+    @IBOutlet var fullNameHeader: UILabel!
     
     var userLoggedIn: Customer = Customer()
     
@@ -96,6 +98,8 @@ class UpdateProfileViewController: UIViewController, UITextFieldDelegate, UINavi
      
         userLoggedIn = mainDelegate.userLoggedIn
         
+            usernameHeader.text = userLoggedIn.username as String
+            fullNameHeader.text = (userLoggedIn.firstName as String) + " " + (userLoggedIn.lastName as String)
             username.text = userLoggedIn.username as String
 
             firstName.text = userLoggedIn.firstName as String
