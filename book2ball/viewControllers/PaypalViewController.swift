@@ -65,15 +65,15 @@ class PaypalViewController: UIViewController, PayPalPaymentDelegate {
         
         let facility=mainDelegate.selectedFacilityData
         var address = ("\(facility.addLine1) \n")
-        if facility.addLine2 == nil {
+        if facility.addLine2 != "" {
             address += ("\(facility.addLine2) \n")
         }
-        if facility.addLine3 == nil {
+        if facility.addLine3 != "" {
             address += ("\(facility.addLine3) \n")
         }
         address += ("\(facility.city), ")
         address += ("\(facility.province) \n")
-        if facility.postalCode == nil {
+        if facility.postalCode != "" {
             address += ("\(facility.postalCode) \n")
         }
         address += ("\(facility.country)")
