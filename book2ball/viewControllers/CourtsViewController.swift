@@ -118,6 +118,8 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
         performSegue(withIdentifier: "segueToPaypalViewController", sender: nil)
         }else {
             showAlert(alertString: "Please select Date/time, duration, and click on search.")
+            //table
+            generateTableData(courtList: mainDelegate.selectedFacilityData.courtsList)
         }
     }
     
