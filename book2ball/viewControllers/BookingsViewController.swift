@@ -103,7 +103,7 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
     
     @IBAction func unwindToBookingsViewController(sender : UIStoryboardSegue)
     {
-        
+         myTable.reloadData()
     }
     
     // step 10 - define table method for how each cell should look
