@@ -31,7 +31,7 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100;
+        return 120;
     }
     
     @IBAction func viewBookingsByType (_ sender: Any)
@@ -63,7 +63,7 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
                     bookDate = formatter.date(from: myString)
                     formatter.dateFormat = "dd-MMM-yyyy"
                     let str = each.facilityName
-                    listData.append("Facility: \(each.facilityName!) \nCourt:\(each.courtName)")
+                    listData.append("\(each.facilityName!)/\(each.courtName!)")
                     descriptionData.append("Number of Hours: \(each.duration!)")
                     
                     timeData.append("Start: \(Booking.formatDate(date: each.startDateTime!))")
@@ -83,7 +83,7 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
                     bookDate = formatter.date(from: myString)
                     formatter.dateFormat = "dd-MMM-yyyy"
                     let str = each.facilityName
-                    listData.append("Facility: \(each.facilityName!) \nCourt:\(each.courtName)")
+                    listData.append("\(each.facilityName!)/\(each.courtName!)")
                     descriptionData.append("Number of Hours: \(each.duration!)")
                     timeData.append("Start: \(Booking.formatDate(date: each.startDateTime!))")
                     endTimeData.append("End: \(Booking.formatDate(date: each.endDateTime!))")
@@ -109,7 +109,24 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
     // step 10 - define table method for how each cell should look
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let cell: BookingsCardViewTableViewCell = tableView.dequeueReusableCell(withIdentifier: "BookingsCardViewTableViewCell") as? BookingsCardViewTableViewCell ?? BookingsCardViewTableViewCell(style: .default, reuseIdentifier: "BookingsCardViewTableViewCell")
         
+        cell.contentView.backgroundColor = UIColor (white: 0.90, alpha: 1)
+        
+  
+        
+        let rowNum = indexPath.row
+        
+        cell.select.backgroundColor = UIColor(red: 8.0/255, green: 104.0/255, blue: 244.0/255, alpha: 1.0)
+        cell.cellView.backgroundColor = UIColor(rgb: 0xFFFFFF)
+        cell.facilityName.text = listData[rowNum] //.facilityName
+        cell.duration.text = descriptionData[rowNum]
+        cell.start.text = timeData[rowNum]
+        cell.end.text = endTimeData[rowNum]
+        return cell
+        
+        
+        /*
         // step 10b - define PaymenTableViewCell.swift as UITableViewCell and move there before continuing
         // step 12 - check if cells already defined and a cell is leaving the screen.
         // if it is a newlyloaded view, cell will be instantiated.
@@ -130,6 +147,7 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
         
         // step 12c - return the cell
         return tableCell
+        */
         
     }
     
@@ -150,6 +168,8 @@ class BookingsViewController: UIViewController , UITableViewDataSource,UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        myTable.separatorColor = UIColor(white: 0.95, alpha: 1)
+        
         bookings = Booking.fetchByEmail(email: mainDelegate.userLoggedIn.email as String)
         statusCheck.selectedSegmentIndex = 0;
         self.viewBookingsByType(statusCheck)
