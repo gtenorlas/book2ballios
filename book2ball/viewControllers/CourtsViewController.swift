@@ -44,7 +44,7 @@ class CourtsViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 95;
+        return 90;
     }
     
     //define table method what to display on each cell
