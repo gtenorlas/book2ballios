@@ -1112,12 +1112,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IAO-pE-9Yg">
-                                                    <rect key="frame" x="20" y="7" width="58" height="28"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="booking.png" highlightedImage="booking.png" translatesAutoresizingMaskIntoConstraints="NO" id="IAO-pE-9Yg">
+                                                    <rect key="frame" x="20" y="7" width="38" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Bookings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="td8-QI-fay">
-                                                    <rect key="frame" x="86" y="7" width="129" height="28"/>
+                                                    <rect key="frame" x="66" y="7" width="129" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <color key="textColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
@@ -2625,6 +2625,7 @@
         <image name="Update.png" width="196" height="196"/>
         <image name="anthony.png" width="248" height="232"/>
         <image name="bgball.png" width="414" height="736"/>
+        <image name="booking.png" width="1031" height="1030"/>
         <image name="contact.png" width="50" height="50"/>
         <image name="email.png" width="50" height="50"/>
         <image name="fbButton" width="206" height="58"/>
