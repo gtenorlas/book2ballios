@@ -1088,12 +1088,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1eE-cp-ccz">
-                                                    <rect key="frame" x="20" y="7" width="57" height="28"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="searchicon.png" highlightedImage="searchicon.png" translatesAutoresizingMaskIntoConstraints="NO" id="1eE-cp-ccz">
+                                                    <rect key="frame" x="20" y="7" width="37" height="26"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search Facility " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEe-Oq-sny">
-                                                    <rect key="frame" x="85" y="7" width="150" height="28"/>
+                                                    <rect key="frame" x="65" y="6" width="150" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <color key="textColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
@@ -2637,6 +2637,7 @@
         <image name="mo.png" width="242" height="222"/>
         <image name="password.png" width="50" height="50"/>
         <image name="phone.png" width="50" height="50"/>
+        <image name="searchicon.png" width="256" height="256"/>
         <image name="shanu.png" width="204" height="208"/>
         <image name="username" width="50" height="50"/>
         <image name="username.png" width="50" height="50"/>
